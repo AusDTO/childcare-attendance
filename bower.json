@@ -1,0 +1,6 @@
+{
+  "name": "childcare_attendance",
+  "dependencies": {
+    "jquery": "~2.2.3"
+  }
+}

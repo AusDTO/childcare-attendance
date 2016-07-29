@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+# Set up Jekyll site. Run this script immediately after cloning the codebase.
+# https://github.com/thoughtbot/guides/tree/master/protocol
+
+# Exit if any subcommand fails
+set -e
+
+# Set up Ruby dependencies via Bundler.
+# If running on CircleCI, ensure gems are cached by using vendor folder.
+if [ -z "$CIRCLECI" ]; then
+  gem install bundler --conservative
+  bundle check || bundle install
+  bundle update
+else
+  bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3 
+fi
+
+# Set up JS dependencies via Bower.
+bower --version > /dev/null || npm install -g bower
+bower install
