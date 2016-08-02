@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem "autoprefixer-rails"
 gem "html-proofer"
-gem "jekyll"
+gem "jekyll", "3.1.6"
 gem "jekyll-assets"
 gem "jekyll-sitemap"
 gem "sass"
