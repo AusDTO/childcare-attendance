@@ -1,0 +1,142 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Concept 01</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="data.js"></script>
+    </head>
+
+<script type='text/JavaScript' >
+
+function go(val)
+{
+	var b1 = document.getElementById('b1');
+	var b2 = document.getElementById('b2');
+	var b3 = document.getElementById('b3');
+	var b4 = document.getElementById('b4');
+	var pin = b1.value+b2.value+b3.value+b4.value;
+	
+	if(val=='Exit')
+	{
+		window.location.replace('ProviderLogin.html');
+		return;
+	}
+
+
+
+	if(val=='Reset')
+	{
+		b1.value='';
+		b2.value='';
+		b3.value='';
+		b4.value='';
+		return;
+	}
+	
+	if(val == 'Continue')
+	{
+		debugger;
+		if(isValidParent(pin)) 
+		{
+		
+		window.location.replace('Children.html?pin=' + pin);
+		return;		
+		}	
+		else
+		{
+		alert('invalid pin.. please try again');
+		b1.value='';
+		b2.value='';
+		b3.value='';
+		b4.value='';
+		return;
+		}
+
+	}
+	
+	if(b1.value=='')
+	{
+		b1.value=val;
+		return;
+	}else
+	if(b2.value=='')
+	{
+		b2.value=val;
+		return;
+	}else
+	if(b3.value=='')
+	{
+		b3.value=val;
+		return;
+	}else
+	if(b4.value=='')
+	{
+		b4.value=val;
+		return;
+	}
+}
+</script>
+
+<title>Kiosk</title>
+</head>
+
+    <body class="dark">
+    <header class="wrapper">
+        <div class="sub-brand">
+        <a href="../index.html">
+          <svg width="15" height="12">
+            <path d="M0,1 15,1" stroke="#fff" stroke-width="2"/>
+            <path d="M0,6 15,6" stroke="#fff" stroke-width="2"/>
+            <path d="M0,11 15,11" stroke="#fff" stroke-width="2"/>
+          </svg>
+          Menu
+        </a></div>
+        <div class="gov"><a href="index.html"><span>Childcare</span></a></div>
+    </header>
+    <div class="wrapper">
+        <main class="main__1-column centred">
+            <h1>Sign in</h1>
+			<section>
+				<span>
+				<input type="text" id='b1' style='width:30px' maxlength='1'/>
+				<input type="text" id='b2' style='width:30px' maxlength='1'/>
+				<input type="text" id='b3' style='width:30px' maxlength='1'/>
+				<input type="text" id='b4' style='width:30px' maxlength='1'/>
+				</span>
+				<table id='numberPad' class="table__layout table__numberpad">
+				<tr>
+				<td><input type='button' value='1' onclick='go(this.value);'/></td>
+				<td><input type='button' value='2' onclick='go(this.value);'/></td>
+				<td><input type='button' value='3' onclick='go(this.value);'/></td>
+				</tr>
+				<tr>
+				<td><input type='button' value='4' onclick='go(this.value);'/></td>
+				<td><input type='button' value='5' onclick='go(this.value);'/></td>
+				<td><input type='button' value='6' onclick='go(this.value);'/></td>
+				</tr>
+				<tr>
+				<td><input type='button' value='7' onclick='go(this.value);'/></td>
+				<td><input type='button' value='8' onclick='go(this.value);'/></td>
+				<td><input type='button' value='9' onclick='go(this.value);'/></td>
+				</tr>
+				<tr>
+				<td></td>
+				<td><input type='button' value='0' onclick='go(this.value);'/></td>
+				<td></td>
+				</tr>
+				</table>
+
+				<p><input type='button' class="btn-default btn-large" value='Continue' onclick='go(this.value);'/></p>
+				<p><input type='button' value='Reset' onclick='go(this.value);'/>&nbsp;<input type='button' value='Exit' onclick='go(this.value);'/></p>
+
+			</section>
+        </main>
+    </div>
+</body>
+</html>

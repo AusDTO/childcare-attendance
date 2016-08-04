@@ -1,0 +1,48 @@
+body
+{
+background-color:silver;
+}
+
+.center
+{
+color:black;
+padding: 5% 10%;
+margin-left:20%;
+margin-right:20%;
+
+border:solid;
+border-width:1px;
+border-color:green;
+}
+
+#attendanceTable td
+{
+	border:solid;
+	border-width:1px;
+	width:100px;
+}
+
+
+#attendanceTable th
+{
+	border:solid;
+	border-width:1px;
+	width:100px;
+	font-weight:bold;
+}
+
+#tblNavigation td
+{
+
+display: block;
+margin:auto;
+text-align:center;
+}
+
+
+
+
+h1
+{
+color:purple;
+}
