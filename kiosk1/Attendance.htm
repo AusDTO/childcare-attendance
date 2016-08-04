@@ -1,0 +1,45 @@
+<html>
+<head>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<title>Childcare Attendance</title><script type='text/javascript'>
+
+function go(val)
+{
+	if(val == 'Provider Menu')
+	{
+		window.location.replace('ProviderMenu.htm');
+	}
+
+		if(val == 'Parent Logon')
+	{
+		window.location.replace('Welcome.htm');
+	}
+
+}
+</script>
+
+</head>
+<body>
+<div class='center'>
+<header>
+<h1>Attendance</h1>
+</header>
+<section>
+<h2 id='lblDate'/>
+<table id='attendanceTable' style='border:solid; width:80%'>
+<tr><th>Name</th><th>Arrival</th><th>Departure</th><th style="width:400px">Comments</th></tr>
+<tr><td>Billy Smith</td><td>10am</td><td>2pm</td><td>more nappies</td></tr>
+<tr><td>Willy Smith</td><td>10am</td><td>2pm</td><td>Needs medication</td></tr>
+<tr><td>Sally Smith</td><td>10.10am</td><td>1pm</td><td>leaving at 1pm</td></tr>
+</table>
+<table>
+<tr><td><input type='button' value='Parent Logon' style='width:250px' onclick='go(this.value);'/><input type='button' value='Provider Menu' style='width:250px' onclick='go(this.value);'/></td></tr>
+
+</table>
+</section>
+</div>
+<script>
+setDefaults();
+</script>
+</body>
+</html>

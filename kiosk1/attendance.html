@@ -1,0 +1,129 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Childcare Attendance</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="data.js"></script>
+
+<script type='text/javascript'>
+
+function go(val)
+{
+    if(val == 'Provider Menu')
+    {
+        window.location.replace('ProviderMenu.html');
+    }
+
+        if(val == 'Parent Login')
+    {
+        window.location.replace('Welcome.html');
+    }
+
+}
+
+function setDefaults()
+{
+buildAttendanceTable();
+}
+
+function buildAttendanceTable()
+{
+    var childcareData = getData();
+    debugger;
+    var attendanceTable  = document.getElementById('attendanceTable');  
+    
+    for(var i=0;i< childcareData.data.parent.length;i++)
+    {
+        children = childcareData.data.parent[i].child;
+        
+        for (j=0;j<children.length;j++)
+        {
+            var name = children[j].name;
+        
+            var row = document.createElement('tr');
+            var cellAction = document.createElement('td');
+            var actionButton = document.createElement('input');
+            actionButton.type = 'button';
+            actionButton.id= 'actionButton'+j;
+            actionButton.value= 'Sign In/Out';
+            cellAction.appendChild(actionButton);
+            
+            var cellName = document.createElement('td');
+            var textName = document.createTextNode(name);
+            
+            cellName.appendChild(textName);
+            var cellArrival = document.createElement('td');
+            cellArrival.id = 'txtArrival'+i;
+            var cellDeparture = document.createElement('td');
+            cellDeparture.id = 'txtDeparture'+i;
+            var cellComments = document.createElement('td');
+            
+            row.appendChild(cellAction);    
+            row.appendChild(cellName);
+            row.appendChild(cellArrival);   
+            row.appendChild(cellDeparture);
+            row.appendChild(cellComments);
+            attendanceTable.appendChild(row);
+        }
+    
+    
+    }
+    
+    
+}
+
+
+
+</script>
+
+    </head>
+    <body class="dark">
+    <header class="wrapper">
+        <div class="sub-brand">
+        <a href="../index.html">
+          <svg width="15" height="12">
+            <path d="M0,1 15,1" stroke="#fff" stroke-width="2"/>
+            <path d="M0,6 15,6" stroke="#fff" stroke-width="2"/>
+            <path d="M0,11 15,11" stroke="#fff" stroke-width="2"/>
+          </svg>
+          Menu
+        </a></div>
+        <div class="gov"><a href="index.html"><span>Childcare</span></a></div>
+    </header>
+
+    <div class="wrapper">
+        <main class="main__1-column">
+            <h1>Attendance</h1>
+
+<table id='attendanceTable'>
+<tr>
+<th></th>
+<th>Name</th>
+<th>Arrival</th>
+<th>Departure</th>
+<th style="width:400px">Comments</th>
+</tr>
+<tr>
+<td><input type='button' value='Sign In/Out'></td>
+<td>Billy Smith</td>
+<td>10am</td>
+<td>2pm</td>
+<td>more nappies</td>
+</tr>
+</table>
+
+<p><input type='button' value='Parent Login' class="btn btn-default" onclick='go(this.value);'/>&nbsp;<input type='button' value='Provider Menu' class="btn btn-default" onclick='go(this.value);'/></p>
+</div>
+<script>
+setDefaults();
+</script>
+
+        </main>
+    </div>
+    </body>
+</html>
