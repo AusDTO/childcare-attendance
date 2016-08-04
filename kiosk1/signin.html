@@ -1,0 +1,227 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Concept 01</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="../css/style.css">
+<script type='text/JavaScript' >
+	var getQueryString = function ( field, url ) {
+    var href = url ? url : window.location.href;
+    var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
+    var string = reg.exec(href);
+    return string ? string[1] : null;
+	};
+
+	
+	function go(val)
+	{
+		var hiddenPin = document.getElementById('pinInput');
+		if(val == 'Sign in ONLY' ||val == 'Confirm' )
+		{
+			var location = 	window.location.replace("end.htm");
+		}
+
+
+
+		if(val=='Sign in and mark absent')
+		{
+			
+			var location = 	window.location.replace("end.htm");
+		  
+		  
+		}
+		
+		
+		if(val == 'Cancel')
+		{
+			var location = 	window.location.replace("welcome.htm");
+		}	
+		
+		
+	}
+
+	
+	function setChildren()
+	{ 
+		debugger;
+		var children = getQueryString('children');
+		var cleaned = children.replace(/~/g, '"'); 	
+		var childrenObj = eval ("(" + cleaned + ")").children;
+		
+		var pin = getQueryString('pin'); 	
+		var hiddenPin = document.getElementById('pinInput');
+		hiddenPin.value= pin;
+
+		var signedInList = document.getElementById('signedInList');
+		var absentList = document.getElementById('absentList');
+		var divAbsent = document.getElementById('divAbsent');	
+		var currentdate = new Date();
+		var txtTime = document.getElementById('txtTime').value = + currentdate.getHours() + ":"  + currentdate.getMinutes();
+		var txtDate = document.getElementById('txtDate').value = getDayString(currentdate.getDay()) + " " + currentdate.getDate() + " "+ getMonthString(currentdate.getMonth());
+
+		for(var i=0;i<childrenObj.length;i++)
+		{
+			var name = childrenObj[i].name;
+			var signedIn = childrenObj[i].signIn;
+			var entry = document.createElement('li');
+			entry.appendChild(document.createTextNode(name));
+
+			if(signedIn == 'true')
+			{
+			signedInList.appendChild(entry);			
+
+			}
+			else
+			{
+			absentList.appendChild(entry);	
+			divAbsent.style.display = 'block';
+			document.getElementById('btYes').value='Sign in Only'
+			var tomorrow = new Date();
+
+			tomorrow.setDate(tomorrow.getDate() + 1); 
+			document.getElementById('txtDateReturn').value= formatDate(tomorrow);
+			debugger;
+			document.getElementById('divYesAbsent').style.display = 'block';
+			}
+		}
+
+		}
+	
+	
+	function getDayString(num)
+	{
+	var d = new Date();
+	var weekday = new Array(7);
+	weekday[0]=  "Sunday";
+	weekday[1] = "Monday";
+	weekday[2] = "Tuesday";
+	weekday[3] = "Wednesday";
+	weekday[4] = "Thursday";
+	weekday[5] = "Friday";
+	weekday[6] = "Saturday";
+	return weekday[d.getDay()];
+	
+	}
+	
+	
+	function getMonthString(num)
+    {
+
+      var month;    
+      switch(num)
+      {
+        case 0:
+          month="January";
+          break;
+        case 1:
+          month="February";
+          break;
+        case 2:
+          month="March";
+          break;
+        case 3:
+          month="April";
+          break;
+        case 4:
+          month="May";
+          break;
+        case 5:
+          month="June";
+          break;
+        case 6:
+          month="July";
+          break;
+        case 7:
+          month="August";
+          break;
+        case 8:
+          month="September";
+          break;
+        case 9:
+          month="October";
+          break;
+        case 10:
+          month="November";
+          break;
+        case 11:
+          month="December";
+          break;
+        default:
+          month="Invalid month";
+      }
+      return month;
+    }
+	
+	function formatDate(value)
+	{
+	   return value.getDate()+1 + "/" + value.getMonth() + "/" + '2016';
+	}
+	
+</script>
+    </head>
+    <body class="dark">
+    <header class="wrapper">
+        <div class="sub-brand">
+        <a href="../index.html">
+          <svg width="15" height="12">
+            <path d="M0,1 15,1" stroke="#fff" stroke-width="2"/>
+            <path d="M0,6 15,6" stroke="#fff" stroke-width="2"/>
+            <path d="M0,11 15,11" stroke="#fff" stroke-width="2"/>
+          </svg>
+          Menu
+        </a></div>
+        <div class="gov"><a href="index.html"><span>Childcare</span></a></div>
+    </header>
+
+    <div class="wrapper">
+        <main class="main__1-column">
+            <h1>Please confirm</h1>
+						<input type='hidden' id='pinInput'/>
+	<p>Signing in </p>
+	<ul id='signedInList'>
+		<p>in at <input id='txtTime' type='text' style='width:50px'/>	<input id='txtDate' type='text' style='width:150px'/></p>
+
+	</ul>
+	<div id='divAbsent' style='display:none'>
+		<div class='absentDetailDiv'>
+		<p>Do you want to report as absent today?</p>
+		<ul id='absentList'>
+		
+		</ul>
+		<table >
+		<tr><td>Reason for absence</td></tr>
+		<tr><td>
+		<form action="">
+		  <input type="radio" name="absent" value="sick"> Sick<br>
+		  <input type="radio" name="absent" value="holiday"> Holiday<br>
+		  <input type="radio" name="absent" value="other"> Other
+		</form>
+		
+		
+		</td></tr>
+		<tr><td>Expected Return</td></tr>
+		<tr><td><input type='text' id='txtDateReturn' style='width:250px' ></input></td></tr>
+		</table>
+
+		</div>
+	</div>
+	<table id="tblNavigation" style='width:100%'>
+	<tr>	
+	<td><div id='divYesAbsent' style='display:none'>
+	<input id='btYesAbsent' type='button' value='Sign in and mark absent' onclick='go(this.value)' style='width:100%' /></div></td>
+	<td><input id='btYes' type='button' value='Confirm' onclick='window.location.replace("end.htm")' style='width:100%' /></td>
+	<td><input id='btCancel' type='button' value='Cancel' onclick='go(this.value);' style='width:100%' /></td></tr>
+	</table>
+	<script>
+		setChildren();
+	</script>
+
+
+        </main>
+    </div>
+    </body>
+</html>

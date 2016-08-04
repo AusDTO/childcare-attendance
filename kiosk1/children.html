@@ -1,0 +1,151 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Concept 01</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="../css/style.css">
+<script src="data.js"></script>
+<script src="js/json2.js"></script>
+<script type='text/JavaScript' >
+	function addChild(childName,absent)
+	{
+			var pinInput = document.getElementById('pinInput');	
+			var childrenTable = document.getElementById('childrenTable');	
+			var row = document.createElement('tr');
+			var cellName = document.createElement('td');
+			cellName.setAttribute('width','15%');
+			var txName = document.createTextNode(childName);
+			/*
+			var buttonName = document.createElement('input');
+			buttonName.type = 'button';
+			buttonName.id = childName;
+			buttonName.value = childName;
+			buttonName.setAttribute('style','width:150');
+			buttonName.setAttribute('onclick','window.location.replace("Child.htm?cn='+childName+'&pin='+pinInput.value+'");');
+			*/
+
+			var cellAbsent = document.createElement('td');
+			var cellAbsent = document.createElement('td');
+			var checkBoxAbsent = document.createElement('input');
+			checkBoxAbsent.type = 'checkbox';
+			checkBoxAbsent.checked = absent;
+			cellAbsent.appendChild(checkBoxAbsent)
+			cellName.appendChild(txName);
+			row.appendChild(cellName);
+			row.appendChild(cellAbsent);
+			childrenTable.appendChild(row);	
+	}
+	
+	function setChildren()
+ {
+
+	  var pinCode = getQueryString('pin'); 
+	  var hiddenPin = document.getElementById('pinInput');
+	  hiddenPin.value= pinCode;
+	 /*
+	  var Connect = new XMLHttpRequest();
+	  Connect.open("GET", "data.xml", false);
+	  Connect.setRequestHeader("Content-Type", "text/xml");
+	  Connect.send(null);
+	  var TheDocument = Connect.responseXML;
+	  Connect = null;
+	  var data = TheDocument.childNodes[0];
+	  */
+	var parent = getParentData(pinCode);
+	var pin  = parent.pin;	  
+	var parentName = 'Hi ' + parent.name;
+	document.getElementById('spParent').innerHTML = parentName;	  
+	
+	if(parent != null)
+	{
+	var children = parent.child;
+			for (var j = 0; j < children.length; j++)
+							  {
+								var childName = children[j].name;
+								addChild((childName),false);
+							  }
+			
+			
+	}
+ }
+	
+	
+	var getQueryString = function ( field, url ) {
+    var href = url ? url : window.location.href;
+    var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
+    var string = reg.exec(href);
+    return string ? string[1] : null;
+	};
+
+function go(val)
+{
+	if(val=='Cancel')
+	{
+		window.location.replace('Welcome.html');
+		return;
+	}
+	
+	
+	if(val='Continue')
+	{
+		var childrenTable = document.getElementById('childrenTable');
+		var childRows = childrenTable.getElementsByTagName('tr');
+		var pinCode = document.getElementById('pinInput').value;
+		debugger;
+		
+		var children = '{~children~:[';
+		
+		for(var i=0;i<childRows.length;i++)
+		{
+			var tdArr = childRows[i].getElementsByTagName('td');
+			var name = tdArr[0];
+			var signIn = tdArr[1].firstChild.checked;
+			children = children + '{~name~:~' +name.innerHTML+'~,~signIn~:~'+signIn+'~},';
+		
+		}
+		
+		children = children.substring(0, children.length - 1);
+		children = children + ']}';
+		
+		window.location.replace('SignIn.html?children=' + children+'&pin='+pinCode);
+	}
+	
+}
+</script>
+
+    </head>
+    <body class="dark">
+    <header class="wrapper">
+        <div class="sub-brand">
+        <a href="../index.html">
+          <svg width="15" height="12">
+            <path d="M0,1 15,1" stroke="#fff" stroke-width="2"/>
+            <path d="M0,6 15,6" stroke="#fff" stroke-width="2"/>
+            <path d="M0,11 15,11" stroke="#fff" stroke-width="2"/>
+          </svg>
+          Menu
+        </a></div>
+        <div class="gov"><a href="index.html"><span>Childcare</span></a></div>
+    </header>
+
+    <div class="wrapper">
+        <main class="main__1-column">
+            <p id='spParent'></p>
+            <h1>Dropping kids off?</h1>
+            <input type='hidden' id='pinInput'/>
+						<table id='childrenTable'>
+						</table>
+						<p><input type='button' class="btn btn-default" value='Continue' onclick='go(this.value);'/>&nbsp;<input type='button' value='Cancel' class="btn" onclick='go(this.value);'/>
+						<script>
+						setChildren();
+						</script>
+        </main>
+    </div>
+    </body>
+</html>
+
+
