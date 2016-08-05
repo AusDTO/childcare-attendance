@@ -14,6 +14,7 @@ test:
   override:
     - bundle exec jekyll hyde
     - bundle exec jekyll build
+    - bundle exec htmlproofer ./_site --allow-hash-href
 
 deployment:
   alpha:

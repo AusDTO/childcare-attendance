@@ -8,20 +8,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" href="../css/style.css">
-        <script type='text/javascript'>
-        function go(val)
-        {
-            if(val == 'Parent Login')
-            {
-                window.location.href ='Welcome.html';
-            }
-
-                if(val == 'Attendance')
-            {
-                window.location.href ='Attendance.html';
-            }
-        }
-        </script>
     </head>
     <body class="dark">
     <header class="wrapper">
@@ -38,9 +24,9 @@
     </header>
 
     <div class="wrapper">
-        <main class="main__1-column centred">
-            <h1>Provider menu</h1>
-            <p><input type='button' value='Parent Login' class="btn btn-default" onclick='go(this.value);'/>&nbsp;<input type='button' value='Attendance' class="btn btn-default" onclick='go(this.value);'/></p>
+        <main class="main__1-column">
+			<h1>Thanks!</h1>
+			<input type='button' id='btSignIn' onclick='window.location.href ="welcome.html";' value='Sign in another child'/>
         </main>
     </div>
     </body>

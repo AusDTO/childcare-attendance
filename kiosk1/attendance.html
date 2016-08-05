@@ -3,12 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Childcare Attendance</title>
+        <title>Concept 01</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" href="../css/style.css">
-        <script src="data.js"></script>
+		<script src="data.js"></script>
+		<script src="js/json2.js"></script>
 
 <script type='text/javascript'>
 
@@ -28,28 +29,57 @@ function go(val)
 
 function setDefaults()
 {
-buildAttendanceTable();
+	buildAttendanceTable();
+	document.getElementById('theDate').innerHTML = currentDate(false);
 }
+
+function signInOut(index)
+{
+	var theDate = currentDate(true);
+	
+	var indexInt = parseInt(index)
+    var attendanceTableRows  = document.getElementById('attendanceTable').getElementsByTagName('tr'); 
+	var cells = attendanceTableRows[indexInt].children;
+	if(cells[2].innerHTML == '')
+	cells[2].innerHTML = theDate;
+	else
+	cells[3].innerHTML=theDate;
+	
+	
+
+}
+function currentDate(includeHours) {
+  function pad(s) { return (s < 10) ? '0' + s : s; }
+  var d = new Date();
+  var DateValue = [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+  if(includeHours)
+  {DateValue =  DateValue +' ' + d.getHours() +':'+ pad(d.getMinutes());}
+  return DateValue;
+}
+
+
 
 function buildAttendanceTable()
 {
     var childcareData = getData();
-    debugger;
     var attendanceTable  = document.getElementById('attendanceTable');  
-    
-    for(var i=0;i< childcareData.data.parent.length;i++)
+    var childRowIndex = 0;
+	for(var i=0;i< childcareData.data.parent.length;i++)
     {
         children = childcareData.data.parent[i].child;
         
-        for (j=0;j<children.length;j++)
+        for (var j=0;j<children.length;j++)
         {
-            var name = children[j].name;
+            childRowIndex++;
+			var name = children[j].name;
         
             var row = document.createElement('tr');
             var cellAction = document.createElement('td');
             var actionButton = document.createElement('input');
-            actionButton.type = 'button';
-            actionButton.id= 'actionButton'+j;
+
+		    actionButton.onclick = (function() {var currentI = childRowIndex; return function() { signInOut(currentI + ''); }})();
+			actionButton.type = 'button';
+            actionButton.id= 'actionButton'+childRowIndex;
             actionButton.value= 'Sign In/Out';
             cellAction.appendChild(actionButton);
             
@@ -58,10 +88,13 @@ function buildAttendanceTable()
             
             cellName.appendChild(textName);
             var cellArrival = document.createElement('td');
-            cellArrival.id = 'txtArrival'+i;
+            cellArrival.id = 'txtArrival'+childRowIndex;
             var cellDeparture = document.createElement('td');
-            cellDeparture.id = 'txtDeparture'+i;
+            cellDeparture.id = 'txtDeparture'+childRowIndex;
             var cellComments = document.createElement('td');
+			var txtComment = document.createElement('input');
+
+			cellComments.appendChild(txtComment);
             
             row.appendChild(cellAction);    
             row.appendChild(cellName);
@@ -99,7 +132,7 @@ function buildAttendanceTable()
     <div class="wrapper">
         <main class="main__1-column">
             <h1>Attendance</h1>
-
+<strong><p id='theDate'></p></strong>
 <table id='attendanceTable'>
 <tr>
 <th></th>
@@ -107,13 +140,6 @@ function buildAttendanceTable()
 <th>Arrival</th>
 <th>Departure</th>
 <th style="width:400px">Comments</th>
-</tr>
-<tr>
-<td><input type='button' value='Sign In/Out'></td>
-<td>Billy Smith</td>
-<td>10am</td>
-<td>2pm</td>
-<td>more nappies</td>
 </tr>
 </table>
 

@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" href="../css/style.css">
-<script type='text/JavaScript' >
+		<script type='text/JavaScript' >
 	var getQueryString = function ( field, url ) {
     var href = url ? url : window.location.href;
     var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
@@ -22,7 +22,7 @@
 		var hiddenPin = document.getElementById('pinInput');
 		if(val == 'Sign in ONLY' ||val == 'Confirm' )
 		{
-			var location = 	window.location.replace("end.htm");
+			var location = 	window.location.href = 'end.html';
 		}
 
 
@@ -30,7 +30,7 @@
 		if(val=='Sign in and mark absent')
 		{
 			
-			var location = 	window.location.replace("end.htm");
+			var location = 	window.location.href = "end.html";
 		  
 		  
 		}
@@ -38,7 +38,7 @@
 		
 		if(val == 'Cancel')
 		{
-			var location = 	window.location.replace("welcome.htm");
+			var location = 	window.location.href ="welcome.html";
 		}	
 		
 		
@@ -162,6 +162,8 @@
 	}
 	
 </script>
+		
+		
     </head>
     <body class="dark">
     <header class="wrapper">
@@ -179,48 +181,50 @@
 
     <div class="wrapper">
         <main class="main__1-column">
-            <h1>Please confirm</h1>
-						<input type='hidden' id='pinInput'/>
-	<p>Signing in </p>
-	<ul id='signedInList'>
-		<p>in at <input id='txtTime' type='text' style='width:50px'/>	<input id='txtDate' type='text' style='width:150px'/></p>
-
-	</ul>
-	<div id='divAbsent' style='display:none'>
-		<div class='absentDetailDiv'>
-		<p>Do you want to report as absent today?</p>
-		<ul id='absentList'>
+		<input type='hidden' id='pinInput'/>
+		<h1>Confirming...</h1>
+		<section>
+		<p>I am signing in </p>
+		<ul id='signedInList'>
 		
 		</ul>
-		<table >
-		<tr><td>Reason for absence</td></tr>
-		<tr><td>
-		<form action="">
-		  <input type="radio" name="absent" value="sick"> Sick<br>
-		  <input type="radio" name="absent" value="holiday"> Holiday<br>
-		  <input type="radio" name="absent" value="other"> Other
-		</form>
 		
+		<p>in at <input id='txtTime' type='text' style='width:50px'/>	<input id='txtDate' type='text' style='width:250px'/></p>
 		
-		</td></tr>
-		<tr><td>Expected Return</td></tr>
-		<tr><td><input type='text' id='txtDateReturn' style='width:250px' ></input></td></tr>
-		</table>
+		<div id='divAbsent' style='display:none'>
+			<div class='absentDetailDiv'>
+			<p>Do you want to report as absent today?</p>
+			<ul id='absentList'>
+			
+			</ul>
+			<table >
+			<tr><td>Reason for absence</td></tr>
+			<tr><td>
+			<form action="">
+			  <input type="radio" name="absent" value="sick"> Sick<br>
+			  <input type="radio" name="absent" value="holiday"> Holiday<br>
+			  <input type="radio" name="absent" value="other"> Other
+			</form>
+			
+			
+			</td></tr>
+			<tr><td>Expected Return</td></tr>
+			<tr><td><input type='text' id='txtDateReturn' style='width:250px' ></input></td></tr>
+			</table>
 
+			</div>
 		</div>
-	</div>
-	<table id="tblNavigation" style='width:100%'>
-	<tr>	
-	<td><div id='divYesAbsent' style='display:none'>
-	<input id='btYesAbsent' type='button' value='Sign in and mark absent' onclick='go(this.value)' style='width:100%' /></div></td>
-	<td><input id='btYes' type='button' value='Confirm' onclick='window.location.replace("end.htm")' style='width:100%' /></td>
-	<td><input id='btCancel' type='button' value='Cancel' onclick='go(this.value);' style='width:100%' /></td></tr>
-	</table>
-	<script>
-		setChildren();
-	</script>
-
-
+		<table id="tblNavigation" style='width:100%'>
+		<tr>	
+		<td><div id='divYesAbsent' style='display:none'>
+		<input id='btYesAbsent' type='button' value='Sign in and mark absent' onclick='go(this.value)' style='width:100%' /></div></td>
+		<td><input id='btYes' type='button' value='Confirm' onclick='window.location.href ="end.html"' style='width:100%' /></td>
+		<td><input id='btCancel' type='button' value='Cancel' onclick='go(this.value);' style='width:100%' /></td></tr>
+		</table>
+		<script>
+			setChildren();
+		</script>
+		</section>
         </main>
     </div>
     </body>
