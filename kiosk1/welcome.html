@@ -24,7 +24,7 @@ function go(val)
 	
 	if(val=='Exit')
 	{
-		window.location.replace('ProviderLogin.html');
+		window.location.href ='ProviderLogin.html';
 		return;
 	}
 
@@ -45,7 +45,7 @@ function go(val)
 		if(isValidParent(pin)) 
 		{
 		
-		window.location.replace('Children.html?pin=' + pin);
+		window.location.href ='Children.html?pin=' + pin;
 		return;		
 		}	
 		else
