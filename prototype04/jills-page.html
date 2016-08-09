@@ -1,0 +1,65 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Mum signs in 2 kids</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body class="dark">
+
+    <header class="wrapper">
+        <div class="sub-brand">
+        <a href="../index.html">
+          <svg width="15" height="12">
+            <path d="M0,1 15,1" stroke="#fff" stroke-width="2"/>
+            <path d="M0,6 15,6" stroke="#fff" stroke-width="2"/>
+            <path d="M0,11 15,11" stroke="#fff" stroke-width="2"/>
+          </svg>
+          Menu
+        </a></div>
+        <div class="gov"><a href="index.html"><span>Childcare</span></a></div>
+    </header>
+    <div class="wrapper">
+        <main class="main__1-column">
+          <h1>Hi Jill, signing both kids in?</h1>
+          <p style="float: right; margin-top: -40px">10 August 2016</p>
+          <p><button class="btn btn-default btn-large" id="linkOne">Sign both in</button> at <strong>08.38 AM</strong> &nbsp;<a class="white smaller" href="#">change sign in time</a></p>
+          <hr />
+          <h2>Or sign separately</h2>
+          <div class="grid-row">
+            <div class="col2 centred" style="max-width: 200px">
+              <img src="../img/jay.png" />
+              <h2>Jay</h2>
+            </div>
+            <div class="col4">
+              <p><button class="btn btn-default btn-large">Sign in</button></p>
+              <p>at <strong>08.38 AM</strong> &nbsp;<a class="white smaller" href="#">change sign in time</a></p>
+            </div>
+            <div class="col2 centred" style="max-width: 200px">
+              <img src="../img/arminda.png" />
+                <h2>Arminda</h2>
+              </div>
+              <div class="col4 last">
+              <p><button class="btn btn-default btn-large">Sign in</button></p>
+              <p>at <strong>08.38 AM</strong> &nbsp;<a class="white smaller" href="#">change sign in time</a></p>
+            </div>
+          </div>
+        </main>
+    </div>
+    <div id="dialogOne" style="display:none;">
+        <h1 style="color: black">Thanks!</h1> 
+        <p style="color: black">Both kids checked in at 08.38AM</p> 
+        <input type="button" class="btn btn-default" id="btnBothKids" value="OK, done" onclick="window.location.href = 'carer-signin.html'" /> 
+        <a href="#" class="margin-left-075" onclick='visionaustralia.closeDialog("dialogOne");'>Cancel</a>
+    </div>
+    <script type="text/javascript" src="../js/vendor/jquery-3.1.0.min.js"></script> 
+    <script type="text/javascript" src="../js/vadialog.js"></script> 
+    <script type="text/javascript">
+            visionaustralia.addDialog("linkOne", "dialogOne"); 
+    </script>     
+    </body>
+</html>
