@@ -48,7 +48,7 @@
                     <p><button class="btn btn-default btn-large centred" id="continue" onclick="return whichCheckBox();"">Confirm sign out</button></p>
                 </div>
                 <div id="postConfirm" style="display: none">
-                <h2><img src="../img/ico-tick.png" style="width: 40px; height: 40px; vertical-align: middle;" /> Thanks!</h2>
+                <h2 style="margin-top:0;"><img src="../img/ico-tick.png" style="width: 40px; height: 40px; vertical-align: middle;" /> Thanks!</h2>
                 <p><button class="btn btn-default btn-large" id="logout" onclick="window.location.href = 'carer-signin.html'">Logout</button></p>
                 </div>
             </div>
@@ -60,6 +60,7 @@
         <input type="button" class="btn btn-default" id="btnBothKids" value="Yes" onclick="window.location.href = 'carer-signin.html'" /> 
         <a href="#" class="margin-left-075" onclick='visionaustralia.closeDialog("dialogOne");'>No, go back</a>
     </div>
+    <p class="disclaimer">Icons made by <a class="white" href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a class="white" href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a class="white" href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></p>
     <script type="text/javascript" src="../js/vendor/jquery-3.1.0.min.js"></script> 
     <script type="text/javascript" src="../js/vadialog.js"></script> 
     <script type="text/javascript">
@@ -79,7 +80,7 @@
             }
             else
             {
-                window.alert('Behaviour to confirm only one child');
+                window.alert('Behaviour not yet designed to handle less than all kids');
 
             }    
                 return false;

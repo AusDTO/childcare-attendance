@@ -60,8 +60,17 @@ a.white, a.white:link, a.white:visited {
 }
 
 
-.smaller {
+.smaller, .disclaimer {
   font-size: $smaller;
+}
+.disclaimer {
+    text-align: center;
+    margin-top: 3em;
+    color: #ccc;
+
+        a, a:link, a:visited {
+        color: #ccc;
+    }
 }
 .smallest {
   font-size: $smallest;
@@ -174,6 +183,9 @@ img.visuallyhidden {
         font-size: 130%;
         margin: 0;
         padding: 0 0 10px 0;
+    }
+    li {
+        color: black;
     }
 }
 

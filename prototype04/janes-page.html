@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Mum signs in 2 kids</title>
+        <title>Restrospective attendance confirmation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -22,22 +22,22 @@
           Menu
         </a></div>
         <div class="gov"><a href="index.html"><span>Childcare</span></a></div>
-        <p class="smaller">08.38am 10 August 2016</p>
+        <p class="smaller">07.26am 10 August 2016</p>
     </header>
     <div class="wrapper">
         <main class="main__1-column">
-            <h1 class="centred">Hi Jill, signing kids in?</h1>
+            <h1 class="centred">Hi Jane, signing kids in?</h1>
             <div class="custom-controls clearfix">
                 <fieldset style="margin-left: 32%">
                 <div class="grid-row">
                   <div class="col2"></div>
                   <div class="col4" style="padding-left: 2%">
-                    <img src="../img/arminda.png" style="max-width: 150px" /><p><input type="checkbox" value="Arminda" id="arminda" /> <label for="arminda">Arminda</label><br /><input type="text" id="inputArminda" value="08.38am" style="width: 4.5em;" /></p>
-                    <p id="outputArminda" style="display: none">08.38am</p>
+                    <img src="../img/seow.png" style="max-width: 150px" /><p><input type="checkbox" value="seow" id="seow" /> <label for="seow">Seow</label><br /><input type="text" id="inputSeow" value="7.26am" style="width: 4.5em;" /></p>
+                    <p id="outputSeow" style="display: none">7.26am</p>
                   </div>
                   <div class="col4">
-                    <img src="../img/jay.png" style="max-width: 150px" /><p><input type="checkbox" value="Jay" id="jay" /> <label for="jay">Jay</label><br /><input type="text" value="08.38am" id="inputJay" style="width: 4.5em;" /></p>
-                    <p id="outputJay" style="display: none">08.38am</p>
+                    <img src="../img/an.png" style="max-width: 150px" /><p><input type="checkbox" value="an" id="an" /> <label for="an">An</label><br /><input type="text" value="7.26am" id="inputAn" style="width: 4.5em;" /></p>
+                    <p id="outputAn" style="display: none">7.26am</p>
                   </div>
                   <div class="col2 last"></div>
                 </div>
@@ -47,35 +47,41 @@
                 <div id="preConfirm" class="centred">
                     <p><button class="btn btn-default btn-large centred" id="continue" onclick="return whichCheckBox();"">Confirm sign in</button></p>
                 </div>
-                <div id="postConfirm" style="display: none">
-                <h2><img src="../img/ico-tick.png" style="width: 40px; height: 40px; vertical-align: middle;" /> Thanks!</h2>
-                <p><button class="btn btn-default btn-large" id="logout" onclick="window.location.href = 'heather-signin.html'">Logout</button></p>
+                <div id="postConfirm" style="display: none;">
+                <h2 style="margin-top:0;"><img src="../img/ico-tick.png" style="width: 40px; height: 40px; vertical-align: middle;" /> Thanks!</h2>
+                <p><button class="btn btn-default btn-large" id="logout" onclick="window.location.href = 'jane-signin.html'">Logout</button></p>
                 </div>
             </div>
         </main>
     </div>
-    <div id="dialogOne" style="display:none;">
-        <h1 style="color: black">Confirm</h1> 
-        <p style="color: black">Only signing in 1 child today?</p> 
-        <input type="button" class="btn btn-default" id="btnBothKids" value="Yes" onclick="window.location.href = 'carer-signin.html'" /> 
-        <a href="#" class="margin-left-075" onclick='visionaustralia.closeDialog("dialogOne");'>No, go back</a>
+    <button id="linkOne" style="display: none"></button>
+    <div id="dialogOne" style="display: none;">
+        <h1 style="color: black">Confirm yesterday</h1> 
+        <p style="color: black">Jane, Caterpillar staff signed 4 kids in on your behalf yesterday (10 August 2016). Please confirm these times are correct:</p>
+        <ul>
+            <li>Seow Wang at <strong>7.30am</strong></li>
+            <li>An Wang at <strong>7.30am</strong></li>
+            <li>Veronique Lawson at <strong>7.30am</strong></li>
+            <li>Bonnie Lawson at <strong>7.30am</strong></li>
+        </ul>
+        <input type="button" class="btn btn-default" id="allGood" value="Yes, all good" onclick='visionaustralia.closeDialog("dialogOne");' /> 
+        <a href="#">No, times are wrong</a> 
     </div>
     <p class="disclaimer">Icons made by <a class="white" href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a class="white" href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a class="white" href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></p>
     <script type="text/javascript" src="../js/vendor/jquery-3.1.0.min.js"></script> 
     <script type="text/javascript" src="../js/vadialog.js"></script> 
     <script type="text/javascript">
-            visionaustralia.addDialog("linkOne", "dialogOne"); 
+        visionaustralia.addDialog("linkOne", "dialogOne");            
     </script>     
-    <script src="../js/main.js"></script>
-    <script type="text/javascript">
+    <script>
         function whichCheckBox(){
-            if(document.getElementById('arminda').checked && document.getElementById('jay').checked) {
+            if(document.getElementById('seow').checked && document.getElementById('an').checked) {
                 $("#preConfirm").hide();
                 $("#postConfirm").show();
-                $("#inputArminda").hide();
-                $("#outputArminda").show();
-                $("#inputJay").hide();
-                $("#outputJay").show();
+                $("#inputSeow").hide();
+                $("#outputSeow").show();
+                $("#inputAn").hide();
+                $("#outputAn").show();
 
             }
             else
@@ -85,7 +91,12 @@
             }    
                 return false;
             }
-        
-    </script>
+        $("document").ready(function() {
+            setTimeout(function() {
+                $('#linkOne').trigger('click');
+            },10);
+        });
+    </script>    
+
     </body>
 </html>
