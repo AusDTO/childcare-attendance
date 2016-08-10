@@ -953,13 +953,13 @@ select[disabled] {
   border: 1px solid #ccc !important; }
 
 .btn-disabled, .btn[disabled], fieldset[disabled] .btn {
-  border: 1px solid #B0B0B0;
-  background: white;
-  color: #656565;
-  cursor: not-allowed;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  pointer-events: none; }
+  border: 1px solid #B0B0B0 !important;
+  background: white !important;
+  color: #656565 !important;
+  cursor: not-allowed !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  pointer-events: none !important; }
 
 .btn-disabled:hover,
 .btn-disabled:focus,
@@ -1392,7 +1392,7 @@ img.visuallyhidden {
   left: 50%;
   top: 50%;
   padding: 35px 40px 40px 40px;
-  width: 300px; }
+  width: 400px; }
   .vadialog h1 {
     font-size: 130%;
     margin: 0;
