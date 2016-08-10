@@ -1,0 +1,367 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Attendance</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="../css/style.css">
+	    <script src="data.js"></script>
+        <script type='text/javascript'>
+
+        function go(val)
+        {
+        	if(val == 'Save Changes')
+            {
+                alert('Your changes have been saved.');
+            }
+
+        	
+        	if(val == 'Provider Menu')
+            {
+                alert('Your changes have been saved.');
+        		window.location.replace('ProviderMenu.html');
+            }
+
+                if(val == 'Parent Login')
+            {
+                window.location.replace('Welcome.html');
+            }
+
+        	if(val == 'Sign in selected')
+        	{
+        		debugger;
+        		var signInDefault = document.getElementById('txtSignInDefault').value;
+        	
+        	    var attendanceTableRows  = document.getElementById('attendanceTable').getElementsByTagName('tr');  	
+        		for(var i=0;i<attendanceTableRows.length;i++)
+        		{
+        			cells = attendanceTableRows[i].getElementsByTagName('td');
+        			if(cells.length > 0 && cells[0].firstChild.checked)
+        			{
+        				cells[2].children[1].value = signInDefault;
+        				cells[2].children[1].style.display='block';
+        				cells[2].children[0].style.display='none';
+        			}
+        		
+        		}
+        		
+        	
+        	
+        	}
+        	
+        	if(val == 'Sign out selected')
+        	{
+        		var signOutDefault = document.getElementById('txtSignOutDefault').value;
+        	
+        	    var attendanceTableRows  = document.getElementById('attendanceTable').getElementsByTagName('tr');  	
+        		for(var i=0;i<attendanceTableRows.length;i++)
+        		{
+        			cells = attendanceTableRows[i].getElementsByTagName('td');
+        			if(cells.length > 0 && cells[0].firstChild.checked)
+        			{
+        				if(cells[2].children[1].value =='')
+        				{debugger;
+        					alert(cells[1].innerHTML + ' has not been signed in.');
+        				}
+        				else
+        					cells[3].children[1].value = signOutDefault;
+        					cells[3].children[1].style.display='block';
+        					cells[3].children[0].style.display='none';					
+        			}
+        		
+        		}
+        		
+        	
+        	
+        	}
+        	
+        }
+
+        function setDefaults()
+        {
+        	buildAttendanceTable();
+        	document.getElementById('theDate').innerHTML = currentDate(false);
+        }
+
+        function signOut(index)
+        {
+        	var theDate = currentDate(true);
+        	
+        	var indexInt = parseInt(index)
+            var attendanceTableRows  = document.getElementById('attendanceTable').getElementsByTagName('tr'); 
+        	var cells = attendanceTableRows[indexInt].children;
+        	
+        	if(cells[2].children[1].value == '')
+        	{
+        		alert('Please sign in first before signing out');
+        	}
+        	else
+        	{
+        		cells[3].children[0].style.display='none';
+        		cells[3].children[1].style.display='block';
+        		cells[3].children[1].value = currentTime();
+        	}
+
+
+        }
+
+
+        function pad(value)
+        {
+        	if(value < 10)
+        	return '0'+value;
+        	else
+        	return value;
+
+
+        }
+
+        function signIn(index)
+        {
+
+        	
+        	var indexInt = parseInt(index)
+            var attendanceTableRows  = document.getElementById('attendanceTable').getElementsByTagName('tr'); 
+        	var cells = attendanceTableRows[indexInt].children;
+        	
+        	
+        	if(cells[2].children[1].value == '')
+        	{
+        		cells[2].children[0].style.display='none';
+        		cells[2].children[1].style.display='block';
+        		cells[2].children[1].value = currentTime();
+        		cells[3].children[0].className = 'btn btn-default btn-small'
+        	}
+
+        }
+
+
+        function currentDate(includeHours) {
+          function pad(s) { return (s < 10) ? '0' + s : s; }
+          var d = new Date();
+          var dateValue = [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+          if(includeHours)
+          {dateValue =  dateValue +' ' + d.getHours() +':'+ pad(d.getMinutes());}
+          return dateValue;
+        }
+
+        function currentTime()
+        {
+        	debugger;
+          var d = new Date();
+          
+          var hours = d.getHours();
+          
+          if(hours > 12)
+          {
+        	var dateValue =  12 - d.getHours() +':'+ pad(d.getMinutes()) + 'pm';    
+          
+          }
+          
+          else
+          {
+        	var dateValue =  d.getHours() +':'+ pad(d.getMinutes())+'am';  
+          
+          
+          }
+         
+          return dateValue;
+
+        }
+
+
+
+        function toggleSelected()
+        {
+        	var chkSelectAll = document.getElementById('chkSelectAll');
+            var attendanceTableRows  = document.getElementById('attendanceTable').getElementsByTagName('tr');  	
+        	for(var i=0;i<attendanceTableRows.length;i++)
+        	{
+        		cells = attendanceTableRows[i].getElementsByTagName('td');
+        		if(cells.length >0)
+        		{
+        		cells[0].firstChild.checked = chkSelectAll.checked;
+        		}
+        	
+        	}
+        	
+
+
+        }
+
+        function buildAttendanceTable()
+        {
+            var childcareData = getData();
+            var attendanceTable  = document.getElementById('attendanceTable');  
+            var childRowIndex = 0;
+        	for(var i=0;i< childcareData.data.parent.length;i++)
+            {
+                children = childcareData.data.parent[i].child;
+                
+                for (var j=0;j<children.length;j++)
+                {
+        			childRowIndex++;
+        			var name = children[j].name;
+        			
+                    var row = document.createElement('tr');
+                    var cellSelect = document.createElement('td');
+                    var selectCheckBox = document.createElement('input');
+        			selectCheckBox.type='checkbox';
+        			cellSelect.appendChild(selectCheckBox);
+        		    selectCheckBox.id= 'selectCheckBox'+childRowIndex;
+
+        			var txArrival = document.createElement('input');
+        			var txDeparture = document.createElement('input');			
+        			txArrival.type = 'text'
+        			txArrival.id='txArrival'+childRowIndex;
+        			txArrival.style.width ='100px';
+        			txArrival.style.display='none';
+        			
+        			txDeparture.type = 'text'
+        			txDeparture.id='txDeparture'+childRowIndex;
+        			txDeparture.style.width ='100px';
+        			txDeparture.style.display='none';
+        			
+        			var signInButton = document.createElement('input');
+        		    signInButton.onclick = (function() {var currentI = childRowIndex; return function() { signIn(currentI + ''); }})();
+        			signInButton.type = 'button';
+                    signInButton.id= 'signInButton'+childRowIndex;
+                    signInButton.value= 'Sign In';
+        			signInButton.className = 'btn btn-default btn-small';
+
+        			
+        			var signOutButton = document.createElement('input');
+        		    signOutButton.onclick = (function() {var currentI = childRowIndex; return function() { signOut(currentI + ''); }})();
+        			signOutButton.type = 'button';
+                    signOutButton.id= 'signOutButton'+childRowIndex;
+                    signOutButton.value= 'Sign Out';
+        			//signOutButton.disabled = 'true';
+        			signOutButton.className = 'btn btn-default btn-small btn-disabled';
+        			
+        			
+                    
+                    var cellName = document.createElement('td');
+                    var textName = document.createTextNode(name);
+                    
+                    cellName.appendChild(textName);
+                    var cellArrival = document.createElement('td');
+                    cellArrival.id = 'tdArrival'+childRowIndex;
+        			cellArrival.appendChild(signInButton);
+        			cellArrival.appendChild(txArrival);
+        			
+                    var cellDeparture = document.createElement('td');
+                    cellDeparture.id = 'tdDeparture'+childRowIndex;
+        			cellDeparture.appendChild(signOutButton);
+        			cellDeparture.appendChild(txDeparture);
+
+                    row.appendChild(cellSelect);    
+                    row.appendChild(cellName);
+                    row.appendChild(cellArrival);   
+                    row.appendChild(cellDeparture);
+                    attendanceTable.appendChild(row);
+                }
+            
+            
+            }
+            
+            
+        }
+
+
+        function prefill()
+        {
+            var attendanceTableRows  = document.getElementById('attendanceTable').getElementsByTagName('tr');  	
+        	for(var i=0;i<attendanceTableRows.length;i++)
+        	{
+        		cells = attendanceTableRows[i].getElementsByTagName('td');
+        		if(cells.length > 0)
+        		{
+        		var inMinutes = pad(Math.floor((Math.random() * 59) + 0)); 
+        		var outMinutes = pad(Math.floor((Math.random() * 59) + 0)); 
+        		var signInHour = Math.floor((Math.random() * 3) + 7); 
+        		var signOutHour = Math.floor((Math.random() * 4) + 1); 
+
+
+        		cells[2].children[1].style.display='block'
+        		cells[3].children[1].style.display='block'
+        		
+        		cells[2].children[0].style.display='none'
+        		cells[3].children[0].style.display='none'
+        		
+        		
+        		
+        		 cells[2].children[1].value = signInHour+':' + inMinutes+'am';
+        		 cells[3].children[1].value = signOutHour+':' + outMinutes+'pm';
+        		}
+        		
+        	
+        	}
+        	
+        	
+
+
+        }
+
+
+        </script>
+
+    </head>
+    <body class="dark">
+    <header class="wrapper">
+        <div class="sub-brand">
+        <a href="../index.html">
+          <svg width="15" height="12">
+            <path d="M0,1 15,1" stroke="#fff" stroke-width="2"/>
+            <path d="M0,6 15,6" stroke="#fff" stroke-width="2"/>
+            <path d="M0,11 15,11" stroke="#fff" stroke-width="2"/>
+          </svg>
+          Menu
+        </a></div>
+        <div class="gov"><a href="index.html"><span>Childcare</span></a></div>
+        <p class="smaller">06.50am 10 August 2016</p>
+    </header>
+
+    <div class="wrapper">
+        <main class="main__1-column">
+            <h1 id='pageTitle' onclick = 'prefill();'>Attendance</h1>
+			
+<p><button class="btn btn-default" onclick="window.location.href = 'menu.html'">Back to menu</button></p>
+<!--
+<strong><p id='theDate'></p></strong>
+<p><input type='button' value='Parent Login' class="btn btn-default" onclick='go(this);'/>
+&nbsp;<input type='button' value='Provider Menu' class="btn btn-default" onclick='go(this.value);'/>
+&nbsp;<input type='button' value='Save Changes' class="btn btn-default" onclick='go(this.value);'/>
+</p>
+-->
+
+<table id='attendanceTable'>
+<tr>
+<th id='thSelect' style="width:6%"><input type='checkbox' id='chkSelectAll' onclick = 'toggleSelected()'></th>
+<th id='thName' style="width:50%">Name</th>
+<th id='thArrival' style="width:22%">Arrival</th>
+<th id='thDeparture' style="width:22%">Departure</th>
+</tr>
+</table>
+
+<table>
+<tr>
+<td><input type='text' style='width:100px' id='txtSignInDefault' value='9:00am'/><input type='button' id='btSignInSelected' value='Sign in selected' onclick='go(this.value)'></input>
+</td>
+<td><input type='text' style='width:100px' id='txtSignOutDefault' value='3:00pm'/><input type='button' id='btSignOutSelected' value='Sign out selected' onclick='go(this.value)'></input>
+</td>
+</table>
+
+
+
+</div>
+<script>
+setDefaults();
+</script>
+
+        </main>
+    </div>
+    </body>
+</html>

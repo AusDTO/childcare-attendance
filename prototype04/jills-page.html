@@ -32,15 +32,25 @@
                 <div class="grid-row">
                   <div class="col2"></div>
                   <div class="col4" style="padding-left: 2%">
-                    <img src="../img/arminda.png" style="max-width: 150px" /><p><input type="checkbox" value="Arminda" id="arminda" /> <label for="arminda">Arminda</label><br /><input type="text" value="08.38am" style="width: 4.5em;" /></p>
+                    <img src="../img/arminda.png" style="max-width: 150px" /><p><input type="checkbox" value="Arminda" id="arminda" /> <label for="arminda">Arminda</label><br /><input type="text" id="inputArminda" value="08.38am" style="width: 4.5em;" /></p>
+                    <p id="outputArminda" style="display: none">08.38am</p>
                   </div>
                   <div class="col4">
-                    <img src="../img/jay.png" style="max-width: 150px" /><p><input type="checkbox" value="Jay" id="jay" /> <label for="jay">Jay</label><br /><input type="text" value="08.38am" style="width: 4.5em;" /></p>
+                    <img src="../img/jay.png" style="max-width: 150px" /><p><input type="checkbox" value="Jay" id="jay" /> <label for="jay">Jay</label><br /><input type="text" value="08.38am" id="inputJay" style="width: 4.5em;" /></p>
+                    <p id="outputJay" style="display: none">08.38am</p>
                   </div>
                   <div class="col2 last"></div>
                 </div>
                 </fieldset>
-                <p class="centred"><button class="btn btn-default btn-large" id="continue" onclick="return whichCheckBox();">Done</button></p>
+            </div>
+            <div class="centred">
+                <div id="preConfirm" class="centred">
+                    <p><button class="btn btn-default btn-large centred" id="continue" onclick="return whichCheckBox();"">Confirm sign in</button></p>
+                </div>
+                <div id="postConfirm" style="display: none">
+                <h2><img src="../img/ico-tick.png" style="width: 40px; height: 40px; vertical-align: middle;" /> Thanks!</h2>
+                <p><button class="btn btn-default btn-large" id="logout" onclick="window.location.href = 'heather-signin.html'">Logout</button></p>
+                </div>
             </div>
         </main>
     </div>
@@ -59,7 +69,13 @@
     <script type="text/javascript">
         function whichCheckBox(){
             if(document.getElementById('arminda').checked && document.getElementById('jay').checked) {
-                window.location='heather-signin.html';
+                $("#preConfirm").hide();
+                $("#postConfirm").show();
+                $("#inputArminda").hide();
+                $("#outputArminda").show();
+                $("#inputJay").hide();
+                $("#outputJay").show();
+
             }
             else
             {

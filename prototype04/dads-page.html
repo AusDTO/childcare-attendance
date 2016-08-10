@@ -1,0 +1,71 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Restrospective attendance confirmation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body class="dark">
+
+    <header class="wrapper">
+        <div class="sub-brand">
+        <a href="../index.html">
+          <svg width="15" height="12">
+            <path d="M0,1 15,1" stroke="#fff" stroke-width="2"/>
+            <path d="M0,6 15,6" stroke="#fff" stroke-width="2"/>
+            <path d="M0,11 15,11" stroke="#fff" stroke-width="2"/>
+          </svg>
+          Menu
+        </a></div>
+        <div class="gov"><a href="index.html"><span>Childcare</span></a></div>
+        <p class="smaller">06.50am 10 August 2016</p>
+    </header>
+    <div class="wrapper">
+        <main class="main__1-column">
+            <h1 class="centred">Hi George, signing in Jay?</h1>
+            <div class="custom-controls clearfix">
+                <fieldset class="centred">
+                    <img src="../img/jay.png" style="max-width: 150px" />
+                    <div id="preConfirm">
+                        <p><input type="text" value="06.50am" style="width: 4.5em;" /></p>
+                        <p><button class="btn btn-default btn-large" id="continue" onclick="showHide()">Confirm sign in</button></p>
+                    </div>
+                    <div id="postConfirm" style="display: none">
+                    <p>06.50am</p>
+                    <h2><img src="../img/ico-tick.png" style="width: 40px; height: 40px; vertical-align: middle;" /> Thanks!</h2>
+                    <p><button class="btn btn-default btn-large" id="logout" onclick="window.location.href = 'dad-signin.html'">Logout</button></p>
+                    </div>
+                </fieldset>
+            </div>
+        </main>
+    </div>
+    <button id="linkOne" style="display: none"></button>
+    <div id="dialogOne" style="display: none;">
+        <h1 style="color: black">Jay's attendance</h1> 
+        <p style="color: black">George, we notice Jay's last visit to the centre was 7 August 2016. Is this correct?</p> 
+        <input type="button" class="btn btn-default" id="allGood" value="Yes, all good" onclick='visionaustralia.closeDialog("dialogOne");' /> 
+        <a href="#">No, I'd like to discuss</a> 
+    </div>
+    <script type="text/javascript" src="../js/vendor/jquery-3.1.0.min.js"></script> 
+    <script type="text/javascript" src="../js/vadialog.js"></script> 
+    <script type="text/javascript">
+        visionaustralia.addDialog("linkOne", "dialogOne");            
+    </script>     
+    <script>
+        function showHide() {
+            $("#preConfirm").hide();
+            $("#postConfirm").show();
+        }
+        $("document").ready(function() {
+            setTimeout(function() {
+                $('#linkOne').trigger('click');
+            },10);
+        });
+    </script>    
+
+    </body>
+</html>
