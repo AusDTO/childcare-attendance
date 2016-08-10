@@ -530,7 +530,9 @@ div.radio-toggle.stacked {
 		}
 	}
 }
-
-.input-right {
-    float: right;
+    
+@media only screen and (min-width: $break-large) {
+    .input-right {
+        float: right;
+    }
 }
