@@ -254,14 +254,26 @@
 					
         			var txArrival = document.createElement('input');
         			var txDeparture = document.createElement('input');			
+
+					var txArrival2 = document.createElement('input');
+        			var txDeparture2 = document.createElement('input');	
+
         			txArrival.type = 'text'
         			txArrival.id='txArrival'+childRowIndex;
         			txArrival.style.width ='100px';
+
+        			txArrival2.type = 'text'
+        			txArrival2.id='txArrival2'+childRowIndex;
+        			txArrival2.style.width ='100px';
 
         			
         			txDeparture.type = 'text'
         			txDeparture.id='txDeparture'+childRowIndex;
         			txDeparture.style.width ='100px';
+
+        			txDeparture2.type = 'text'
+        			txDeparture2.id='txDeparture2'+childRowIndex;
+        			txDeparture2.style.width ='100px';
         			
 					/*
         			var signInButton = document.createElement('input');
@@ -296,11 +308,23 @@
         			//cellDeparture.appendChild(signOutButton);
         			cellDeparture.appendChild(txDeparture);
 
+					var cellArrival2 = document.createElement('td');
+                    cellArrival2.id = 'tdArrival2'+childRowIndex;
+        			cellArrival2.appendChild(txArrival2);
+        			
+                    var cellDeparture2 = document.createElement('td');
+                    cellDeparture2.id = 'tdDeparture2'+childRowIndex;
+        			cellDeparture2.appendChild(txDeparture2);
+					
+					
+					
                     row.appendChild(cellSelect); 
                     row.appendChild(cellProvider);					
                     row.appendChild(cellName);
                     row.appendChild(cellArrival);   
                     row.appendChild(cellDeparture);
+                    row.appendChild(cellArrival2);   
+                    row.appendChild(cellDeparture2);					
                     attendanceTable.appendChild(row);
                 }
             
@@ -405,13 +429,15 @@
 <th id='thName' style="width:50%">Name</th>
 <th id='thArrival' style="width:22%">Arrival</th>
 <th id='thDeparture' style="width:22%">Departure</th>
+<th id='thArrival2' style="width:22%">Arrival</th>
+<th id='thDeparture2' style="width:22%">Departure</th>
 </tr>
 </table>
 
 <table>
 <tr>
-<td><input type='button' id='btSignInSelected' value='Export to CSV' onclick='go(this.value)'></input>
-<input type='button' id='btSignOutSelected' value='Print' onclick='go(this.value)'></input>
+<td><input type='button' id='btSignInSelected' value='Export to CSV' onclick='alert("export complete!");'></input>
+<input type='button' id='btSignOutSelected' value='Print' onclick='alert("Your job has been queued to the printer!");'></input>
 </td>
 </table>
 
