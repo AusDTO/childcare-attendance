@@ -3,42 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Attendance</title>
+        <title>Hub</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" href="../css/style.css">
-	    <script src="../js/data.js"></script>
+		<script type="text/javascript" src="../js/vendor/jquery-3.1.0.min.js"></script> 
+	    <script type="text/javascript" src="../js/data.js"></script>
         <script type='text/javascript'>
 
         function go(val)
         {
-        	debugger;
-			if(val=='Back to menu')
-			{
-			
-			var menu = getQueryString('menu'); 
-			if(menu == null||menu == '')
-			{
-			
-			window.location.href = 'menu.html'
-			
-			}
-			else
-			{
-			window.location.href = 'menu'+ menu +'.html'
-			
-			
-			}
-			
-			
-			
-			
-			}
-			
-			
-			
-			if(val == 'Save Changes')
+        	if(val == 'Save Changes')
             {
                 alert('Your changes have been saved.');
             }
@@ -57,7 +33,7 @@
 
         	if(val == 'Sign in selected')
         	{
-        		debugger;
+
         		var signInDefault = document.getElementById('txtSignInDefault').value;
         	
         	    var attendanceTableRows  = document.getElementById('attendanceTable').getElementsByTagName('tr');  	
@@ -66,10 +42,9 @@
         			cells = attendanceTableRows[i].getElementsByTagName('td');
         			if(cells.length > 0 && cells[0].firstChild.checked)
         			{
-        				cells[2].children[1].value = signInDefault;
-        				cells[2].children[1].style.display='block';
-        				cells[2].children[0].style.display='none';
-						cells[3].children[0].className = 'btn btn-default btn-small'
+        				cells[3].children[1].value = signInDefault;
+        				cells[3].children[1].style.display='block';
+        				cells[3].children[0].style.display='none';
         			}
         		
         		}
@@ -88,14 +63,14 @@
         			cells = attendanceTableRows[i].getElementsByTagName('td');
         			if(cells.length > 0 && cells[0].firstChild.checked)
         			{
-        				if(cells[2].children[1].value =='')
-        				{debugger;
+        				if(cells[3].children[1].value =='')
+
         					alert(cells[1].innerHTML + ' has not been signed in.');
         				}
         				else
-        					cells[3].children[1].value = signOutDefault;
-        					cells[3].children[1].style.display='block';
-        					cells[3].children[0].style.display='none';					
+        					cells[4].children[1].value = signOutDefault;
+        					cells[4].children[1].style.display='block';
+        					cells[4].children[0].style.display='none';					
         			}
         		
         		}
@@ -104,13 +79,44 @@
         	
         	}
         	
-        }
+
 
         function setDefaults()
         {
         	buildAttendanceTable();
-        	//document.getElementById('theDate').innerHTML = currentDate(false);
+        	buildProviderSelect();
+			prefill();
         }
+		
+		function buildProviderSelect()
+		{
+		var selProvider = document.getElementById('selProvider');
+		var childcareData = getData();
+
+		
+		var providersArr = [];
+		
+		
+		for(var i=0;i< childcareData.data.parent.length;i++)
+			{
+				
+				var providerName = childcareData.data.parent[i].provider;					
+				var found = $.inArray(providerName, providersArr) > -1;
+				
+				if(!found)
+				{
+					
+					providersArr.push(providerName);
+					var option = document.createElement('option');
+					option.text = providerName;
+					selProvider.add(option);
+				}
+			}
+
+		
+		}
+		
+		
 
         function signOut(index)
         {
@@ -126,9 +132,9 @@
         	}
         	else
         	{
-        		cells[3].children[0].style.display='none';
-        		cells[3].children[1].style.display='block';
-        		cells[3].children[1].value = currentTime();
+        		cells[4].children[0].style.display='none';
+        		cells[4].children[1].style.display='block';
+        		cells[4].children[1].value = currentTime();
         	}
 
 
@@ -154,11 +160,11 @@
         	var cells = attendanceTableRows[indexInt].children;
         	
         	
-        	if(cells[2].children[1].value == '')
+        	if(cells[3].children[1].value == '')
         	{
-        		cells[2].children[0].style.display='none';
-        		cells[2].children[1].style.display='block';
-        		cells[2].children[1].value = currentTime();
+        		cells[3].children[0].style.display='none';
+        		cells[3].children[1].style.display='block';
+        		cells[3].children[1].value = currentTime();
         		cells[3].children[0].className = 'btn btn-default btn-small'
         	}
 
@@ -176,7 +182,7 @@
 
         function currentTime()
         {
-        	debugger;
+
           var d = new Date();
           
           var hours = d.getHours();
@@ -226,6 +232,8 @@
         	for(var i=0;i< childcareData.data.parent.length;i++)
             {
                 children = childcareData.data.parent[i].child;
+				var providerName = childcareData.data.parent[i].provider;
+
                 
                 for (var j=0;j<children.length;j++)
                 {
@@ -238,19 +246,24 @@
         			selectCheckBox.type='checkbox';
         			cellSelect.appendChild(selectCheckBox);
         		    selectCheckBox.id= 'selectCheckBox'+childRowIndex;
+					selectCheckBox.style.display='none';
 
+					var cellProvider = document.createElement('td');
+					cellProvider.innerHTML = providerName;
+					
+					
         			var txArrival = document.createElement('input');
         			var txDeparture = document.createElement('input');			
         			txArrival.type = 'text'
         			txArrival.id='txArrival'+childRowIndex;
         			txArrival.style.width ='100px';
-        			txArrival.style.display='none';
+
         			
         			txDeparture.type = 'text'
         			txDeparture.id='txDeparture'+childRowIndex;
         			txDeparture.style.width ='100px';
-        			txDeparture.style.display='none';
         			
+					/*
         			var signInButton = document.createElement('input');
         		    signInButton.onclick = (function() {var currentI = childRowIndex; return function() { signIn(currentI + ''); }})();
         			signInButton.type = 'button';
@@ -266,7 +279,7 @@
                     signOutButton.value= 'Sign Out';
         			//signOutButton.disabled = 'true';
         			signOutButton.className = 'btn btn-default btn-small btn-disabled';
-        			
+					*/        			
         			
                     
                     var cellName = document.createElement('td');
@@ -275,15 +288,16 @@
                     cellName.appendChild(textName);
                     var cellArrival = document.createElement('td');
                     cellArrival.id = 'tdArrival'+childRowIndex;
-        			cellArrival.appendChild(signInButton);
+        			//cellArrival.appendChild(signInButton);
         			cellArrival.appendChild(txArrival);
         			
                     var cellDeparture = document.createElement('td');
                     cellDeparture.id = 'tdDeparture'+childRowIndex;
-        			cellDeparture.appendChild(signOutButton);
+        			//cellDeparture.appendChild(signOutButton);
         			cellDeparture.appendChild(txDeparture);
 
-                    row.appendChild(cellSelect);    
+                    row.appendChild(cellSelect); 
+                    row.appendChild(cellProvider);					
                     row.appendChild(cellName);
                     row.appendChild(cellArrival);   
                     row.appendChild(cellDeparture);
@@ -310,17 +324,10 @@
         		var signInHour = Math.floor((Math.random() * 3) + 7); 
         		var signOutHour = Math.floor((Math.random() * 4) + 1); 
 
-
-        		cells[2].children[1].style.display='block'
-        		cells[3].children[1].style.display='block'
-        		
-        		cells[2].children[0].style.display='none'
-        		cells[3].children[0].style.display='none'
         		
         		
-        		
-        		 cells[2].children[1].value = signInHour+':' + inMinutes+'am';
-        		 cells[3].children[1].value = signOutHour+':' + outMinutes+'pm';
+        		 cells[3].children[0].value = signInHour+':' + inMinutes+'am';
+        		 cells[4].children[0].value = signOutHour+':' + outMinutes+'pm';
         		}
         		
         	
@@ -330,14 +337,29 @@
 
 
         }
-		
-			var getQueryString = function ( field, url ) {
-			var href = url ? url : window.location.href;
-			var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
-			var string = reg.exec(href);
-			return string ? string[1] : null;
-			};
 
+		
+		function filterList(value)
+		{
+			//alert(value);
+			var attendanceTableRows  = document.getElementById('attendanceTable').getElementsByTagName('tr');  
+
+			for(var i=0;i < attendanceTableRows.length;i++)
+			{
+				if(attendanceTableRows[i].getElementsByTagName('td').length >0)
+				{
+				if(value=='All Providers' || attendanceTableRows[i].getElementsByTagName('td')[1].innerHTML == value)
+					attendanceTableRows[i].style.display='';
+				else
+					attendanceTableRows[i].style.display='none';
+				}
+			
+			
+			}
+			
+				
+				
+		}
 
         </script>
 
@@ -359,9 +381,15 @@
 
     <div class="wrapper">
         <main class="main__1-column">
-            <h1 id='pageTitle' onclick = 'prefill();'>Attendance</h1>
+            <h1 id='pageTitle' onclick = 'prefill();'>Hub</h1>
 			
-<p><button class="btn btn-default" onclick="go(this.value)" value='Back to menu'>Back to menu</button></p>
+<p><button class="btn btn-default" onclick="window.location.href = 'menu.html'">Back to menu</button>
+<select id='selProvider' onchange='filterList(this.value);'>
+<option>All Providers</option>
+
+</select>
+
+</p>
 <!--
 <strong><p id='theDate'></p></strong>
 <p><input type='button' value='Parent Login' class="btn btn-default" onclick='go(this);'/>
@@ -372,7 +400,8 @@
 
 <table id='attendanceTable'>
 <tr>
-<th id='thSelect' style="width:6%"><input type='checkbox' id='chkSelectAll' onclick = 'toggleSelected()'></th>
+<th id='thSelect' style="width:6%"><input type='checkbox' id='chkSelectAll' onclick = 'toggleSelected()' style='display:none'></th>
+<th id='thProvider' style="width:50%">Provider</th>
 <th id='thName' style="width:50%">Name</th>
 <th id='thArrival' style="width:22%">Arrival</th>
 <th id='thDeparture' style="width:22%">Departure</th>
@@ -381,9 +410,8 @@
 
 <table>
 <tr>
-<td><input type='text' style='width:100px' id='txtSignInDefault' value='9:00am'/><input type='button' id='btSignInSelected' value='Sign in selected' onclick='go(this.value)'></input>
-</td>
-<td><input type='text' style='width:100px' id='txtSignOutDefault' value='3:00pm'/><input type='button' id='btSignOutSelected' value='Sign out selected' onclick='go(this.value)'></input>
+<td><input type='button' id='btSignInSelected' value='Export to CSV' onclick='go(this.value)'></input>
+<input type='button' id='btSignOutSelected' value='Print' onclick='go(this.value)'></input>
 </td>
 </table>
 
