@@ -22,20 +22,20 @@
           Menu
         </a></div>
         <div class="gov"><a href="index.html"><span>Childcare</span></a></div>
-        <p class="smaller">08.38am 10 August 2016</p>
+        <p class="smaller">12.56pm 10 August 2016</p>
     </header>
     <div class="wrapper">
         <main class="main__1-column">
-            <h1 class="centred">Hi Jill, signing kids in?</h1>
+            <h1 class="centred">Hi Heather, signing kids out?</h1>
             <div class="custom-controls clearfix">
                 <fieldset style="margin-left: 32%">
                 <div class="grid-row">
                   <div class="col2"></div>
                   <div class="col4" style="padding-left: 2%">
-                    <img src="../img/arminda.png" style="max-width: 150px" /><p><input type="checkbox" value="Arminda" id="arminda" /> <label for="arminda">Arminda</label><br /><input type="text" value="08.38am" style="width: 4.5em;" /></p>
+                    <img src="../img/arminda.png" style="max-width: 150px" /><p><input type="checkbox" value="Arminda" id="arminda" /> <label for="arminda">Arminda</label><br /><input type="text" value="12.56pm" style="width: 4.5em;" /></p>
                   </div>
                   <div class="col4">
-                    <img src="../img/jay.png" style="max-width: 150px" /><p><input type="checkbox" value="Jay" id="jay" /> <label for="jay">Jay</label><br /><input type="text" value="08.38am" style="width: 4.5em;" /></p>
+                    <img src="../img/jay.png" style="max-width: 150px" /><p><input type="checkbox" value="Jay" id="jay" /> <label for="jay">Jay</label><br /><input type="text" value="12.56pm" style="width: 4.5em;" /></p>
                   </div>
                   <div class="col2 last"></div>
                 </div>
@@ -44,22 +44,13 @@
             </div>
         </main>
     </div>
-    <div id="dialogOne" style="display:none;">
-        <h1 style="color: black">Confirm</h1> 
-        <p style="color: black">Only signing in 1 child today?</p> 
-        <input type="button" class="btn btn-default" id="btnBothKids" value="Yes" onclick="window.location.href = 'carer-signin.html'" /> 
-        <a href="#" class="margin-left-075" onclick='visionaustralia.closeDialog("dialogOne");'>No, go back</a>
-    </div>
     <script type="text/javascript" src="../js/vendor/jquery-3.1.0.min.js"></script> 
     <script type="text/javascript" src="../js/vadialog.js"></script> 
-    <script type="text/javascript">
-            visionaustralia.addDialog("linkOne", "dialogOne"); 
-    </script>     
     <script src="../js/main.js"></script>
     <script type="text/javascript">
         function whichCheckBox(){
             if(document.getElementById('arminda').checked && document.getElementById('jay').checked) {
-                window.location='heather-signin.html';
+                window.location='carer-signin.html';
             }
             else
             {
