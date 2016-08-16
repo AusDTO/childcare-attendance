@@ -205,11 +205,19 @@ td.warning {
   margin: 4em 0 0 0;
   td, th {
     text-align: center;
-    font-size: 100%;
     margin: 0;
     padding: 0.25em 0;
   }
   .smallest {
+    font-size: 1.1rem;
+  }
+  input[type=button] {
+    width: 80px;
+    height: 80px;
+  }
+}
+.table__smaller {
+  td, th, input[type=button] {
     font-size: 1.1rem;
   }
 }

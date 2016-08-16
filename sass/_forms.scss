@@ -30,6 +30,7 @@
   user-select: none;
   font-weight: normal;
   margin-right: 0.5em;
+  font-size: 1.75rem;
 }
 
 
@@ -98,10 +99,10 @@ select[disabled]:active {
 .btn-small {
   padding: 0.5em 0.75em;
   font-weight: normal;  
-  font-size: 85%;
+  font-size: 1.1rem !important;
 }
 .btn-large {
-  font-size: 120% !important;
+  font-size: 2rem !important;
 }
 
 
