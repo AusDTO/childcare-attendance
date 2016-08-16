@@ -535,11 +535,16 @@ td.warning {
   margin: 4em 0 0 0; }
   .table__numberpad-fixed td, .table__numberpad-fixed th {
     text-align: center;
-    font-size: 100%;
     margin: 0;
     padding: 0.25em 0; }
   .table__numberpad-fixed .smallest {
     font-size: 1.1rem; }
+  .table__numberpad-fixed input[type=button] {
+    width: 80px;
+    height: 80px; }
+
+.table__smaller td, .table__smaller th, .table__smaller input[type=button] {
+  font-size: 1.1rem; }
 
 @media only screen and (min-width: 480px) {
   body {
@@ -552,7 +557,7 @@ td.warning {
     font-size: 130%; } }
 @media only screen and (min-width: 768px) {
   body {
-    font-size: 1.1rem; }
+    font-size: 1.2rem; }
 
   h1 {
     font-size: 240%;
@@ -565,7 +570,7 @@ td.warning {
     font-size: 140%; } }
 @media only screen and (min-width: 960px) {
   body {
-    font-size: 1.15rem; }
+    font-size: 1.3rem; }
 
   h1 {
     font-size: 280%; }
@@ -574,7 +579,7 @@ td.warning {
     font-size: 150%; } }
 @media only screen and (min-width: 1220px) {
   body {
-    font-size: 1.2rem; }
+    font-size: 1.4rem; }
 
   h1 {
     font-size: 300%; }
@@ -928,7 +933,8 @@ a.card:hover {
   -ms-user-select: none;
   user-select: none;
   font-weight: normal;
-  margin-right: 0.5em; }
+  margin-right: 0.5em;
+  font-size: 1.75rem; }
 
 .btn:hover,
 .btn:focus,
@@ -991,10 +997,10 @@ select[disabled]:active {
 .btn-small {
   padding: 0.5em 0.75em;
   font-weight: normal;
-  font-size: 85%; }
+  font-size: 1.1rem !important; }
 
 .btn-large {
-  font-size: 120% !important; }
+  font-size: 2rem !important; }
 
 input:hover, input:focus, input:active, textarea:hover, textarea:focus, textarea:active, select:hover, select:focus, select:active {
   -webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);

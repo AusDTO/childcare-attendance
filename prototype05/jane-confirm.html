@@ -22,7 +22,7 @@
           Menu
         </a></div>
         <div class="gov"><a href="index.html"><span>Childcare</span></a></div>
-        <p class="smaller"><strong>Hi Heather</strong>, 7:25am 16 August 2016</p>
+        <p class="smaller"><strong>Hi Jane</strong>, 7:20am 16 August 2016</p>
     </header>
     <div class="wrapper">
         <main class="main__1-column">
@@ -38,17 +38,18 @@
                 </div>
                 <div id="postConfirm" style="display: none">
                 <h2><img src="../img/ico-tick.png" style="width: 40px; height: 40px; vertical-align: middle;" /> Thanks!</h2>
-                <p>Both kids dropped off at 7:25am 16 August 2016</p>
-                <p><button class="btn btn-default btn-large" id="logout" onclick="window.location.href = 'dave-login.html'">Logout</button></p>
+                <p>Both kids signed in at 7:20am 16 August 2016</p>
+                <p><button class="btn btn-default btn-large" id="logout" onclick="window.location.href = 'confirm-signin.html'">Logout</button></p>
                 </div>
             </div>
         </main>
     </div>
+    <button id="linkOne" style="display: none"></button>
     <div id="dialogOne" style="display:none;">
-        <h1 style="color: black">Confirm</h1> 
-        <p style="color: black">Only signing in 1 child today?</p> 
-        <input type="button" class="btn btn-default" id="btnBothKids" value="Yes" onclick="window.location.href = 'carer-signin.html'" /> 
-        <a href="#" class="margin-left-075" onclick='visionaustralia.closeDialog("dialogOne");'>No, go back</a>
+        <h1 style="color: black">Confirm sign in</h1> 
+        <p style="color: black">Did your childcare provider sign in Jay and Arminda this morning?</p> 
+        <input type="button" class="btn btn-default" id="btnBothKids" value="Yes" onclick='visionaustralia.closeDialog("dialogOne");' /> 
+        <a href="#" class="margin-left-075" onclick="window.location.href = ''">No, let's chat</a>
     </div>
     <script type="text/javascript" src="../js/vendor/jquery-3.1.0.min.js"></script> 
     <script type="text/javascript" src="../js/vadialog.js"></script> 
@@ -68,6 +69,15 @@
             }    
                 return false;
             }        
-    </script>
+        function showHide() {
+            $("#preConfirm").hide();
+            $("#postConfirm").show();
+        }
+        $("document").ready(function() {
+            setTimeout(function() {
+                $('#linkOne').trigger('click');
+            },10);
+        });
+        </script>
     </body>
 </html>
