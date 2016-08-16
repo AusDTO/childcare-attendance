@@ -30,7 +30,7 @@
   user-select: none;
   font-weight: normal;
   margin-right: 0.5em;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
 }
 
 
@@ -76,7 +76,7 @@ select[disabled] {
 }
 .btn-disabled, .btn[disabled], fieldset[disabled] .btn {
     border: 1px solid $button-disabled-border !important;
-    background: white !important;
+    background: $gray-light !important;
     color: $button-disabled !important;
     cursor: not-allowed !important;
     -webkit-box-shadow: none !important;
@@ -89,7 +89,7 @@ select[disabled] {
 select[disabled]:hover,
 select[disabled]:focus,
 select[disabled]:active {
-  background: white;
+  background: $gray-light;
   border: 1px solid $button-disabled-border;
   color: $button-disabled;
   -webkit-box-shadow: none;
@@ -201,7 +201,7 @@ input.larger {
 
 	label {
 		float:left;
-		width: 140px;
+		width: 80px;
 		margin: 0.5em 0;
 		background-color:#EFEFEF;
 		border-radius:4px;
@@ -233,7 +233,7 @@ input.larger {
 
 		span {
 			text-align:center;
-			padding: 10px 0;
+			padding: 5px 0;
 			display:block;
 			cursor: pointer;
 		}
@@ -252,7 +252,7 @@ input.larger {
 		background-color: $input-focus;
 		-webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
 		box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
-		padding: 9px 0;
+		padding: 5px 0;
 		border: 1px solid $input-outline;
 	}
 	

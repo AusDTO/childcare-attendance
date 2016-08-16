@@ -220,6 +220,24 @@ td.warning {
   td, th, input[type=button] {
     font-size: 1.1rem;
   }
+  .btn-small {
+    padding: 0.5em 0.5em;
+    font-size: 1.1rem !important;
+  }
+  p {
+     margin: 0;
+     padding: 0;
+     line-height: 1rem;
+  }
+  .custom-controls__checkbox {
+    padding: 9px 5px 2px 55px !important;
+  }
+  .time-stamp {
+    width: 4em;
+  }
+  .signed-in-by {
+    width: 13em;
+  }
 }
 
 // Responsive font sizing

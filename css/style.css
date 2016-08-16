@@ -545,6 +545,19 @@ td.warning {
 
 .table__smaller td, .table__smaller th, .table__smaller input[type=button] {
   font-size: 1.1rem; }
+.table__smaller .btn-small {
+  padding: 0.5em 0.5em;
+  font-size: 1.1rem !important; }
+.table__smaller p {
+  margin: 0;
+  padding: 0;
+  line-height: 1rem; }
+.table__smaller .custom-controls__checkbox {
+  padding: 9px 5px 2px 55px !important; }
+.table__smaller .time-stamp {
+  width: 4em; }
+.table__smaller .signed-in-by {
+  width: 13em; }
 
 @media only screen and (min-width: 480px) {
   body {
@@ -934,7 +947,7 @@ a.card:hover {
   user-select: none;
   font-weight: normal;
   margin-right: 0.5em;
-  font-size: 1.75rem; }
+  font-size: 1.5rem; }
 
 .btn:hover,
 .btn:focus,
@@ -975,7 +988,7 @@ select[disabled] {
 
 .btn-disabled, .btn[disabled], fieldset[disabled] .btn {
   border: 1px solid #B0B0B0 !important;
-  background: white !important;
+  background: #cccccc !important;
   color: #656565 !important;
   cursor: not-allowed !important;
   -webkit-box-shadow: none !important;
@@ -988,7 +1001,7 @@ select[disabled] {
 select[disabled]:hover,
 select[disabled]:focus,
 select[disabled]:active {
-  background: white;
+  background: #cccccc;
   border: 1px solid #B0B0B0;
   color: #656565;
   -webkit-box-shadow: none;
@@ -1073,7 +1086,7 @@ input.larger {
 
 .radio-toggle label {
   float: left;
-  width: 140px;
+  width: 80px;
   margin: 0.5em 0;
   background-color: #EFEFEF;
   border-radius: 4px;
@@ -1096,7 +1109,7 @@ input.larger {
     background-color: #fff; }
   .radio-toggle label span {
     text-align: center;
-    padding: 10px 0;
+    padding: 5px 0;
     display: block;
     cursor: pointer; }
   .radio-toggle label input {
@@ -1110,7 +1123,7 @@ input.larger {
   background-color: #fff79b;
   -webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
-  padding: 9px 0;
+  padding: 5px 0;
   border: 1px solid #02bfe7; }
 .radio-toggle input:checked + span {
   -webkit-box-shadow: inset 0px 1px 2px 2px rgba(0, 0, 0, 0.1);
