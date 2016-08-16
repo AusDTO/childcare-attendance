@@ -525,9 +525,21 @@ td.warning {
   margin: 0.5em auto 1em auto; }
   .table__numberpad td, .table__numberpad th {
     text-align: center;
-    font-size: 110%;
+    font-size: 100%;
     margin: 0;
     padding: 0.25em 0; }
+
+.table__numberpad-fixed {
+  width: auto;
+  text-align: left;
+  margin: 4em 0 0 0; }
+  .table__numberpad-fixed td, .table__numberpad-fixed th {
+    text-align: center;
+    font-size: 100%;
+    margin: 0;
+    padding: 0.25em 0; }
+  .table__numberpad-fixed .smallest {
+    font-size: 1.1rem; }
 
 @media only screen and (min-width: 480px) {
   body {
@@ -569,6 +581,9 @@ td.warning {
 
   h2 {
     font-size: 160%; } }
+.make-it-huge fieldset {
+  font-size: 2rem; }
+
 body.dark {
   background-color: #3c4651;
   color: white; }
@@ -1243,6 +1258,9 @@ div.radio-toggle.stacked.full-width label {
 @media only screen and (min-width: 960px) {
   .input-right {
     float: right; } }
+.input-focus {
+  background-color: #fff79b; }
+
 /* Yellow animated fade */
 @-webkit-keyframes fade {
   from {
