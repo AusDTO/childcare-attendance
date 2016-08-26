@@ -1,0 +1,94 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Signing in/out</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body class="dark" onload='setFocusToTextBox()'>
+
+    <header class="wrapper">
+        <div class="sub-brand">
+        <a href="../index.html">
+          <svg width="15" height="12">
+            <path d="M0,1 15,1" stroke="#fff" stroke-width="2"/>
+            <path d="M0,6 15,6" stroke="#fff" stroke-width="2"/>
+            <path d="M0,11 15,11" stroke="#fff" stroke-width="2"/>
+          </svg>
+          Menu
+        </a></div>
+        <div class="gov"><a href="index.html"><span>Childcare</span></a></div>
+        <p class="smaller">2:50pm 18 August 2016</p>
+    </header>
+    <div class="wrapper">
+        <main class="main__1-column make-it-huge">
+            <div class="grid-row">
+                <div class="col7">
+                    <fieldset style="margin-left: 7%">
+                        <legend class="margin5 larger">Family login</legend>
+                        <div class="grid-row">
+                            <div class="col5">
+                                <label for="pin" class="input-right">PIN</label>
+                            </div>
+                            <div class="col7 last">
+                                <input id="pin" type="password" class="number" maxlength="4" style="width: 3em">
+                            </div>
+                        </div>
+                        <div class="grid-row" style="padding-top: 0.5em">
+                            <div class="col12 last">
+                                <input type='button' class="btn btn-default btn-large margin5" value='Login' onclick="window.location.href = 'dave.html'" /><a style="margin-left: 0.5em" class="white smaller" href="dave-login.html">Cancel</a>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="col5 last">
+                    <fieldset>
+                    <table id='numberPad' class="table__layout table__numberpad-fixed">
+                    <tr>
+                        <td><input type='button' value='1' onclick='go(this.value);' class="btn btn-default" /></td>
+                        <td><input type='button' value='2' onclick='go(this.value);' class="btn btn-default" /></td>
+                        <td><input type='button' value='3' onclick='go(this.value);' class="btn btn-default" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type='button' value='4' onclick='go(this.value);' class="btn btn-default" /></td>
+                        <td><input type='button' value='5' onclick='go(this.value);' class="btn btn-default" /></td>
+                        <td><input type='button' value='6' onclick='go(this.value);' class="btn btn-default" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type='button' value='7' onclick='go(this.value);' class="btn btn-default" /></td>
+                        <td><input type='button' value='8' onclick='go(this.value);' class="btn btn-default" /></td>
+                        <td><input type='button' value='9' onclick='go(this.value);' class="btn btn-default" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type='button' value='clear' onclick='go(this.value);' class="btn btn-default smallest" /></td>
+                        <td><input type='button' value='0' onclick='go(this.value);' class="btn btn-default"/></td>
+                        <td><input type='button' value='delete' onclick='go(this.value);' class="btn btn-default smallest" /></td>
+                    </tr>
+                    </table>
+                    </fieldset>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/vendor/jquery-3.1.0.min.js"></script>
+    <script>
+        function go(value) {
+            var mobile = document.getElementById('mobile');
+            var pin = document.getElementById('pin');
+
+            if (mobile.value.length < 10)
+                mobile.value = mobile.value + value;
+            else 
+                if(pin.value.length < 4)
+                pin.value = pin.value + value;
+        }    
+        function setFocusToTextBox(){
+            document.getElementById("pin").focus();
+        }
+    </script>
+</body>
+</html>
