@@ -201,7 +201,7 @@ input.larger {
 
 	label {
 		float:left;
-		width: 80px;
+		width: 100px;
 		margin: 0.5em 0;
 		background-color:#EFEFEF;
 		border-radius:4px;
@@ -226,6 +226,12 @@ input.larger {
 			border-right: 0;
 			border-radius: 0;
 		}
+        &.label-checkbox {
+            border-left: 1px solid #D0D0D0;
+            border-right: 1px solid #D0D0D0;
+            background: $brand-blue url(../img/sprite-custom-controls.png) no-repeat 0 0;
+            color: $button-color !important;
+        }
 
 		&:hover {
 			background-color:#fff;
@@ -233,7 +239,7 @@ input.larger {
 
 		span {
 			text-align:center;
-			padding: 5px 0;
+			padding: 8px 5px;
 			display:block;
 			cursor: pointer;
 		}
@@ -252,15 +258,16 @@ input.larger {
 		background-color: $input-focus;
 		-webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
 		box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
-		padding: 5px 0;
+        padding: 8px 5px;
 		border: 1px solid $input-outline;
 	}
 	
-	input:checked + span {
+	input:checked + span,
+    input:active + span {
 		-webkit-box-shadow: inset 0px 1px 2px 2px rgba(0,0,0,0.1);
 		-moz-box-shadow: inset 0px 1px 2px 2px rgba(0,0,0,0.1);
 		box-shadow: inset 0px 1px 2px 2px rgba(0,0,0,0.1);
-		background: #3679b3;
+        background: #3679b3;
 		color: #FFFFFF;
 		border-color: #2366a1;
 	}
@@ -370,13 +377,6 @@ div.radio-toggle.stacked {
 	}
 }
 
-
-/* Adding dollar symbol to input field */
-.input-dollar {
-  background: transparent url(../img/ico-dollar.png) no-repeat 0 50%;
-  padding-left: 45px;
-  width: 100%;
-}
 
 
 // Image replacements for radio and checkboxes
@@ -531,6 +531,7 @@ div.radio-toggle.stacked {
 		}
 	}
 }
+
     
 @media only screen and (min-width: $break-large) {
     .input-right {
