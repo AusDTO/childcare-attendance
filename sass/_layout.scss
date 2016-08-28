@@ -19,7 +19,7 @@ body.dark {
 	box-sizing: border-box;
 	/* embed clearfix */
 	zoom: 1;
-	
+
 	&:before, &:after {
 		content: "";
 		display: table;
@@ -231,6 +231,8 @@ nav {
 }
 
 .main__1-column {
+	max-width: 1400px;
+	margin: 0 auto;
 
 	h1 {
 		font-family: $font-light;
