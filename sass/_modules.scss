@@ -230,17 +230,20 @@ table.tablesorter thead tr .headerSortDown {
 
 // Confirmation cards
 
-.card {
+.card__container {
+    -webkit-box-shadow: 2px 2px 3px 0 rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 3px 0 rgba(0,0,0,0.2);
     background-color: white;
     color: black;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     border-radius: 6px;
     border-left: 12px solid $brand-blue;
-    padding: 1em 0.5em 0.5em 0.5em;
+    padding: 1em 0.5em 0 0.5em;
     width: 95%;
+    margin: 1em 0;
     display: table;
-    height: 225px;
+    min-height: 225px;
     position: relative;
 
     .card__row {
@@ -268,17 +271,11 @@ table.tablesorter thead tr .headerSortDown {
         width: 80%;
         .large {
             font-size: 1.5rem;
-            background: transparent url(../img/ico-question.png) no-repeat 0 3px;
-            padding-left: 42px;
-            min-height: 50px;
         }
         .small {
             clear: both;
             font-size: 1.1rem;
         }
-    }
-    .btn-card {
-
     }
 }
 

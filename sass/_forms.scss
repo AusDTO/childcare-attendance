@@ -284,6 +284,23 @@ input.larger {
 	}
 }
 
+.table__smaller .radio-toggle {
+    label {
+        float:left;
+        width: 60px;
+        margin: 0.25em 0;
+
+        span {
+            padding: 4px 0;
+        }
+        
+    }    
+    input:focus + span {
+            padding: 4px 0;
+    }
+}
+
+
 /* Stacked radio-toggle control */
 @mixin radio-toggle-stacked($minsize: 1) {
 	// stack radio options vertically
