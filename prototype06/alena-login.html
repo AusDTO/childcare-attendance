@@ -32,15 +32,23 @@
                         <legend class="margin5 larger">Family login</legend>
                         <div class="grid-row">
                             <div class="col5">
-                                <label for="mobile"  class="input-right">User ID</label>
+                                <label for="mobile"  class="input-right">Phone</label>
                             </div>
                             <div class="col7 last">
                                 <input id="mobile" type="text" class="number" maxlength="10"></input>
                             </div>
                         </div>
+                        <div class="grid-row">
+                            <div class="col5">
+                                <label for="pin" class="input-right">PIN</label>
+                            </div>
+                            <div class="col7 last">
+                                <input id="pin" type="password" class="number" maxlength="4" style="width: 3em">
+                            </div>
+                        </div>
                         <div class="grid-row" style="padding-top: 0.5em">
                             <div class="col12 last">
-                                <input type='button' class="btn btn-default btn-large margin5" value='Next' onclick="window.location.href = 'alena-login-pin.html'" />
+                                <input type='button' class="btn btn-default btn-large margin5" value='Login' onclick="window.location.href = 'alena.html'" /><a style="margin-left: 0.5em" class="white smaller" href="#">Reset PIN</a>
                             </div>
                         </div>
                     </fieldset>

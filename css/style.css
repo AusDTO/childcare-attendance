@@ -1149,6 +1149,15 @@ input.larger {
   -webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2); }
 
+.table__smaller .radio-toggle label {
+  float: left;
+  width: 60px;
+  margin: 0.25em 0; }
+  .table__smaller .radio-toggle label span {
+    padding: 4px 0; }
+.table__smaller .radio-toggle input:focus + span {
+  padding: 4px 0; }
+
 /* Stacked radio-toggle control */
 div.radio-toggle.stacked label.label-left:nth-last-child(n+1), div.radio-toggle.stacked label.label-top:nth-last-child(n+1) {
   display: block;
@@ -1478,42 +1487,42 @@ table.tablesorter thead tr .headerSortUp {
 table.tablesorter thead tr .headerSortDown {
   background-image: url(../img/desc.gif); }
 
-.card {
+.card__container {
+  -webkit-box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.2);
   background-color: white;
   color: black;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
   border-left: 12px solid #3179b5;
-  padding: 1em 0.5em 0.5em 0.5em;
+  padding: 1em 0.5em 0 0.5em;
   width: 95%;
+  margin: 1em 0;
   display: table;
-  height: 225px;
+  min-height: 225px;
   position: relative; }
-  .card .card__row {
+  .card__container .card__row {
     display: table-row; }
-  .card .card__date {
+  .card__container .card__date {
     display: table-cell;
     text-align: center;
     text-transform: uppercase;
     border-right: 1px solid #e4e5e5;
     width: 20%;
     font-size: 1.1rem; }
-    .card .card__date .card__time {
+    .card__container .card__date .card__time {
       margin-top: 2em;
       color: #666; }
-    .card .card__date strong {
+    .card__container .card__date strong {
       font-size: 2rem; }
-  .card .card__details {
+  .card__container .card__details {
     display: table-cell;
     padding: 0 2em;
     width: 80%; }
-    .card .card__details .large {
-      font-size: 1.5rem;
-      background: transparent url(../img/ico-question.png) no-repeat 0 3px;
-      padding-left: 42px;
-      min-height: 50px; }
-    .card .card__details .small {
+    .card__container .card__details .large {
+      font-size: 1.5rem; }
+    .card__container .card__details .small {
       clear: both;
       font-size: 1.1rem; }
 

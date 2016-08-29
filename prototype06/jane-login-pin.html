@@ -80,10 +80,7 @@
             var mobile = document.getElementById('mobile');
             var pin = document.getElementById('pin');
 
-            if (mobile.value.length < 10)
-                mobile.value = mobile.value + value;
-            else 
-                if(pin.value.length < 4)
+            if (pin.value.length < 4)
                 pin.value = pin.value + value;
         }    
         function setFocusToTextBox(){
