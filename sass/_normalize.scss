@@ -387,8 +387,13 @@ iframe {
 fieldset {
   border: 0;
   clear: both;
-  margin: 0 0 2em 0;
+  margin: 0 2% 2em 2%;
   padding: 0;
+}
+@media only screen and (min-width: $break-medium) {
+  fieldset {
+    margin-bottom: 0 0 2em 0;
+  }
 }
 
 legend, label, .label {
@@ -406,10 +411,15 @@ legend, label, .label {
 }
 legend {
   display: inline-block;
-  font-size: 160%;
+  font-size: 120%;
   margin: 1em 0 0 0;
   padding: 0;
 }
+@media only screen and (min-width: $break-medium) {
+    legend {
+      font-size: 160%;
+    }
+} 
 
 
 /**

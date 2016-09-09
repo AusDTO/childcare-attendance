@@ -186,7 +186,9 @@ input[type=radio] {
 input.larger {
   padding: 0.57em 0.5em;  
 }
-
+input.number {
+    max-width: 10em;
+}
 .label-inline {
   display: block;
   padding: 0;
@@ -549,7 +551,7 @@ div.radio-toggle.stacked {
 	}
 }
 
-    
+
 @media only screen and (min-width: $break-large) {
     .input-right {
         float: right;
