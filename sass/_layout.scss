@@ -15,7 +15,7 @@ body.dark {
 	position: relative;
 	margin: 0 auto;
 	max-width: $content-max-width;
-	padding: 0 2%;
+	padding: 0 0.5%;
 	box-sizing: border-box;
 	/* embed clearfix */
 	zoom: 1;
@@ -32,6 +32,17 @@ body.dark {
 
 }
 
+.hide-for-mobile {
+	display: none;
+}
+@media only screen and (min-width: $break-medium) {
+	.hide-for-mobile {
+		display: block;
+	}
+	.wrapper {
+		padding: 0 2%;
+	}
+}
 
 // Width overrides
 
@@ -46,7 +57,7 @@ body.dark {
 header {
 	position: relative;
 	margin-bottom: 10px;
-	height: 170px;
+	height: 90px;
 	font-family: $font-heading;
 
 	.header__feature {
@@ -62,6 +73,29 @@ header {
 		}
 	}
 }
+
+@media only screen and (min-width: $break-medium) {
+	header {
+		position: relative;
+		margin-bottom: 10px;
+		height: 170px;
+		font-family: $font-heading;
+
+		.header__feature {
+			span {
+				border: 0;
+				clip: rect(0 0 0 0);
+				height: 1px;
+				margin: -1px;
+				overflow: hidden;
+				padding: 0;
+				position: absolute;
+				width: 1px;
+			}
+		}
+	}
+}
+
 
 body.dark header {
   background: $body-bg url(../img/bg-waves.svg) no-repeat top left;
