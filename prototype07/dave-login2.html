@@ -36,7 +36,7 @@
           Menu
         </a></div>
         <div class="gov"><a href="index.html"><span>Childcare</span></a></div>
-        <p class="smaller">2:32 PM - 20 September 2016</p>
+        <p class="smaller">7:30 AM - 20 September 2016</p>
     </header>
     <div class="wrapper">
         <main class="main__1-column make-it-huge">
@@ -96,55 +96,7 @@
             </div>
         </main>
     </div>
-    <button id="linkTwo" style="display: none"></button>
-    <button id="linkThree" style="display: none"></button>
     <div id="dialogOne" style="display:none; padding: 0">
-        <div class="card__container">
-            <div class="card__row">
-                <div class="card__date">
-                    <p>
-                        <strong>14-19</strong><br />
-                        September<br />
-                        2016
-                    </p>
-                </div>
-                <div class="card__details">
-                    <h1><span class="pil">1</span>Hi Alena, please confirm</h1>
-                    <p class="large">Najah has missed 4 days of care since Tuesday 20 September</p>
-                    <div class="radio-toggle" id="question1">
-                        <label class="label-left" for="yes1"><input type="radio" name="question1" id="yes1" /> <span>Yes</span></label>
-                        <label class="label-right" for="no1"><input type="radio" name="question1" id="no1" /> <span>No</span></label>
-                    </div>
-                    <p style="clear: both; margin-top: 120px"><button id="btnMsg1" class="btn btn-default">Next</button></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="dialogTwo" style="display:none; padding: 0">
-        <div class="card__container">
-            <div class="card__row">
-                <div class="card__date">
-                    <p>
-                        <strong>20</strong><br />
-                        September<br />
-                        2016
-                    </p>
-                    <p class="card__time">Earlier<br />
-                    07.31 AM</p>
-                </div>
-                <div class="card__details">
-                    <h1><span class="pil">2</span>Hi Alena, please confirm</h1>
-                    <p class="large">Najah was signed in by staff this morning</p>
-                    <div class="radio-toggle" id="question2">
-                        <label class="label-left" for="yes2"><input type="radio" name="question2" id="yes2" /> <span>Yes</span></label>
-                        <label class="label-right" for="no2"><input type="radio" name="question2" id="no2" /> <span>No</span></label>
-                    </div>
-                    <p style="clear: both; margin-top: 120px"><button id="btnMsg2" class="btn btn-default">Next</button></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="dialogThree" style="display:none; padding: 0">
         <div class="card__container">
             <div class="card__row">
                 <div class="card__date">
@@ -154,17 +106,17 @@
                         2016
                     </p>
                     <p class="card__time">Now<br />
-                    2:31 PM</p>
+                    7:30 AM</p>
                 </div>
                 <div class="card__details">
-                    <h1><span class="pil">3</span>Hi Alena, please confirm</h1>
-                    <p class="large">Signing out Najah now</p>
+                    <h1>Hi Dave, please confirm</h1>
+                    <p class="large">Signing in Jay now</p>
                     <p></p>
                     <div class="radio-toggle" id="question3">
                         <label class="label-left" for="yes3"><input type="radio" name="question3" id="yes3" /> <span>Yes</span></label>
                         <label class="label-right" for="no3"><input type="radio" name="question3" id="no3" /> <span>No</span></label>
                     </div>
-                    <p style="clear: both; margin-top: 120px"><button id="btnMsg3" class="btn btn-default">Log out</button></p>
+                    <p style="clear: both; margin-top: 120px"><button id="btnMsg1" class="btn btn-default">Log out</button></p>
                 </div>
             </div>
         </div>
@@ -174,21 +126,11 @@
     <script type="text/javascript" src="../js/vadialog.js"></script> 
     <script type="text/javascript">
             visionaustralia.addDialog("linkOne", "dialogOne"); 
-            visionaustralia.addDialog("linkTwo", "dialogTwo"); 
-            visionaustralia.addDialog("linkThree", "dialogThree"); 
     </script>     
     <script src="../js/main.js"></script>
     <script type="text/javascript">     
         jQuery('#btnMsg1').click(function () {
-            $('#linkTwo').trigger('click');
             visionaustralia.closeDialog("dialogOne");
-        });
-        jQuery('#btnMsg2').click(function () {
-            $('#linkThree').trigger('click');
-            visionaustralia.closeDialog("dialogTwo");
-        });
-        jQuery('#btnMsg3').click(function () {
-            visionaustralia.closeDialog("dialogThree");
             document.getElementById("mobile").focus();
         });
         </script>
