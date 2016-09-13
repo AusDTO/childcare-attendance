@@ -1,0 +1,45 @@
+// VARIABLES
+// Styling overrides for Education Childcare Attendance
+// ------------------------------------------------------------------------------------------------------
+
+
+// Widths
+// ------------------------------------------------------------------------------------------------------
+
+$content-max-width: 1920px;
+$break-small: 480px;
+$break-medium: 768px;
+$break-large: 960px;
+$break-wide: 1220px;
+
+
+// Colours
+// ------------------------------------------------------------------------------------------------------
+
+$edu-gray-dark: #333231;
+$edu-green: #428619;
+$edu-beige: #C8C3B0;
+$edu-light-bg: #EDEDEB;
+
+
+// Typography
+// ------------------------------------------------------------------------------------------------------
+
+$font-size-base: 16px;
+$font-size-default: 1.1rem;
+$font-size-small: 1.05rem;
+$font-size-medium: 1.2rem;
+$font-size-large: 1.3rem;
+$font-size-wide: 1.4rem;
+
+
+// Mixins
+// ------------------------------------------------------------------------------------------------------
+
+@mixin transition {
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
