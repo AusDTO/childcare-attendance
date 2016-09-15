@@ -7,6 +7,7 @@
 // Duplicated from UI kit to allow local compilation
 // ------------------------------------------------------------------------------------------------------
 
+$mobile-maxwidth: 419px;
 $mobile-minwidth: 420px;
 $tablet-minwidth: 768px;
 $desktop-minwidth: 1200px;
@@ -35,10 +36,26 @@ $font-size-wide: 1.4rem;
 // Mixins
 // ------------------------------------------------------------------------------------------------------
 
-@mixin transition {
-  -webkit-transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  -ms-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+@mixin font-size($sizeValue: 12 ){
+  font-size: $sizeValue + px; //fallback for old browsers
+  font-size: (0.125 * $sizeValue) + rem;
+}
+@mixin breakpoint($point) {
+  @if $point == tiny {
+    @media (max-width: $mobile-maxwidth) { @content; }
+  }
+  @if $point == small {
+    @media (min-width: $mobile-minwidth) { @content; }
+  }
+  @else if $point == medium {
+    @media (min-width: $tablet-minwidth) { @content; }
+  }
+  @else if $point == large {
+    @media (min-width: $desktop-minwidth)  { @content; }
+  }
 }

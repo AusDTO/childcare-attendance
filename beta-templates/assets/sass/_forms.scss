@@ -2,9 +2,54 @@
 // Styling overrides for Education Childcare Attendance
 // ------------------------------------------------------------------------------------------------------
 
-.govau--header a[role=button], .govau--header button, .govau--header input[type=reset], .govau--header input[type=submit] {
+main>article a[role=button], 
+main>article button, 
+main>article input[type=reset], 
+main>article input[type=submit] {
+    border: none;
+    color: #fff;
     background-color: $edu-green;
-    border: 1px solid $edu-green;
+}
+.govau--header a[role=button], 
+.govau--header button, 
+.govau--header input[type=reset], 
+.govau--header input[type=submit] {
+    border: none;
+    color: #fff;
+    background-color: $edu-green;
+    margin-bottom: 0;
+    @include border-radius(3px);
+    @include breakpoint(tiny) {
+        @include font-size(8);
+    }
+    @include breakpoint(small) {
+        @include font-size(10);
+    }
+    @include breakpoint(medium) {
+        @include font-size(14);
+    }
+    @include breakpoint(large) { 
+        @include font-size(16);
+    }
+}
+main>article a[role=button]:focus, 
+main>article a[role=button]:hover, 
+main>article button:focus, 
+main>article button:hover, 
+main>article input[type=reset]:focus, 
+main>article input[type=reset]:hover,
+main>article input[type=submit]:focus, 
+main>article input[type=submit]:hover,
+.govau--header a[role=button]:focus, 
+.govau--header a[role=button]:hover, 
+.govau--header button:focus, 
+.govau--header button:hover, 
+.govau--header input[type=reset]:focus, 
+.govau--header input[type=reset]:hover, 
+.govau--header input[type=submit]:focus,
+.govau--header input[type=submit]:hover {
+    background-color: black;
+    color: #fff;
 }
 .btn--login-family {
     font-size: 1.8rem;
