@@ -15,7 +15,6 @@
 
 <nav class="skip-to">
   <a href="#content">Skip to main content</a>
-  <a href="#nav">Skip to section navigation</a>
 </nav>
 
 <header role="banner">
@@ -25,25 +24,76 @@
         <a href="index.html" class="logo">Child care attendance</a> <span class="badge--default">beta</span>
       </div>
       <p class="user">Hi, Linda Joseph</p>
-      <button type="button" class="btn btn-default login--family" onclick="location.href='family-login.html'">Family login</button>
+      <button type="button" class="btn--login-family" onclick="location.href='family-login.html'">Family login</button>
     </div>
   </section>
 </header>
 
 <section class="attendance-status">
   <div class="wrapper">
-    <p class="attendance-time">06:36 AM <span>Tue 20 Sep</span></p>
+    <div class="attendance-status-item attendance-time">
+      <p>
+        06:36 AM<br />
+        <span>Tue 20 Sep</span>
+      </p>
+    </div>
+    <div class="attendance-status-item">
+      <p>
+        <strong>12</strong><br />
+        <span>enrolled</span>
+      </p>
+    </div>
+    <div class="attendance-status-item">
+      <p>
+        <strong>6</strong><br />
+        <span>expected</span>
+      </p>
+    </div>
+    <div class="attendance-status-item">
+      <p>
+        <strong>0</strong><br />
+        <span>signed in</span>
+      </p>
+    </div>
+    <div class="attendance-status-item attendance-logout">
+      <p>
+        <a href="index.html">Log out</a>
+      </p>
+    </div>
   </div>
 </section>
 
 <main role="main">
 
   <article id="content">
-    <header class="">
-      <h1></h1>
-    </header>
-    
-
+      <h1>Attendance today</h1>
+    <table class="content-table">
+      <caption>Population of Australian states and territories, December 2015</caption>
+      <thead>
+        <tr>
+          <th scope="col">Child</th>
+          <th scope="col">Absent</th>
+          <th scope="col">Sign in</th>
+          <th scope="col">Sign out</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Peta Lawson</td>
+          <td>7,670.7</td>
+          <td>7,670.7</td>
+          <td>7,670.7</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Australia</td>
+          <td>23,940.3</td>
+          <td>23,940.3</td>
+          <td>23,940.3</td>
+        </tr>
+      </tfoot>
+    </table>
   </article>
 </main>
 

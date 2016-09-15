@@ -15,21 +15,40 @@
     background-color: $edu-beige;
     padding: 1em;
     .wrapper {
-        background: transparent url(../img/feature-attendance.jpg) no-repeat 0 0;
-        padding-left: 350px;
-        min-height: 210px;
+        min-height: 50px;
         color: $edu-gray-dark;
         .logo {
             color: $edu-gray-dark;
             text-transform: none;
-            font-size: 2.5rem;
-            letter-spacing: 0;
+            line-height: 1.2em;
+            letter-spacing: -1px;
+            @include breakpoint(tiny) {
+                @include font-size(10);
+            }
+            @include breakpoint(small) {
+                @include font-size(14);
+            }
+            @include breakpoint(medium) {
+                @include font-size(18);
+            }
+            @include breakpoint(large) { 
+                @include font-size(24);
+            }
+        }
+    }
+    @media only screen and (min-width: $tablet-minwidth) {
+        .wrapper {
+            background: transparent url(../img/feature-attendance.jpg) no-repeat 0 0;
+            padding-left: 350px;
+            min-height: 210px;
         }
     }
     .user {
         clear: both;
+        margin-bottom: 0.75em;
     }
 }
+
 
 
 // attendance-status sits underneath header on attendance dashboard and provides
@@ -37,6 +56,64 @@
 
 .attendance-status {
     background-color: $edu-gray-dark;
-    color: $edu-beige;
     padding: 1em 0;
+}
+.attendance-status-item {
+    color: white;
+    float: left;
+    margin-left: 1em;
+    text-align: center;
+    span {
+        line-height: 1.8rem;
+        @include breakpoint(tiny) {
+            @include font-size(8);
+        }
+        @include breakpoint(small) {
+            @include font-size(10);
+        }
+        @include breakpoint(medium) {
+            @include font-size(12);
+        }
+        @include breakpoint(large) { 
+            @include font-size(14);
+        }
+        color: $edu-beige;
+    }
+    strong {
+        font-weight: 600;
+        @include breakpoint(tiny) {
+            @include font-size(10);
+        }
+        @include breakpoint(small) {
+            @include font-size(14);
+        }
+        @include breakpoint(medium) {
+            @include font-size(18);
+        }
+        @include breakpoint(large) { 
+            @include font-size(22);
+        }
+    }
+}
+.attendance-time p {
+    font-size: 2.8rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    line-height: 1em;
+    margin:0;
+}
+.attendance-logout {
+    float: right;
+    a, a:link {
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+
+// Footer override
+
+footer[role=contentinfo] {
+    background-color: $edu-light-bg;
+    border-top: 6px solid $edu-gray-dark;
 }
