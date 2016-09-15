@@ -5,3 +5,38 @@
 .govau--header {
     background-color: $edu-gray-dark;
 }
+.form--admin input {
+    max-width: 20em;
+}
+
+// attendance--header is header override for attendance dashboard screens
+
+.attendance--header {
+    background-color: $edu-beige;
+    padding: 1em;
+    .wrapper {
+        background: transparent url(../img/feature-attendance.jpg) no-repeat 0 0;
+        padding-left: 350px;
+        min-height: 210px;
+        color: $edu-gray-dark;
+        .logo {
+            color: $edu-gray-dark;
+            text-transform: none;
+            font-size: 2.5rem;
+            letter-spacing: 0;
+        }
+    }
+    .user {
+        clear: both;
+    }
+}
+
+
+// attendance-status sits underneath header on attendance dashboard and provides
+// data such as time and enrollment numbers
+
+.attendance-status {
+    background-color: $edu-gray-dark;
+    color: $edu-beige;
+    padding: 1em 0;
+}
