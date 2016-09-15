@@ -4,13 +4,12 @@
 
 
 // Widths
+// Duplicated from UI kit to allow local compilation
 // ------------------------------------------------------------------------------------------------------
 
-$content-max-width: 1920px;
-$break-small: 480px;
-$break-medium: 768px;
-$break-large: 960px;
-$break-wide: 1220px;
+$mobile-minwidth: 420px;
+$tablet-minwidth: 768px;
+$desktop-minwidth: 1200px;
 
 
 // Colours

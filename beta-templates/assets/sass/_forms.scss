@@ -2,7 +2,10 @@
 // Styling overrides for Education Childcare Attendance
 // ------------------------------------------------------------------------------------------------------
 
-button {
+.govau--header a[role=button], .govau--header button, .govau--header input[type=reset], .govau--header input[type=submit] {
     background-color: $edu-green;
     border: 1px solid $edu-green;
+}
+.btn--login-family {
+    font-size: 1.8rem;
 }

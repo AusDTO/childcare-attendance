@@ -15,15 +15,24 @@
     background-color: $edu-beige;
     padding: 1em;
     .wrapper {
-        background: transparent url(../img/feature-attendance.jpg) no-repeat 0 0;
-        padding-left: 350px;
-        min-height: 210px;
+        min-height: 50px;
         color: $edu-gray-dark;
         .logo {
             color: $edu-gray-dark;
             text-transform: none;
-            font-size: 2.5rem;
-            letter-spacing: 0;
+            font-size: 2rem;
+            line-height: 1.2em;
+            letter-spacing: -1px;
+        }
+    }
+    @media only screen and (min-width: $tablet-minwidth) {
+        .wrapper {
+            background: transparent url(../img/feature-attendance.jpg) no-repeat 0 0;
+            padding-left: 350px;
+            min-height: 210px;
+            .logo {
+                font-size: 2.9rem;
+            }
         }
     }
     .user {
@@ -37,6 +46,26 @@
 
 .attendance-status {
     background-color: $edu-gray-dark;
-    color: $edu-beige;
     padding: 1em 0;
+}
+.attendance-status-item {
+    color: white;
+    float: left;
+    margin-left: 1em;
+    text-align: center;
+    span {
+        line-height: 1.8rem;
+        font-size: 1.4rem;
+        color: $edu-beige;
+    }
+    strong {
+        font-weight: 600;
+        font-size: 2.8rem;
+    }
+}
+.attendance-time p {
+    font-size: 2.8rem;
+    font-weight: 100;
+    line-height: 1.8rem;
+    text-transform: uppercase;
 }
