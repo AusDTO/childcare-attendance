@@ -1,6 +1,19 @@
+/*
+
+UI-Kit version: 1.8.0
+
+*/
+
+@import 'variables';
+@import 'utils';
+@import 'vendor';
+@import 'components';
+
+
 // Styling overrides for Education Childcare Attendance
 // ------------------------------------------------------------------------------------------------------
 
-@import "variables";
-@import "layout";
-@import "forms";
+@import "edu-variables";
+@import "edu-layout";
+@import "edu-forms";
+

@@ -1,0 +1,66 @@
+// VARIABLES
+// Styling overrides for Education Childcare Attendance
+// ------------------------------------------------------------------------------------------------------
+
+
+// Widths
+// Duplicated from UI kit to allow local compilation
+// ------------------------------------------------------------------------------------------------------
+
+$mobile-maxwidth: 419px;
+$mobile-minwidth: 420px;
+$tablet-minwidth: 768px;
+$desktop-minwidth: 1200px;
+
+// Double column layout for attendance admin
+$doublecol-leftcol: 367px;
+$form-max-width: 30em;
+
+
+// Colours
+// ------------------------------------------------------------------------------------------------------
+
+$edu-gray-dark: #333231;
+$edu-green: #428619;
+$edu-beige: #C8C3B0;
+$edu-light-bg: #EDEDEB;
+$input-focus: #ffff99;
+
+
+// Typography
+// ------------------------------------------------------------------------------------------------------
+
+$font-size-base: 16px;
+$font-size-default: 1.1rem;
+$font-size-small: 1.05rem;
+$font-size-medium: 1.2rem;
+$font-size-large: 1.3rem;
+$font-size-wide: 1.4rem;
+
+
+// Mixins
+// ------------------------------------------------------------------------------------------------------
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+@mixin font-size($sizeValue: 12 ){
+  font-size: $sizeValue + px; //fallback for old browsers
+  font-size: (0.125 * $sizeValue) + rem;
+}
+@mixin breakpoint($point) {
+  @if $point == tiny {
+    @media (max-width: $mobile-maxwidth) { @content; }
+  }
+  @if $point == small {
+    @media (min-width: $mobile-minwidth) { @content; }
+  }
+  @else if $point == medium {
+    @media (min-width: $tablet-minwidth) { @content; }
+  }
+  @else if $point == large {
+    @media (min-width: $desktop-minwidth)  { @content; }
+  }
+}

@@ -1,0 +1,260 @@
+// LAYOUT
+// Styling overrides for Education Childcare Attendance
+// ------------------------------------------------------------------------------------------------------
+
+
+// login screen
+
+.govau--header {
+    background-color: $edu-gray-dark;
+}
+.form--admin input {
+    max-width: $form-max-width;
+}
+
+
+// reduce padding on main
+
+main .content-main {
+    @include breakpoint(medium) {
+        width: 70%;
+    }
+    @include breakpoint(large) {
+        padding: 0;
+        width: 70%;
+    }
+}
+main {
+    @include breakpoint(large) {
+        padding: 2em 0;
+    }
+}
+
+
+// attendance--header is header override for attendance dashboard screens
+
+.attendance--header {
+    background-color: $edu-beige;
+    padding: 1em 0;
+    .wrapper {
+        min-height: 50px;
+        color: $edu-gray-dark;
+        .logo {
+            color: $edu-gray-dark;
+            text-transform: none;
+            line-height: 1.2em;
+            letter-spacing: -1px;
+            @include breakpoint(tiny) {
+                @include font-size(10);
+            }
+            @include breakpoint(small) {
+                @include font-size(14);
+            }
+            @include breakpoint(medium) {
+                @include font-size(18);
+            }
+            @include breakpoint(large) { 
+                @include font-size(24);
+            }
+        }
+    }
+    @include breakpoint(medium) {
+        .wrapper {
+            background: transparent url(../img/feature-attendance.jpg) no-repeat 0 0;
+            padding-left: $doublecol-leftcol;
+            min-height: 210px;
+        }
+    }
+    .user {
+        clear: both;
+        margin-bottom: 0.75em;
+    }
+    .logout {
+        margin-left: 0.5em;
+        color: $edu-gray-dark;
+    }
+}
+
+
+
+// attendance-status sits underneath header on attendance dashboard and provides
+// data such as time and enrollment numbers
+
+.attendance-status {
+    background-color: $edu-gray-dark;
+    padding: 1em 0 0.5em 1em;
+    .wrapper {
+        padding: 0;
+    }
+}
+.attendance-status-item {
+    color: white;
+    float: left;
+    margin: 0.5em 0.5em 0 1em;
+    @include breakpoint(medium) {
+        text-align: center;
+        margin: 0.5em 2em 0 0;
+    }
+    @include breakpoint(medium) {
+        margin: 0.5em 3em 0 0;
+    }
+    span {
+        color: $edu-beige;
+        line-height: 1.8rem;
+        @include breakpoint(tiny) {
+            @include font-size(8);
+        }
+        @include breakpoint(small) {
+            @include font-size(9);
+        }
+        @include breakpoint(medium) {
+            @include font-size(10);
+        }
+        @include breakpoint(large) { 
+            @include font-size(11);
+        }
+    }
+    strong {
+        font-weight: 600;
+        @include breakpoint(tiny) {
+            @include font-size(10);
+        }
+        @include breakpoint(small) {
+            @include font-size(14);
+        }
+        @include breakpoint(medium) {
+            @include font-size(18);
+        }
+        @include breakpoint(large) { 
+            @include font-size(22);
+        }
+    }
+}
+.attendance-time {
+    margin-right: 0;
+    p {
+        font-weight: 100;
+        text-transform: uppercase;
+        line-height: 0.75em;
+        margin: 0.1em 1em 0 0;
+        @include font-size(18);
+        display: block;
+        @include breakpoint(medium) {
+            width: $doublecol-leftcol - 40px;
+        }
+    }
+}
+.attendance-logout {
+    float: right;
+    a, a:link {
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+// Keep numerical attendance data together on small screens
+
+.numerical-data {
+    clear: both;
+    @include breakpoint(medium) {
+        clear: none;
+    }
+}
+
+
+// Table styling
+
+.content-table {
+    th, td {
+        text-align: center;
+        padding: 0.8em 0.8em 0.25em 0.8em;
+    }
+    td {
+        a, a:link {
+            color: $edu-green;
+            font-weight: 600;
+            border-bottom: solid 0.1rem $edu-green;
+        }
+        a:focus, a:hover {
+            background-color: black;
+            color: #fff;
+        }
+    }
+    .btn-small {
+        margin-right: 0.5em;
+        white-space: nowrap;
+    }
+
+    caption {
+        text-align: left;
+        letter-spacing: -0.1rem;
+        @include breakpoint(tiny) {
+            @include font-size(12);
+        }
+        @include breakpoint(small) {
+            @include font-size(14);
+        }
+        @include breakpoint(medium) {
+            @include font-size(18);
+        }
+        @include breakpoint(large) { 
+            @include font-size(20);
+        }
+    }
+    .left {
+        text-align: left;
+    }
+    tfoot td {
+        padding: 1em 0 0 0;
+    }
+    p button {
+        margin: 0;
+    }
+}
+
+
+// Filters for refining attendance data
+
+.attendance-filter {
+    @include breakpoint(medium) {
+        display: block;
+        float: left;
+        width: 24%;
+        margin-right: 2%;
+    }
+    input, select {
+        width: 100%;
+        max-width: $form-max-width;
+        display: block;
+        padding: 0.3em;
+        @include border-radius(3px);
+        border: 1px solid #bbbbbb;
+        &:focus, &:hover {
+            background-color: $input-focus;
+        }
+    }
+    legend {
+        letter-spacing: -0.1rem;
+        margin-top: 0.5em;
+        @include breakpoint(tiny) {
+            @include font-size(10);
+        }
+        @include breakpoint(small) {
+            @include font-size(11);
+        }
+        @include breakpoint(medium) {
+            @include font-size(12);
+        }
+        @include breakpoint(large) { 
+            @include font-size(14);
+        }
+    }
+}
+
+
+// Footer override
+
+footer[role=contentinfo] {
+    background-color: $edu-light-bg;
+    border-top: 6px solid $edu-gray-dark;
+}
