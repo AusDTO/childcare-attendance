@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAIA,cAAe,CACX,gBAAgB,CCaJ,OAAO,CCdvB,MAAO,CACH,gBAAgB,CDcR,OAAO,CCbf,MAAM,CAAE,iBAAoB",
-"sources": ["../sass/_layout.scss","../sass/_variables.scss","../sass/_forms.scss"],
-"names": [],
-"file": "education.css"
-}

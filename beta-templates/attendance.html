@@ -19,11 +19,11 @@
 
 <header role="banner">
   <section class="govau--header attendance--header">
-    <div class="wrapper">
+    <div class="wrapper push-left">
       <div class="govau--logo">
-        <a href="index.html" class="logo">Child care attendance</a> <span class="badge--default">beta</span>
+        <a href="index.html" class="logo">Child care attendance</a><span class="badge--default">beta</span>
       </div>
-      <p class="user">Hi, Linda Joseph</p>
+      <p class="user">Hi, <strong>Linda Joseph</strong> <a class="logout" href="index.html">Log out</a></p>
       <button type="button" class="btn--login-family" onclick="location.href='family-login.html'">Family login</button>
     </div>
   </section>
@@ -37,65 +37,113 @@
         <span>Tue 20 Sep</span>
       </p>
     </div>
-    <div class="attendance-status-item">
-      <p>
-        <strong>12</strong><br />
-        <span>enrolled</span>
-      </p>
-    </div>
-    <div class="attendance-status-item">
-      <p>
-        <strong>6</strong><br />
-        <span>expected</span>
-      </p>
-    </div>
-    <div class="attendance-status-item">
-      <p>
-        <strong>0</strong><br />
-        <span>signed in</span>
-      </p>
-    </div>
-    <div class="attendance-status-item attendance-logout">
-      <p>
-        <a href="index.html">Log out</a>
-      </p>
-    </div>
+    <div class="numerical-data">
+      <div class="attendance-status-item">
+        <p>
+          <strong>12</strong><br />
+          <span>enrolled</span>
+        </p>
+      </div>
+      <div class="attendance-status-item">
+        <p>
+          <strong>4</strong><br />
+          <span>expected</span>
+        </p>
+      </div>
+      <div class="attendance-status-item">
+        <p>
+          <strong>0</strong><br />
+          <span>signed in</span>
+        </p>
+      </div>
+    </div><!-- numerical-data -->
   </div>
 </section>
 
+<!-- ========== Main Page Row ========== -->
 <main role="main">
 
-  <article id="content">
-      <h1>Attendance today</h1>
-    <table class="content-table">
-      <caption>Population of Australian states and territories, December 2015</caption>
+  <aside class="attendance-filter">
+    <legend>Refine</legend>
+      <p>
+        <label for="dateFrom">Date from</label>
+        <input name="dateFrom" id="dateFrom" type="date" />
+      </p>
+      <p>
+        <label for="dateTo">Date to</label>
+        <input name="dateTo" id="dateTo" type="date" />
+      </p>
+      <p>
+        <label for="attendanceType">Attendance type</label>
+        <select name="attendanceType" id="attendanceType">
+          <option selected>Expected today</option>
+          <option>Total enrolled</option>
+        </select>
+      </p>
+      <p>
+        <label for="room">Room</label>
+        <select name="room" id="room">
+          <option selected>Burra</option>
+          <option>Kidna</option>
+          <option>Roo</option>
+        </select>
+      </p>
+      <p><button>Filter view</button></p>
+  </aside>
+
+  <!-- ========== Content ========== -->
+  <article id="content" class="content-main">
+  <form>
+    <table class="content-table custom-controls">
+      <caption>Attendance today</caption>
       <thead>
         <tr>
-          <th scope="col">Child</th>
-          <th scope="col">Absent</th>
-          <th scope="col">Sign in</th>
-          <th scope="col">Sign out</th>
+          <th scope="col" class="left" style="width: 40%"><p>Child</p></th>
+          <th scope="col" style="width: 7%"><p>Absent</p></th>
+          <th scope="col" style="width: 9%"><p>Sign in</p></th>
+          <th scope="col" style="width: 9%"><p>Sign out</p></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Peta Lawson</td>
-          <td>7,670.7</td>
-          <td>7,670.7</td>
-          <td>7,670.7</td>
+          <td class="left"><p><a href="child-detail.html">Peta Lawson</a></p></td>
+          <td><p><input type="checkbox" value="" id="c01-absent" /> <label for="c01-absent"><span class="visuallyhidden">Absent</span></label></p></td>
+          <td><button class="btn-small">Sign in</button></td>
+          <td><button disabled class="btn-small">Sign out</button></td>
+        </tr>
+        <tr>
+          <td class="left"><p><a href="child-detail.html">Bonnie Lawson</a></p></td>
+          <td><p><input type="checkbox" value="" id="c02-absent" /> <label for="c02-absent"><span class="visuallyhidden">Absent</span></label></p></td>
+          <td><button class="btn-small">Sign in</button></td>
+          <td><button disabled class="btn-small">Sign out</button></td>
+        </tr>
+        <tr>
+          <td class="left"><p><a href="child-detail.html">James Williams</a></p></td>
+          <td><p><input type="checkbox" value="" id="c03-absent" /> <label for="c03-absent"><span class="visuallyhidden">Absent</span></label></p></td>
+          <td><button class="btn-small">Sign in</button></td>
+          <td><button disabled class="btn-small">Sign out</button></td>
+        </tr>
+        <tr>
+          <td class="left"><p><a href="child-detail.html">Arminda Singh</a></p></td>
+          <td><p><input type="checkbox" value="" id="c04-absent" /> <label for="c03-absent"><span class="visuallyhidden">Absent</span></label></p></td>
+          <td><button class="btn-small">Sign in</button></td>
+          <td><button disabled class="btn-small">Sign out</button></td>
         </tr>
       </tbody>
       <tfoot>
         <tr>
-          <td>Australia</td>
-          <td>23,940.3</td>
-          <td>23,940.3</td>
-          <td>23,940.3</td>
+          <td colspan="4" class="left"><p><button>Submit attendance</button></p></td>
         </tr>
       </tfoot>
     </table>
+    </form>
+
+
   </article>
+  <!-- ========== end Content ========== -->
 </main>
+
+
 
 
 <footer role="contentinfo">

@@ -1,0 +1,75 @@
+// FORMS
+// Styling overrides for Education Childcare Attendance
+// ------------------------------------------------------------------------------------------------------
+
+main>article a[role=button], 
+main>article button, 
+main>article input[type=reset], 
+main>article input[type=submit] {
+    border: none;
+    color: #fff;
+    background-color: $edu-green;
+    @include border-radius(2px);
+    @include breakpoint(small) {
+        @include border-radius(2px);
+    }
+    @include breakpoint(medium) {
+        @include border-radius(3px);
+    }
+    @include breakpoint(large) { 
+        @include border-radius(4px);
+    }
+}
+.govau--header a[role=button], 
+.govau--header button, 
+.govau--header input[type=reset], 
+.govau--header input[type=submit] {
+    border: none;
+    color: #fff;
+    background-color: $edu-green;
+    margin-bottom: 0;
+    @include border-radius(3px);
+        @include breakpoint(tiny) {
+        @include font-size(8);
+    }
+    @include breakpoint(small) {
+        @include border-radius(5px);
+        @include font-size(10);
+    }
+    @include breakpoint(medium) {
+        @include border-radius(6px);
+        @include font-size(14);
+    }
+    @include breakpoint(large) { 
+        @include border-radius(8px);
+        @include font-size(16);
+    }
+}
+main>article a[role=button]:focus, 
+main>article a[role=button]:hover, 
+main>article button:focus, 
+main>article button:hover, 
+main>article input[type=reset]:focus, 
+main>article input[type=reset]:hover,
+main>article input[type=submit]:focus, 
+main>article input[type=submit]:hover,
+.govau--header a[role=button]:focus, 
+.govau--header a[role=button]:hover, 
+.govau--header button:focus, 
+.govau--header button:hover, 
+.govau--header input[type=reset]:focus, 
+.govau--header input[type=reset]:hover, 
+.govau--header input[type=submit]:focus,
+.govau--header input[type=submit]:hover {
+    background-color: black;
+    color: #fff;
+}
+.btn--login-family {
+    font-size: 1.8rem;
+}
+.btn-small {
+    font-weight: 400;
+    height: 2.2em;
+    padding: 0.1em 0.75em;
+}
+
