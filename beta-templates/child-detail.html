@@ -39,22 +39,7 @@
     </div>
     <div class="numerical-data">
       <div class="attendance-status-item">
-        <p>
-          <strong>12</strong><br />
-          <span>enrolled</span>
-        </p>
-      </div>
-      <div class="attendance-status-item">
-        <p>
-          <strong>4</strong><br />
-          <span>expected</span>
-        </p>
-      </div>
-      <div class="attendance-status-item">
-        <p>
-          <strong>0</strong><br />
-          <span>signed in</span>
-        </p>
+        <p class="back"><a href="attendance.html">Back to attendance</a></p>
       </div>
     </div><!-- numerical-data -->
   </div>
@@ -68,38 +53,30 @@
     <h2>Refine</h2>
       <p>
         <label for="dateFrom">Date from</label>
-        <input name="dateFrom" id="dateFrom" type="date" value="2016-09-21" />
+        <input name="dateFrom" id="dateFrom" type="date" value="2016-09-20" />
       </p>
       <p>
         <label for="dateTo">Date to</label>
         <input name="dateTo" id="dateTo" type="date" value="2016-09-21" />
       </p>
-      <p>
-        <label for="attendanceType">Attendance type</label>
-        <select name="attendanceType" id="attendanceType">
-          <option selected>Expected today</option>
-          <option>Total enrolled</option>
-        </select>
-      </p>
-      <p>
-        <label for="room">Room</label>
-        <select name="room" id="room">
-          <option selected>Burra</option>
-          <option>Kidna</option>
-          <option>Roo</option>
-        </select>
-      </p>
       <p><button class="btn-small">Filter view</button></p>
-   </aside>
+      <h2>Guardians</h2>
+      <ul>
+        <li>Jill Lawson (mother)</li>
+        <li>George Lawson (father)</li>
+        <li>Marge Gray (friend)</li>
+      </ul>
+  </aside>
 
   <!-- ========== Content ========== -->
+  
   <article id="content" class="content-main">
   <form>
     <table class="content-table">
-      <caption>Attendance today</caption>
+      <caption>Peta Lawson</caption>
       <thead>
         <tr>
-          <th scope="col" class="left" style="width: 40%"><p>Child</p></th>
+          <th scope="col" class="left" style="width: 40%"><p>Date</p></th>
           <th scope="col" style="width: 7%"><p>Absent</p></th>
           <th scope="col" style="width: 9%"><p>Sign in</p></th>
           <th scope="col" style="width: 9%"><p>Sign out</p></th>
@@ -107,38 +84,41 @@
       </thead>
       <tbody>
         <tr>
-          <td class="left"><p><a href="child-detail.html">Peta Lawson</a></p></td>
-          <td><p><input type="checkbox" value="" id="c01-absent" /> <label for="c01-absent"><span class="visuallyhidden">Absent</span></label></p></td>
-          <td><p><label for="c01-signedIn"><span class="visuallyhidden">Signed in</span></label>
-          <input name="c01-signedIn" id="c01-signedIn" type="text" value="06:32 AM" /></p></td>
+          <td class="left"><p>21 Sep 2016</p></td>
+          <td><p><input type="checkbox" value="" id="c01-absent0" /> <label for="c01-absent0"><span class="visuallyhidden">Absent</span></label></p></td>
+          <td><p><label for="c01-signedIn0"><span class="visuallyhidden">Signed in</span></label>
+          <input name="c01-signedIn0" id="c01-signedIn0" type="text" value="06:32 AM" /></p></td>
           <td><button class="btn-small">Sign out</button></td>
         </tr>
         <tr>
-          <td class="left"><p><a href="child-detail.html">Bonnie Lawson</a></p></td>
-          <td><p><input type="checkbox" value="" id="c02-absent" /> <label for="c02-absent"><span class="visuallyhidden">Absent</span></label></p></td>
-          <td><button class="btn-small">Sign in</button></td>
-          <td><button disabled class="btn-small">Sign out</button></td>
+          <td class="left"><p>20 Sep 2016</p></td>
+          <td><p><input type="checkbox" value="" id="c01-absent1" /> <label for="c01-absent1"><span class="visuallyhidden">Absent</span></label></p></td>
+          <td>
+            <p><label for="c01-signedIn1"><span class="visuallyhidden">Signed in</span></label><input name="c01-signedIn1" id="c01-signedIn1" type="text" value="06:32 AM" /></p>
+          </td>
+          <td>
+            <p><label for="c01-signedOut1"><span class="visuallyhidden">Signed in</span></label><input name="c01-signedOut1" id="c01-signedOut1" type="text" value="08:17 AM" /></p>
+          </td>
         </tr>
         <tr>
-          <td class="left"><p><a href="child-detail.html">James Williams</a></p></td>
-          <td><p><input type="checkbox" value="" id="c03-absent" /> <label for="c03-absent"><span class="visuallyhidden">Absent</span></label></p></td>
-          <td><button class="btn-small">Sign in</button></td>
-          <td><button disabled class="btn-small">Sign out</button></td>
+          <td class="left"><p>20 Sep 2016</p></td>
+          <td><p><input type="checkbox" value="" id="c01-absent2" /> <label for="c01-absent2"><span class="visuallyhidden">Absent</span></label></p></td>
+          <td>
+            <p><label for="c01-signedIn2"><span class="visuallyhidden">Signed in</span></label><input name="c01-signedIn2" id="c01-signedIn2" type="text" value="09:50 AM" /></p>
+          </td>
+          <td>
+            <p><label for="c01-signedOut2"><span class="visuallyhidden">Signed in</span></label><input name="c01-signedOut2" id="c01-signedOut2" type="text" value="14:10 PM" /></p>
+          </td>
         </tr>
-        <tr>
-          <td class="left"><p><a href="child-detail.html">Arminda Singh</a></p></td>
-          <td><p><input type="checkbox" value="" id="c04-absent" /> <label for="c04-absent"><span class="visuallyhidden">Absent</span></label></p></td>
-          <td><button class="btn-small">Sign in</button></td>
-          <td><button disabled class="btn-small">Sign out</button></td>
-        </tr>
-      </tbody>
       <tfoot>
         <tr>
-          <td colspan="4" class="left"><p><button>Submit attendance</button></p></td>
+          <td colspan="4" class="left"><p><a href="attendance.html">Back to attendance</a></p></td>
         </tr>
       </tfoot>
+      </tbody>
     </table>
     </form>
+
 
   </article>
   <!-- ========== end Content ========== -->
