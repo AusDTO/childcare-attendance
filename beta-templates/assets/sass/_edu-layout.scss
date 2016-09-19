@@ -31,7 +31,7 @@ main {
 }
 
 
-// attendance--header is header override for attendance dashboard screens
+// attendance--header override styling for attendance dashboard screens
 
 .attendance--header {
     background-color: $edu-beige;
@@ -85,6 +85,17 @@ main {
     padding: 1em 0 0.5em 1em;
     .wrapper {
         padding: 0;
+    }
+    p.back {
+        background: transparent url(../img/ico-back.svg) no-repeat 0 0;
+            a, a:link {
+            color: white;
+            @include font-size(12);
+            text-decoration: none;
+            padding-left: 30px;
+            margin: 0.5em 0 1.75em 0;
+            display: block;
+        }
     }
 }
 .attendance-status-item {
@@ -162,12 +173,13 @@ main {
 }
 
 
-// Table styling
+// Table styling for attendance data
 
 .content-table {
     th, td {
         text-align: center;
         padding: 0.8em 0.8em 0.25em 0.8em;
+        background-color: white;
     }
     td {
         a, a:link {
@@ -180,8 +192,22 @@ main {
             color: #fff;
         }
     }
+    input, select {
+        padding: 0.3em 0 0.3em 0.3em;
+        @include border-radius(3px);
+        border: 1px solid #bbbbbb;
+        &[type=text] {
+            width: 5.5em;
+        }
+        &:focus, &:hover {
+            background-color: $input-focus;
+        }
+        &[disabled]:focus, &[disabled]:hover {
+            background-color: $input-disabled;
+        }
+    }    
     .btn-small {
-        margin-right: 0.5em;
+        margin-right: 0;
         white-space: nowrap;
     }
 
@@ -221,6 +247,21 @@ main {
         float: left;
         width: 24%;
         margin-right: 2%;
+    }
+    h2 {
+        margin: 0.5em 0;
+        @include breakpoint(tiny) {
+            @include font-size(10);
+        }
+        @include breakpoint(small) {
+            @include font-size(12);
+        }
+        @include breakpoint(medium) {
+            @include font-size(14);
+        }
+        @include breakpoint(large) { 
+            @include font-size(16);
+        }
     }
     input, select {
         width: 100%;

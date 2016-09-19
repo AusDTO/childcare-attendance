@@ -3,7 +3,8 @@
 // ------------------------------------------------------------------------------------------------------
 
 main>article a[role=button], 
-main>article button, 
+main>article button,
+main>aside button,
 main>article input[type=reset], 
 main>article input[type=submit] {
     border: none;
@@ -49,6 +50,8 @@ main>article a[role=button]:focus,
 main>article a[role=button]:hover, 
 main>article button:focus, 
 main>article button:hover, 
+main>aside button:focus, 
+main>aside button:hover, 
 main>article input[type=reset]:focus, 
 main>article input[type=reset]:hover,
 main>article input[type=submit]:focus, 
