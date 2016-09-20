@@ -23,6 +23,7 @@ main>article input[type=submit] {
 }
 .govau--header a[role=button], 
 .govau--header button, 
+.form--family button,
 .govau--header input[type=reset], 
 .govau--header input[type=submit] {
     border: none;
@@ -39,11 +40,11 @@ main>article input[type=submit] {
     }
     @include breakpoint(medium) {
         @include border-radius(6px);
-        @include font-size(14);
+        @include font-size(12);
     }
     @include breakpoint(large) { 
         @include border-radius(8px);
-        @include font-size(16);
+        @include font-size(14);
     }
 }
 main>article a[role=button]:focus, 
