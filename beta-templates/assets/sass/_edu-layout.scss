@@ -3,13 +3,52 @@
 // ------------------------------------------------------------------------------------------------------
 
 
-// login screen
+// Basic overrides
 
 .govau--header {
     background-color: $edu-gray-dark;
+    .logo {
+        text-transform: none;
+        letter-spacing: 0;
+    }
 }
-.form--admin input {
-    max-width: $form-max-width;
+
+form .hint {
+    font-size: 1rem;
+}
+main {
+    padding: 2em 1em 0 1em;
+    @include breakpoint(medium) {
+        padding-top: 3.2em;
+    }
+}
+main>article a {
+    color: $edu-green;
+    text-decoration: none;
+    border-bottom: solid 1px $edu-green;
+}
+main>article a:hover, main>article a:focus {
+    background-color: white;
+    color: black;
+}
+.wrapper {
+    padding: 0 1em;
+}
+
+
+
+// login screens
+
+.form--admin, .form--family {
+    input {
+        max-width: $form-max-width;
+    }
+    .input-phone {
+        max-width: 10em;
+    }
+    .input-pin {
+        max-width: 3em;
+    }
 }
 
 
@@ -25,8 +64,15 @@ main .content-main {
     }
 }
 main {
-    @include breakpoint(large) {
+    @include breakpoint(medium) {
         padding: 2em 0;
+    }
+}
+body.attendance {
+    main {
+        &.wrapper {
+            padding: 2em 1em 0 1em;
+        }
     }
 }
 
@@ -60,7 +106,7 @@ main {
     }
     @include breakpoint(medium) {
         .wrapper {
-            background: transparent url(../img/feature-attendance.jpg) no-repeat 0 0;
+            background: transparent url(../img/feature-attendance.jpg) no-repeat 1em 0;
             padding-left: $doublecol-leftcol;
             min-height: 210px;
         }
@@ -101,12 +147,12 @@ main {
 .attendance-status-item {
     color: white;
     float: left;
-    margin: 0.5em 0.5em 0 1em;
+    margin: 0.5em 0.5em 0 0;
     @include breakpoint(medium) {
         text-align: center;
         margin: 0.5em 2em 0 0;
     }
-    @include breakpoint(medium) {
+    @include breakpoint(large) {
         margin: 0.5em 3em 0 0;
     }
     span {
@@ -288,6 +334,91 @@ main {
         }
         @include breakpoint(large) { 
             @include font-size(14);
+        }
+    }
+}
+
+
+// Family screen size overrides to emulate kiosk UI
+
+body.kiosk {
+    background-color: $edu-gray-dark;
+    .govau--header {
+        background-color: black;
+        .logo {
+            color: $edu-beige;           
+        }
+    }
+    nav {
+        padding: 0 0 0 1em;
+        line-height: 2rem;
+        display: inline-block;
+    }
+    @include breakpoint(medium) {
+        nav {
+            float: right;
+            padding: 0.15em 0 0 0;
+        }
+    }
+    main {
+        @include breakpoint(large) {
+            padding-top: 4.2em;
+        }
+        .wrapper {
+            padding: 0;
+            @include breakpoint(medium) {
+                padding: 0 1em;
+            }
+        }
+        legend {
+            letter-spacing: -0.1rem;
+            margin-top: 0.5em;
+            @include breakpoint(tiny) {
+                @include font-size(12);
+            }
+            @include breakpoint(small) {
+                @include font-size(18);
+            }
+            @include breakpoint(medium) {
+                @include font-size(22);
+            }
+            @include breakpoint(large) { 
+                @include font-size(26);
+            }
+        }
+        input, label {
+            @include breakpoint(tiny) {
+                @include font-size(10);
+            }
+            @include breakpoint(small) {
+                @include font-size(12);
+            }
+            @include breakpoint(medium) {
+                @include font-size(14);
+            }
+            @include breakpoint(large) { 
+                @include font-size(16);
+            }
+        }
+        input {
+            padding: 0.3em 0 0.3em 0.3em;
+            @include border-radius(3px);
+            border: 1px solid #bbbbbb;
+            &:focus, &:hover {
+                background-color: $input-focus;
+                outline: none;
+            }
+            &[disabled]:focus, &[disabled]:hover {
+                background-color: $input-disabled;
+            }
+        }   
+        button {
+            margin: 1em 0.5em 0 0;
+        } 
+        .form--family {
+            background-color: #eee;
+            @include border-radius(6px);
+            padding: 2em 1em 1em 2em;
         }
     }
 }

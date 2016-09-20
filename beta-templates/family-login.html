@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Family login - child care attendance</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="assets/css/ui-kit.css"/>
+  <link rel="stylesheet" type="text/css" href="assets/css/education.css"/>
+  <script type="text/javascript" src="assets/js/ui-kit.js"></script>
+</head>
+<body class="kiosk">
+
+<nav class="skip-to">
+  <a href="#content">Skip to main content</a>
+</nav>
+
+<header role="banner">
+  <section class="govau--header">
+    <div class="wrapper">
+      <div class="govau--logo">
+        <a href="index.html" class="logo">Child care attendance trial</a> <span class="badge--default">beta</span>
+      </div>
+      <nav>
+        <a href="index.html">Admin login</a>
+      </nav>
+    </div>
+  </section>
+</header>
+
+<main role="main">
+
+  <article id="content" class="wrapper">
+    <form class="form--family">
+      <fieldset>
+          <legend>Family login</legend>
+          <p>
+            <label for="phone">Phone <span class="hint">Your own 10 digit number (example: 0409100200)</span></label>
+            <input id="phone" type="text" class="input-phone" maxlength="10"></input>
+          </p>
+          <p>
+            <label for="pin" class="input-right">PIN <span class="hint">4 digit number</span></label>
+            <input id="pin" type="password" class="input-pin" maxlength="4">
+          </p>
+          <p>
+            <button onclick="window.location.href = 'dave.html'" />Login</button><a href="#">Reset PIN</a>
+          </p>
+      </fieldset>
+    </form>
+  </article>
+</main>
+
+<script src="../js/vendor/jquery-3.1.0.min.js"></script>
+<script>  
+    $(function() {
+      $("#phone").focus();
+    });
+</script>
+</body>
+</html>
