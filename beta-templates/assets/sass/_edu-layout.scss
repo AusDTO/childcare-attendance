@@ -239,9 +239,6 @@ body.attendance {
         }
     }
     input, select {
-        padding: 0.3em 0 0.3em 0.3em;
-        @include border-radius(3px);
-        border: 1px solid #bbbbbb;
         &[type=text] {
             width: 5.5em;
         }
@@ -429,4 +426,61 @@ body.kiosk {
 footer[role=contentinfo] {
     background-color: $edu-light-bg;
     border-top: 6px solid $edu-gray-dark;
+}
+
+
+// Confirmation cards
+
+.card--family {    
+    -webkit-box-shadow: 2px 2px 3px 0 rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 3px 0 rgba(0,0,0,0.2);
+    background-color: white;
+    color: black;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    @include border-radius(6px);
+    border-left: 12px solid $edu-green;
+    padding: 3.5em 1em 3em 1em !important;
+    width: 100%;
+    margin: 1em 0;
+    display: table;
+    position: relative;
+
+    .card--row {
+        display: table-row;
+    }
+
+    .card--date {
+        display: table-cell;
+        text-align: center;
+        text-transform: uppercase;
+        border-right: 1px solid #ccc; 
+        width: 20%;  
+        p {
+            @include breakpoint(tiny) {
+                @include font-size(8);
+            }
+            @include breakpoint(small) {
+                @include font-size(9);
+            }
+            @include breakpoint(medium) {
+                @include font-size(11);
+            }
+            @include breakpoint(large) { 
+                @include font-size(12);
+            }
+            strong {
+                @include font-size(20);
+            }
+        }     
+        .card--time {
+            margin-top: 2em;
+            color: #666;
+        }
+    }
+    .card--details {
+        display: table-cell;
+        padding: 0 1em 0 3em;
+        width: 80%;
+    }
 }

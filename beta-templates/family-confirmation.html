@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Family login - child care attendance</title>
+  <title>Confirm - child care attendance</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="assets/css/ui-kit.css"/>
@@ -33,21 +33,23 @@
 <main role="main">
 
   <article id="content" class="wrapper">
-    <form class="form--family">
-      <fieldset>
-          <legend>Family login</legend>
-          <p>
-            <label for="phone">Phone <span class="hint">Your own 10 digit number (example: 0409100200)</span></label>
-            <input id="phone" type="text" class="input-phone" maxlength="10"></input>
-          </p>
-          <p>
-            <label for="pin" class="input-right">PIN <span class="hint">4 digit number</span></label>
-            <input id="pin" type="password" class="input-pin" maxlength="4">
-          </p>
-          <p>
-            <button type="button" onclick="location.href='family-confirmation.html'">Login</button><a href="#">Reset PIN</a>
-          </p>
-      </fieldset>
+    <form class="form--family card--family">
+        <div class="card--row">
+            <div class="card--date">
+                <p>
+                    <strong>20</strong><br />
+                    September<br />
+                    2016
+                </p>
+                <p class="card--time">Now<br />
+                7:30 AM</p>
+            </div>
+            <div class="card--details">
+                <h1>Hi Dave, please confirm</h1>
+                <p><input type="checkbox" name="confirmSignIn" id="yes" /><label for="yes">Signing in Jay now</label></p>
+                <p><button type="button" onclick="location.href='family-login.html'">Save and log out</button></p>
+            </div>
+        </div>
     </form>
   </article>
 </main>

@@ -76,4 +76,12 @@ main>article input[type=submit]:hover,
     height: 2.2em;
     padding: 0.1em 0.75em;
 }
-
+main {
+        input, select {
+            &[type=text],&[type=password] {
+            padding: 0.4em 0 0.4em 0.3em;
+            @include border-radius(3px);
+            border: 1px solid #bbbbbb;
+        }
+    }
+}
