@@ -22,10 +22,13 @@ main {
         padding-top: 3.2em;
     }
 }
+.content-main p {
+    max-width: none;
+}
 main>article a {
-    color: $edu-green;
+    color: $edu-primary;
     text-decoration: none;
-    border-bottom: solid 1px $edu-green;
+    border-bottom: solid 1px $edu-primary;
 }
 main>article a:hover, main>article a:focus {
     background-color: white;
@@ -80,7 +83,7 @@ body.attendance {
 // attendance--header override styling for attendance dashboard screens
 
 .attendance--header {
-    background-color: $edu-beige;
+    background-color: $edu-secondary;
     padding: 1em 0;
     .wrapper {
         min-height: 50px;
@@ -106,7 +109,7 @@ body.attendance {
     }
     @include breakpoint(medium) {
         .wrapper {
-            background: transparent url(../img/feature-attendance.jpg) no-repeat 1em 0;
+            background: transparent url(../img/feature.png) no-repeat 1em 0;
             padding-left: $doublecol-leftcol;
             min-height: 210px;
         }
@@ -156,7 +159,7 @@ body.attendance {
         margin: 0.5em 3em 0 0;
     }
     span {
-        color: $edu-beige;
+        color: $edu-secondary;
         line-height: 1.8rem;
         @include breakpoint(tiny) {
             @include font-size(8);
@@ -229,9 +232,9 @@ body.attendance {
     }
     td {
         a, a:link {
-            color: $edu-green;
+            color: $edu-link;
             font-weight: 600;
-            border-bottom: solid 0.1rem $edu-green;
+            border-bottom: solid 0.1rem $edu-link;
         }
         a:focus, a:hover {
             background-color: black;
@@ -343,13 +346,17 @@ body.kiosk {
     .govau--header {
         background-color: black;
         .logo {
-            color: $edu-beige;           
+            color: $edu-secondary;           
         }
     }
     nav {
         padding: 0 0 0 1em;
         line-height: 2rem;
         display: inline-block;
+        a, a:link {
+            color: #999;
+            border-color: #999;
+        }
     }
     @include breakpoint(medium) {
         nav {
@@ -439,7 +446,7 @@ footer[role=contentinfo] {
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     @include border-radius(6px);
-    border-left: 12px solid $edu-green;
+    border-left: 12px solid $edu-primary;
     padding: 3.5em 1em 3em 1em !important;
     width: 100%;
     margin: 1em 0;
@@ -482,5 +489,8 @@ footer[role=contentinfo] {
         display: table-cell;
         padding: 0 1em 0 3em;
         width: 80%;
+        legend {
+            margin-bottom: 0.5em;
+        }
     }
 }

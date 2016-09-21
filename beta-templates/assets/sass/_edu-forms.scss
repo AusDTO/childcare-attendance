@@ -5,11 +5,12 @@
 main>article a[role=button], 
 main>article button,
 main>aside button,
+button,
 main>article input[type=reset], 
 main>article input[type=submit] {
     border: none;
     color: #fff;
-    background-color: $edu-green;
+    background-color: $edu-primary;
     @include border-radius(2px);
     @include breakpoint(small) {
         @include border-radius(2px);
@@ -28,7 +29,7 @@ main>article input[type=submit] {
 .govau--header input[type=submit] {
     border: none;
     color: #fff;
-    background-color: $edu-green;
+    background-color: $edu-primary;
     margin-bottom: 0;
     @include border-radius(3px);
         @include breakpoint(tiny) {

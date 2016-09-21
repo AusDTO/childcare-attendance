@@ -65,7 +65,7 @@
 
   <!-- ========== Refine column ========== -->
   <aside class="attendance-filter">
-    <h2>Refine</h2>
+    <h2>Change view</h2>
       <p>
         <label for="dateFrom">Date from</label>
         <input name="dateFrom" id="dateFrom" type="date" value="2016-09-21" />
@@ -89,7 +89,7 @@
           <option>Roo</option>
         </select>
       </p>
-      <p><button class="btn-small">Filter view</button></p>
+      <p><button class="btn-small">Change</button></p>
    </aside>
 
   <!-- ========== Content ========== -->
@@ -99,8 +99,8 @@
       <caption>Attendance today</caption>
       <thead>
         <tr>
-          <th scope="col" class="left" style="width: 40%"><p>Child</p></th>
-          <th scope="col" style="width: 7%"><p>Absent</p></th>
+          <th scope="col" class="left" style="width: 73%"><p>Child</p></th>
+          <th scope="col" style="width: 9%"><p>Absent</p></th>
           <th scope="col" style="width: 9%"><p>Sign in</p></th>
           <th scope="col" style="width: 9%"><p>Sign out</p></th>
         </tr>
@@ -134,7 +134,10 @@
       </tbody>
       <tfoot>
         <tr>
-          <td colspan="4" class="left"><p><button>Submit attendance</button></p></td>
+          <td colspan="4" class="left">
+            <p><button>Submit attendance</button></p>
+            <p id="submitMessage" style="display: none"><strong>Attendance submitted</strong> <span id="timeStamp"></span></p>
+          </td>
         </tr>
       </tfoot>
     </table>
@@ -145,10 +148,7 @@
 </main>
 
 
-
-
 <footer role="contentinfo">
 </footer>
-
 </body>
 </html>
