@@ -5,6 +5,7 @@
 main>article a[role=button], 
 main>article button,
 main>aside button,
+.form--admin button,
 button,
 main>article input[type=reset], 
 main>article input[type=submit] {
@@ -73,6 +74,7 @@ main>article input[type=submit]:hover,
     font-size: 1.8rem;
 }
 .btn-small {
+    background-color: $edu-tertiary;
     font-weight: 400;
     height: 2.2em;
     padding: 0.1em 0.75em;
@@ -85,4 +87,15 @@ main {
             border: 1px solid #bbbbbb;
         }
     }
+}
+
+
+// Validation for MCV controllers
+
+.field-validation-error {
+    background: transparent url(../img/ico-error.png) no-repeat 0 50%;
+    padding: 3px 0 0 23px;
+    display: block;
+    font-size: 1rem;
+    color: #cc0000;
 }

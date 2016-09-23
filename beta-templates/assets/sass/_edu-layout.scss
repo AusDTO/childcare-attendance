@@ -346,7 +346,7 @@ body.kiosk {
     .govau--header {
         background-color: black;
         .logo {
-            color: $edu-secondary;           
+            color: #999999;           
         }
     }
     nav {
@@ -446,7 +446,7 @@ footer[role=contentinfo] {
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     @include border-radius(6px);
-    border-left: 12px solid $edu-primary;
+    border-left: 14px solid $edu-tertiary;
     padding: 3.5em 1em 3em 1em !important;
     width: 100%;
     margin: 1em 0;
