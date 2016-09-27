@@ -13,6 +13,23 @@
     }
 }
 
+
+// Double columns for family login screen
+
+@include breakpoint(medium) {
+    .family-login-left,
+    .family-login-right {
+        float: left;
+    }
+    .family-login-right {
+        margin-left: 2em;
+    }
+    .clear {
+        clear: both;
+    }
+}
+
+
 form .hint {
     font-size: 1rem;
 }
