@@ -447,22 +447,14 @@ footer[role=contentinfo] {
     -webkit-border-radius: 6px;
     @include border-radius(6px);
     border-left: 14px solid $edu-tertiary;
-    padding: 3.5em 1em 3em 1em !important;
+    padding: 2em 1em 2em 1em !important;
     width: 100%;
     margin: 1em 0;
-    display: table;
     position: relative;
 
-    .card--row {
-        display: table-row;
-    }
-
     .card--date {
-        display: table-cell;
         text-align: center;
         text-transform: uppercase;
-        border-right: 1px solid #ccc; 
-        width: 20%;  
         p {
             @include breakpoint(tiny) {
                 @include font-size(8);
@@ -481,16 +473,38 @@ footer[role=contentinfo] {
             }
         }     
         .card--time {
-            margin-top: 2em;
+            margin-top: 0;
             color: #666;
         }
     }
     .card--details {
-        display: table-cell;
-        padding: 0 1em 0 3em;
-        width: 80%;
+        padding: 0 1em 0 1em;
         legend {
             margin-bottom: 0.5em;
+        }
+    }
+}
+@include breakpoint(medium) {
+    .card--family {    
+        padding: 3.5em 1em 3em 1em !important;
+        display: table;
+
+        .card--row {
+            display: table-row;
+        }
+
+        .card--date {
+            border-right: 1px solid #ccc; 
+            display: table-cell;
+            width: 20%;  
+            .card--time {
+                margin-top: 2em;
+            }
+        }
+        .card--details {
+            display: table-cell;
+            padding: 0 1em 0 3em;
+            width: 80%;
         }
     }
 }
