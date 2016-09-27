@@ -36,15 +36,19 @@
     <form class="form--family">
       <fieldset>
           <legend>Family login</legend>
+          <div style="float:left">
           <p>
-            <label for="phone">Phone <span class="hint">Your own 10 digit number (example: 0409100200)</span></label>
+            <label for="phone">Phone <span class="hint">Your own 10 digit number</span></label>
             <input id="phone" type="text" class="input-phone" maxlength="10"></input>
           </p>
+          </div>
+          <div style="float: left; margin-left: 2em">
           <p>
             <label for="pin" class="input-right">PIN <span class="hint">4 digit number</span></label>
             <input id="pin" type="password" class="input-pin" maxlength="4">
           </p>
-          <p>
+          </div>
+          <p style="clear: both">
             <button type="button" onclick="location.href='family-confirmation.html'">Login</button><a href="#">Reset PIN</a>
           </p>
       </fieldset>
