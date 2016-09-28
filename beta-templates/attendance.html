@@ -18,54 +18,62 @@
 </nav>
 
 <header role="banner">
-  <section class="govau--header attendance--header">
-    <div class="wrapper push-left">
+  <section class="govau--header">
+    <div class="wrapper">
       <div class="govau--logo">
-        <a href="index.html" class="logo">Child care attendance</a><span class="badge--default">beta</span>
+        <p><a href="index.html" class="logo">Child care attendance trial</a> <span class="badge--default">beta</span></p>
+        <p class="user">Hi, <strong>Linda Johnson</strong> <a href="index.html">Log out</a></p>
       </div>
-      <p class="user">Hi, <strong>Linda Joseph</strong> <a class="logout" href="index.html">Log out</a></p>
-      <button type="button" class="btn--login-family" onclick="location.href='family-login.html'">Family login</button>
     </div>
   </section>
 </header>
 
-<section class="attendance-status">
-  <div class="wrapper">
-    <div class="attendance-status-item attendance-time">
-      <p>
-        06:36 AM<br />
-        <span>Tue 21 Sep</span>
-      </p>
-    </div>
-    <div class="numerical-data">
-      <div class="attendance-status-item">
-        <p>
-          <strong>12</strong><br />
-          <span>enrolled</span>
-        </p>
-      </div>
-      <div class="attendance-status-item">
-        <p>
-          <strong>4</strong><br />
-          <span>expected</span>
-        </p>
-      </div>
-      <div class="attendance-status-item">
-        <p>
-          <strong>0</strong><br />
-          <span>signed in</span>
-        </p>
-      </div>
-    </div><!-- numerical-data -->
-  </div>
-</section>
+
 
 <!-- ========== Main Page Row ========== -->
 <main role="main" class="wrapper">
+  <article id="content" class="wrapper">
+    <header class="guide-section-header">
+      <h1 class="visuallyhidden">Attendance dashboard</h1>
+    </header>
+    <section class="attendance-status">
+      <div class="wrapper">
+        <div class="attendance-status-item attendance-time">
+          <p>
+            06:36 AM<br />
+            <span>Tue 21 Sep</span><br />
+          </p>
+        </div>
+        <div class="numerical-data">
+          <div class="attendance-status-item">
+            <p>
+              <span>enrolled</span><br />
+              <strong>12</strong>
+            </p>
+          </div>
+          <div class="attendance-status-item">
+            <p>
+              <span>expected</span><br />
+              <strong>4</strong>
+            </p>
+          </div>
+          <div class="attendance-status-item">
+            <p>
+              <span>signed&nbsp;in</span><br />
+              <strong>0</strong>
+            </p>
+          </div>
+          <div class="attendance-status-item family-login">
+              <p><button type="button" class="btn-small" onclick="location.href='family-login.html'">Family&nbsp;login</button></p>
+          </div>
+        </div><!-- numerical-data -->
+      </div>
+    </section>
+  </article>  
 
   <!-- ========== Refine column ========== -->
-  <aside class="attendance-filter">
-    <h2>Change view</h2>
+  <aside class="attendance-filter wrapper">
+    <h2>Refine</h2>
       <p>
         <label for="dateFrom">Date from</label>
         <input name="dateFrom" id="dateFrom" type="date" value="2016-09-21" />
@@ -89,14 +97,14 @@
           <option>Roo</option>
         </select>
       </p>
-      <p><button class="btn-small">Change</button></p>
+      <p><button class="btn-small">Go</button></p>
    </aside>
 
   <!-- ========== Content ========== -->
   <article id="content" class="content-main">
   <form>
     <table class="content-table">
-      <caption>Attendance today</caption>
+      <caption>Attendance</caption>
       <thead>
         <tr>
           <th scope="col" class="left" style="width: 73%"><p>Child</p></th>

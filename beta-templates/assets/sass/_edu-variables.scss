@@ -13,22 +13,18 @@ $tablet-minwidth: 768px;
 $desktop-minwidth: 1200px;
 
 // Double column layout for attendance admin
-$doublecol-leftcol: 367px;
+$doublecol-leftcol: 250px;
 $form-max-width: 30em;
 
 
 // Colours
 // ------------------------------------------------------------------------------------------------------
 
-$edu-gray-dark: #333231;
+$edu-gray-dark: #313131;
 $edu-primary: #522761; // purple
-$edu-primary: #428619; // green
-$edu-secondary: #C8C3B0; // beige
-$edu-tertiary: #e9a913; // mustard
-$edu-tertiary: #428619; // green
+$edu-secondary: #e9a913; // mustard
 $edu-link: #3b53a4; // blue
-$edu-link: #522761; // purple
-$edu-light-bg: #EDEDEB;
+$edu-light-bg: #f0f0f0;
 $input-focus: #ffff99;
 $input-disabled: #ebebe4;
 
@@ -70,3 +66,4 @@ $font-size-wide: 1.4rem;
     @media (min-width: $desktop-minwidth)  { @content; }
   }
 }
+

@@ -11,7 +11,7 @@ main>article input[type=reset],
 main>article input[type=submit] {
     border: none;
     color: #fff;
-    background-color: $edu-primary;
+    background-color: $edu-link;
     @include border-radius(2px);
     @include breakpoint(small) {
         @include border-radius(2px);
@@ -25,12 +25,13 @@ main>article input[type=submit] {
 }
 .govau--header a[role=button], 
 .govau--header button, 
+.attendance-status button, 
 .form--family button,
 .govau--header input[type=reset], 
 .govau--header input[type=submit] {
     border: none;
     color: #fff;
-    background-color: $edu-primary;
+    background-color: $edu-link;
     margin-bottom: 0;
     @include border-radius(3px);
         @include breakpoint(tiny) {
@@ -46,7 +47,7 @@ main>article input[type=submit] {
     }
     @include breakpoint(large) { 
         @include border-radius(8px);
-        @include font-size(14);
+        @include font-size(13);
     }
 }
 main>article a[role=button]:focus, 
@@ -74,7 +75,7 @@ main>article input[type=submit]:hover,
     font-size: 1.8rem;
 }
 .btn-small {
-    background-color: $edu-tertiary;
+    background-color: $edu-link;
     font-weight: 400;
     height: 2.2em;
     padding: 0.1em 0.75em;
