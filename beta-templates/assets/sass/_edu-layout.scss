@@ -141,6 +141,8 @@ main>article a:hover, main>article a:focus {
 // login screens
 
 .form--admin, .form--family {
+    -webkit-box-shadow: 0 0 8px 0 rgba(0,0,0,.4);
+    box-shadow: 0 0 8px 0 rgba(0,0,0,.4);
     input {
         max-width: $form-max-width;
     }
@@ -532,17 +534,7 @@ footer[role=contentinfo] {
 // Confirmation cards
 
 .card--family {    
-    -webkit-box-shadow: 2px 2px 3px 0 rgba(0,0,0,0.2);
-    box-shadow: 2px 2px 3px 0 rgba(0,0,0,0.2);
-    background-color: white;
-    color: black;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    @include border-radius(6px);
-    border-left: 14px solid $edu-primary;
-    padding: 2em 1em 2em 1em !important;
     width: 100%;
-    margin: 1em 0;
     position: relative;
 
     .card--date {
@@ -570,15 +562,19 @@ footer[role=contentinfo] {
         }
     }
     .card--details {
-        padding: 0 1em 0 1em;
+        padding: 0 1em 0 0;
         legend {
             margin-bottom: 0.5em;
+        }
+        img {
+            vertical-align: middle;
+            margin-right: 0.25em;
         }
     }
 }
 @include breakpoint(medium) {
     .card--family {    
-        padding: 2.5em 1em 2em 1em !important;
+        padding: 2.5em 1em 2em 0 !important;
         display: table;
 
         .card--row {
@@ -586,7 +582,7 @@ footer[role=contentinfo] {
         }
 
         .card--date {
-            border-right: 1px solid #ccc; 
+            border-left: 1px solid #ccc; 
             display: table-cell;
             width: 20%;
             .card--time {

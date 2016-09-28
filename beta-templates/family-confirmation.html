@@ -33,23 +33,26 @@
   <article id="content" class="wrapper">
     <form class="form--family card--family">
         <div class="card--row">
+            <div class="card--details">
+              <fieldset class="notConfirmed">
+                <legend>Hi Dave</legend>
+                <p><button type="button" onclick="return signIn();">Sign in Jay</button> &nbsp; <a href="family-login.html">Cancel</a></p>
+              </fieldset>
+              <fieldset class="isConfirmed" style="display: none">
+                <legend>Thanks Dave</legend>
+                <p><img src="assets/img/ico-tick.png" alt="Dropped off" /> Jay dropped off at 7:30 AM</p>
+                <p><button type="button" onclick="location.href='family-login.html'">Logout</button></p>
+              </fieldset>
+            </div>
             <div class="card--date">
                 <div class="card--time">
                   <p>Now<br />
                   <strong>7:30 AM</strong></p>
-                  <p>
-                      20 <span>September</span> <span>2016</span>
-                  </p>
+                  <p>20 <span>September</span> <span>2016</span></p>
                 </div>
             </div>
-            <div class="card--details">
-              <fieldset>
-                <legend>Hi Dave</legend>
-                <p><button type="button" onclick="location.href='family-login.html'">Sign in Jay</button> &nbsp; <a href="family-login.html">Cancel</a></p>
-              </fieldset>
-            </div>
         </div>
-    </form>
+      </form>
   </article>
 </main>
 
@@ -58,6 +61,11 @@
     $(function() {
       $("#phone").focus();
     });    
+        
+    function signIn() {
+        $(".notConfirmed").hide();
+        $(".isConfirmed").show();
+    }  
 </script>
 </body>
 </html>
