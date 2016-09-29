@@ -50,14 +50,10 @@
     <form class="form--family card--family">
         <div class="card--row">
             <div class="card--details">
-              <fieldset class="notConfirmed">
+              <fieldset>
                 <legend>Hi Dave</legend>
-                <p><button type="button" onclick="return signIn();">Sign in Jay</button> &nbsp; <a href="family-login.html">Cancel</a></p>
-              </fieldset>
-              <fieldset class="isConfirmed" style="display: none">
-                <legend>Thanks!</legend>
-                <p class="confirmation-message"><img src="assets/img/ico-tick.png" alt="Dropped off" /> Jay dropped off at 7:30 AM</p>
-                <p><button type="button" onclick="location.href='family-login.html'">Logout</button></p>
+                <p class="confirmation-message">Jay has missed 5 days of care since Wednesday 21 September.</p>
+                <p><button type="button" onclick="location.href='family-confirmation.html'">Yes this is right</button> &nbsp; <a href="family-login.html">No, this is wrong</a></p>
               </fieldset>
             </div>
             <div class="card--date">
@@ -73,11 +69,5 @@
 </main>
 
 <script src="../js/vendor/jquery-3.1.0.min.js"></script>
-<script>         
-    function signIn() {
-        $(".notConfirmed").hide();
-        $(".isConfirmed").fadeIn();
-    }  
-</script>
 </body>
 </html>

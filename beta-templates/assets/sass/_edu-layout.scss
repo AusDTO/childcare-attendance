@@ -573,6 +573,17 @@ footer[role=contentinfo] {
         legend {
             margin-bottom: 0.5em;
         }
+        p.confirmation-message {
+            @include breakpoint(tiny) {
+                @include font-size(10);
+            }
+            @include breakpoint(small) {
+                @include font-size(11);
+            }
+            @include breakpoint(medium) {
+                @include font-size(12);
+            }
+        }
         img {
             vertical-align: middle;
             margin-right: 0.25em;
