@@ -52,11 +52,13 @@
             <div class="card--details">
               <fieldset class="notConfirmed">
                 <legend>Hi Dave</legend>
-                <p><button type="button" onclick="return signIn();">Sign in Jay</button> &nbsp; <a href="family-login.html">Cancel</a></p>
+                <p><input type="checkbox" value="" id="c01" /> <label for="c01">Sign in Jay</label></p>
+                <p><input type="checkbox" value="" id="c02" /> <label for="c02">Sign in Arminda</label></p>
+                <p><button type="button" onclick="return signIn();">Save</button> &nbsp; <a href="family-login.html">Cancel</a></p>
               </fieldset>
               <fieldset class="isConfirmed" style="display: none">
                 <legend>Thanks!</legend>
-                <p class="confirmation-message"><img src="assets/img/ico-tick.png" alt="Dropped off" /> Jay dropped off at 7:30 AM</p>
+                <p class="confirmation-message"><img src="assets/img/ico-tick.png" alt="Dropped off" /> Jay and Arminda dropped off at 7:30 AM</p>
                 <p><button type="button" onclick="location.href='family-login.html'">Logout</button></p>
               </fieldset>
             </div>
@@ -73,7 +75,7 @@
 </main>
 
 <script src="../js/vendor/jquery-3.1.0.min.js"></script>
-<script>         
+<script>  
     function signIn() {
         $(".notConfirmed").hide();
         $(".isConfirmed").fadeIn();
