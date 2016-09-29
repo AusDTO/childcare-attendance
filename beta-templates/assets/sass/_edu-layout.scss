@@ -574,9 +574,7 @@ footer[role=contentinfo] {
             margin-bottom: 0.5em;
         }
         p.confirmation-message {
-            @include breakpoint(tiny) {
-                @include font-size(10);
-            }
+            @include font-size(10);
             @include breakpoint(small) {
                 @include font-size(11);
             }
