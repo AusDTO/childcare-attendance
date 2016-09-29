@@ -157,7 +157,7 @@ main>article a:hover, main>article a:focus {
 body.unauthenticated {
     .form--admin, .form--family {
         -webkit-box-shadow: none;
-        box-shadow: 0 none;
+        box-shadow: none;
     }
 }
 
@@ -607,4 +607,15 @@ footer[role=contentinfo] {
             width: 80%;
         }
     }
+}
+
+
+// Styling for solution overrides
+
+// Override form wrapping login details top right
+.inline-form {
+    display: inline;
+    position: absolute;
+    right: 0;
+    top: 40px;
 }
