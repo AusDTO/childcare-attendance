@@ -154,6 +154,13 @@ main>article a:hover, main>article a:focus {
     }
 }
 
+body.unauthenticated {
+    .form--admin, .form--family {
+        -webkit-box-shadow: none;
+        box-shadow: 0 none;
+    }
+}
+
 
 // reduce padding on main
 
