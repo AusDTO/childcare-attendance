@@ -4,68 +4,76 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Attendance - child care attendance</title>
+  <title>Child detail - child care attendance</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="https://gov-au-ui-kit.apps.staging.digital.gov.au/latest/ui-kit.min.css"/>
+  <link rel="stylesheet" type="text/css" href="assets/ui-kit.css"/>
   <link rel="stylesheet" type="text/css" href="assets/css/education.css"/>
-  <script type="text/javascript" src="https://gov-au-ui-kit.apps.staging.digital.gov.au/latest/ui-kit.min.js"></script>
+  <script type="text/javascript" src="assets/js/ui-kit.min.js"></script>
 </head>
-<body>
+<body class="attendance">
 
 <nav class="skip-to">
   <a href="#content">Skip to main content</a>
 </nav>
 
 <header role="banner">
-  <section class="govau--header attendance--header">
-    <div class="wrapper push-left">
+  <section class="govau--header">
+    <div class="wrapper">
       <div class="govau--logo">
-        <a href="index.html" class="logo">Child care attendance</a><span class="badge--default">beta</span>
+        <p><span class="logo">Child care attendance trial</span> <span class="badge--default">beta</span></p>
+        <p class="user">Hi, <strong>Linda Johnson</strong> <a href="index.html">Log out</a></p>
       </div>
-      <p class="user">Hi, <strong>Linda Joseph</strong> <a class="logout" href="index.html">Log out</a></p>
-      <button type="button" class="btn--login-family" onclick="location.href='family-login.html'">Family login</button>
     </div>
   </section>
 </header>
 
-<section class="attendance-status">
-  <div class="wrapper">
-    <div class="attendance-status-item attendance-time">
-      <p>
-        06:36 AM<br />
-        <span>Tue 21 Sep</span>
-      </p>
-    </div>
-    <div class="numerical-data">
-      <div class="attendance-status-item">
-        <p class="back"><a href="attendance.html">Back to attendance</a></p>
-      </div>
-    </div><!-- numerical-data -->
-  </div>
-</section>
 
 <!-- ========== Main Page Row ========== -->
 <main role="main">
 
+  <article id="content" class="wrapper">
+    <header class="guide-section-header">
+      <h1 class="visuallyhidden">Attendance dashboard</h1>
+    </header>
+    <section class="attendance-status">
+      <div class="wrapper">
+        <div class="attendance-status-item attendance-time">
+          <p>
+            06:36 AM<br />
+            <span>Tue 21 Sep</span>
+          </p>
+        </div>
+      </div>
+    </section>
+  </article>  
+
   <!-- ========== Refine column ========== -->
   <aside class="attendance-filter">
     <h2>Refine</h2>
-      <p>
-        <label for="dateFrom">Date from</label>
-        <input name="dateFrom" id="dateFrom" type="date" value="2016-09-20" />
-      </p>
-      <p>
-        <label for="dateTo">Date to</label>
-        <input name="dateTo" id="dateTo" type="date" value="2016-09-21" />
-      </p>
-      <p><button class="btn-small">Filter view</button></p>
-      <h2>Guardians</h2>
-      <ul>
-        <li>Jill Lawson (mother)</li>
-        <li>George Lawson (father)</li>
-        <li>Marge Gray (friend)</li>
-      </ul>
+    <p>
+      <label for="attendanceDay">Select day</label>
+      <select name="attendanceDay" id="attendanceDay">
+        <option selected>Today</option>
+        <option>etc</option>
+        <option>etc</option>
+      </select>
+    </p>
+    <p>
+      <label for="dateFrom">Date from</label>
+      <input name="dateFrom" id="dateFrom" type="date" value="" disabled />
+    </p>
+    <p>
+      <label for="dateTo">Date to</label>
+      <input name="dateTo" id="dateTo" type="date" value="" disabled />
+    </p>
+    <p><button class="btn-small">Go</button></p>
+    <h2>Guardians</h2>
+    <ul>
+      <li>Jill Lawson (mother)</li>
+      <li>George Lawson (father)</li>
+      <li>Marge Gray (friend)</li>
+    </ul>
   </aside>
 
   <!-- ========== Content ========== -->

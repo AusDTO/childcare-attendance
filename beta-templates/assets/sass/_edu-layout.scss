@@ -226,17 +226,6 @@ body.attendance {
     .wrapper {
         padding: 0;
     }
-    p.back {
-        background: transparent url(../img/ico-back.svg) no-repeat 0 0;
-            a, a:link {
-            color: white;
-            @include font-size(12);
-            text-decoration: none;
-            padding-left: 30px;
-            margin: 0.5em 0 1.75em 0;
-            display: block;
-        }
-    }
 }
 .attendance-status-item {
     color: $edu-gray-dark;

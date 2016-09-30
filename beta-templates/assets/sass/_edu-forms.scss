@@ -100,3 +100,8 @@ main {
     font-size: 1rem;
     color: #cc0000;
 }
+
+
+input:focus {
+    outline:none;
+}
