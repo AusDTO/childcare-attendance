@@ -60,7 +60,7 @@
           <div class="attendance-status-item">
             <p>
               <span>signed&nbsp;in</span><br />
-              <strong>0</strong>
+              <strong>1</strong>
             </p>
           </div>
           <div class="attendance-status-item family-login">
@@ -75,17 +75,27 @@
   <aside class="attendance-filter wrapper">
     <h2>Refine</h2>
       <p>
+        <label for="attendanceDay">Select day</label>
+        <select name="attendanceDay" id="attendanceDay">
+          <option selected>Today</option>
+          <option>etc</option>
+          <option>etc</option>
+        </select>
+      </p>
+      <p>
         <label for="dateFrom">Date from</label>
-        <input name="dateFrom" id="dateFrom" type="date" value="2016-09-21" />
+        <input name="dateFrom" id="dateFrom" type="date" value="" disabled />
       </p>
       <p>
         <label for="dateTo">Date to</label>
-        <input name="dateTo" id="dateTo" type="date" value="2016-09-21" />
+        <input name="dateTo" id="dateTo" type="date" value="" disabled />
       </p>
+      <!--
       <p>
         <label for="attendanceType">Attendance type</label>
         <select name="attendanceType" id="attendanceType">
-          <option selected>Expected today</option>
+          <option selected>-- Select attendance type --</option>
+          <option>Expected today</option>
           <option>Total enrolled</option>
         </select>
       </p>
@@ -97,6 +107,7 @@
           <option>Roo</option>
         </select>
       </p>
+      -->
       <p><button class="btn-small">Go</button></p>
    </aside>
 
@@ -104,7 +115,7 @@
   <article id="content" class="content-main">
   <form>
     <table class="content-table">
-      <caption>Attendance</caption>
+      <caption>Attendance for today</caption>
       <thead>
         <tr>
           <th scope="col" class="left" style="width: 73%"><p>Child</p></th>
