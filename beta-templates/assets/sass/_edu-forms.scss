@@ -90,6 +90,10 @@ main {
     }
 }
 
+form input[type='checkbox']+label {
+    outline: none !important;
+}
+
 
 // Validation for MCV controllers
 
@@ -99,9 +103,4 @@ main {
     display: block;
     font-size: 1rem;
     color: #cc0000;
-}
-
-
-input:focus {
-    outline:none;
 }
