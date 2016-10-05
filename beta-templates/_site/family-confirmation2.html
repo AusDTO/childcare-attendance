@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Confirm - child care attendance</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="assets/css/ui-kit.css"/>
+  <link rel="stylesheet" type="text/css" href="assets/css/education.css"/>
+  <script type="text/javascript" src="assets/js/ui-kit.js"></script>
+  <style>
+  .transform {
+  -webkit-transition: all 2s ease;  
+  -moz-transition: all 2s ease;  
+  -o-transition: all 2s ease;  
+  -ms-transition: all 2s ease;  
+  transition: all 2s ease;
+}
+
+.transform-active {
+  background-color: #45CEE0;
+  height: 200px;
+  width: 200px;
+}
+
+  </style>
+</head>
+<body class="kiosk">
+
+<nav class="skip-to">
+  <a href="#content">Skip to main content</a>
+</nav>
+
+<header role="banner">
+  <section class="govau--header">
+    <div class="wrapper">
+      <div class="govau--logo">
+        <p><span class="logo">Child care attendance trial</span> <span class="badge--default">beta</span></p>
+        <p class="user"><strong>Caterpillars</strong> &nbsp;<a href="index.html">Admin</a></p>
+      </div>
+    </div>
+  </section>
+</header>
+
+<main role="main">
+
+  <article id="content" class="wrapper">
+    <form class="form--family card--family">
+        <div class="card--row">
+            <div class="card--details">
+              <fieldset class="notConfirmed">
+                <legend>Hi Dave</legend>
+                <p><input type="checkbox" value="" id="c01" /> <label for="c01">Sign in Jay</label></p>
+                <p><input type="checkbox" value="" id="c02" /> <label for="c02">Sign in Arminda</label></p>
+                <p><button type="button" onclick="return signIn();">Save</button> &nbsp; <a href="family-login.html">Cancel</a></p>
+              </fieldset>
+              <fieldset class="isConfirmed" style="display: none">
+                <legend>Thanks!</legend>
+                <p class="confirmation-message"><img src="assets/img/ico-tick.png" alt="Dropped off" /> Jay and Arminda dropped off at 7:30 AM</p>
+                <p><button type="button" onclick="location.href='family-login.html'">Logout</button></p>
+              </fieldset>
+            </div>
+            <div class="card--date">
+                <div class="card--time">
+                  <p>Now<br />
+                  <strong>7:30 AM</strong></p>
+                  <p>20 <span>September</span> <span>2016</span></p>
+                </div>
+            </div>
+        </div>
+      </form>
+  </article>
+</main>
+
+<script src="../js/vendor/jquery-3.1.0.min.js"></script>
+<script>  
+    function signIn() {
+        $(".notConfirmed").hide();
+        $(".isConfirmed").fadeIn();
+    }  
+</script>
+</body>
+</html>

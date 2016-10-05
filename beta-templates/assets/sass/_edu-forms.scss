@@ -27,6 +27,7 @@ main>article input[type=submit] {
 .govau--header button, 
 .attendance-status button, 
 .form--family button,
+.btn,
 .govau--header input[type=reset], 
 .govau--header input[type=submit] {
     border: none;
@@ -50,6 +51,23 @@ main>article input[type=submit] {
         @include font-size(13);
     }
 }
+.btn {
+    padding: 0.75em 1.25em;
+    display: inline-block;
+    font-weight: 700;
+    @include breakpoint(tiny) {
+        @include font-size(8);
+    }
+    @include breakpoint(small) {
+        @include font-size(10);
+    }
+    @include breakpoint(medium) {
+        @include font-size(12);
+    }
+    @include breakpoint(large) { 
+        @include font-size(13);
+    }
+}
 main>article a[role=button]:focus, 
 main>article a[role=button]:hover, 
 main>article button:focus, 
@@ -64,6 +82,8 @@ main>article input[type=submit]:hover,
 .govau--header a[role=button]:hover, 
 .govau--header button:focus, 
 .govau--header button:hover, 
+.btn:focus,
+.btn:hover,
 .govau--header input[type=reset]:focus, 
 .govau--header input[type=reset]:hover, 
 .govau--header input[type=submit]:focus,

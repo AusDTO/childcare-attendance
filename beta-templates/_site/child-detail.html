@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Child detail - child care attendance</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="assets/ui-kit.css"/>
+  <link rel="stylesheet" type="text/css" href="assets/css/education.css"/>
+  <script type="text/javascript" src="assets/js/ui-kit.min.js"></script>
+</head>
+<body class="attendance">
+
+<nav class="skip-to">
+  <a href="#content">Skip to main content</a>
+</nav>
+
+<header role="banner">
+  <section class="govau--header">
+    <div class="wrapper">
+      <div class="govau--logo">
+        <p><span class="logo">Child care attendance trial</span> <span class="badge--default">beta</span></p>
+        <p class="user">Hi, <strong>Linda Johnson</strong> <a href="index.html">Log out</a></p>
+      </div>
+    </div>
+  </section>
+</header>
+
+
+<!-- ========== Main Page Row ========== -->
+<main role="main">
+
+  <article id="content" class="wrapper">
+    <header class="guide-section-header">
+      <h1 class="visuallyhidden">Attendance dashboard</h1>
+    </header>
+    <section class="attendance-status">
+      <div class="wrapper">
+        <div class="attendance-status-item attendance-time">
+          <p>
+            06:36 AM<br />
+            <span>Tue 21 Sep</span>
+          </p>
+        </div>
+      </div>
+    </section>
+  </article>  
+
+  <!-- ========== Refine column ========== -->
+  <aside class="attendance-filter">
+    <h2>Refine</h2>
+    <p>
+      <label for="attendanceDay">Select day</label>
+      <select name="attendanceDay" id="attendanceDay">
+        <option selected>Today</option>
+        <option>etc</option>
+        <option>etc</option>
+      </select>
+    </p>
+    <p>
+      <label for="dateFrom">Date from</label>
+      <input name="dateFrom" id="dateFrom" type="date" value="" disabled />
+    </p>
+    <p>
+      <label for="dateTo">Date to</label>
+      <input name="dateTo" id="dateTo" type="date" value="" disabled />
+    </p>
+    <p><button class="btn-small">Go</button></p>
+    <h2>Guardians</h2>
+    <ul>
+      <li>Jill Lawson (mother)</li>
+      <li>George Lawson (father)</li>
+      <li>Marge Gray (friend)</li>
+    </ul>
+  </aside>
+
+  <!-- ========== Content ========== -->
+  
+  <article id="content" class="content-main">
+  <form>
+    <table class="content-table">
+      <caption>Peta Lawson</caption>
+      <thead>
+        <tr>
+          <th scope="col" class="left" style="width: 40%"><p>Date</p></th>
+          <th scope="col" style="width: 7%"><p>Absent</p></th>
+          <th scope="col" style="width: 9%"><p>Sign in</p></th>
+          <th scope="col" style="width: 9%"><p>Sign out</p></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="left"><p>21 Sep 2016</p></td>
+          <td><p><input type="checkbox" value="" id="c01-absent0" /> <label for="c01-absent0"><span class="visuallyhidden">Absent</span></label></p></td>
+          <td><p><label for="c01-signedIn0"><span class="visuallyhidden">Signed in</span></label>
+          <input name="c01-signedIn0" id="c01-signedIn0" type="text" value="06:32 AM" /></p></td>
+          <td><button class="btn-small">Sign out</button></td>
+        </tr>
+        <tr>
+          <td class="left"><p>20 Sep 2016</p></td>
+          <td><p><input type="checkbox" value="" id="c01-absent1" /> <label for="c01-absent1"><span class="visuallyhidden">Absent</span></label></p></td>
+          <td>
+            <p><label for="c01-signedIn1"><span class="visuallyhidden">Signed in</span></label><input name="c01-signedIn1" id="c01-signedIn1" type="text" value="06:32 AM" /></p>
+          </td>
+          <td>
+            <p><label for="c01-signedOut1"><span class="visuallyhidden">Signed in</span></label><input name="c01-signedOut1" id="c01-signedOut1" type="text" value="08:17 AM" /></p>
+          </td>
+        </tr>
+        <tr>
+          <td class="left"><p>20 Sep 2016</p></td>
+          <td><p><input type="checkbox" value="" id="c01-absent2" /> <label for="c01-absent2"><span class="visuallyhidden">Absent</span></label></p></td>
+          <td>
+            <p><label for="c01-signedIn2"><span class="visuallyhidden">Signed in</span></label><input name="c01-signedIn2" id="c01-signedIn2" type="text" value="09:50 AM" /></p>
+          </td>
+          <td>
+            <p><label for="c01-signedOut2"><span class="visuallyhidden">Signed in</span></label><input name="c01-signedOut2" id="c01-signedOut2" type="text" value="14:10 PM" /></p>
+          </td>
+        </tr>
+      <tfoot>
+        <tr>
+          <td colspan="4" class="left"><p><a href="attendance.html">Back to attendance</a></p></td>
+        </tr>
+      </tfoot>
+      </tbody>
+    </table>
+    </form>
+
+
+  </article>
+  <!-- ========== end Content ========== -->
+</main>
+
+
+
+
+<footer role="contentinfo">
+</footer>
+
+</body>
+</html>
