@@ -58,7 +58,7 @@
               </fieldset>
               <fieldset class="isConfirmed" style="display: none">
                 <legend>Thanks!</legend>
-                <p class="confirmation-message"><img src="assets/img/ico-tick.png" alt="Dropped off" /> Jay and Arminda dropped off at 7:30 AM</p>
+                <p class="confirmation-message"><img src="assets/img/ico-tick.png" alt="Dropped off" /> <span class="confirmation-message-content">Jay and Arminda dropped off at 7:30 AM</span></p>
                 <p><button type="button" onclick="location.href='family-login.html'">Logout</button></p>
               </fieldset>
             </div>
@@ -77,8 +77,17 @@
 <script src="../js/vendor/jquery-3.1.0.min.js"></script>
 <script>  
     function signIn() {
-        $(".notConfirmed").hide();
-        $(".isConfirmed").fadeIn();
+        if(document.getElementById('c01').checked && document.getElementById('c02').checked) {
+          $( ".confirmation-message-content" ).text( " Jay and Arminda dropped off at 7:30 AM" );
+        }
+        else if(document.getElementById('c01').checked) {
+          $( ".confirmation-message-content" ).text( " Jay dropped off at 7:30 AM" );
+        }
+        else if(document.getElementById('c02').checked) {
+          $( ".confirmation-message-content" ).text( " Arminda dropped off at 7:30 AM" );
+        }
+          $(".notConfirmed").hide();
+          $(".isConfirmed").fadeIn();
     }  
 </script>
 </body>

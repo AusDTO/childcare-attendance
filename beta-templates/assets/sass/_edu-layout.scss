@@ -328,7 +328,7 @@ body.attendance {
 .content-table {
     th, td {
         text-align: center;
-        padding: 0.8em 0.8em 0.25em 0.8em;
+        padding: 0.25em 0.8em 0.25em 0.8em;
         background-color: transparent;
     }
     tr:nth-child(even) {
@@ -613,14 +613,26 @@ footer[role=contentinfo] {
 }
 
 
-// Styling for solution overrides
-
 // Override form wrapping login details top right
 .inline-form {
     display: inline;
     position: absolute;
     right: 0;
     top: 40px;
+}
+
+
+// Navbar styling for admin screens
+
+main>article a:hover, main>article a:focus, footer[role='contentinfo'] a:hover, footer[role='contentinfo'] a:focus {
+    background-color: white;
+}
+.navbar li a {
+    display: inline;
+    border-bottom: 1px solid $edu-link;
+    float: left;
+    margin: 0.25em 1.25em;
+    background-color: none;
 }
 
 

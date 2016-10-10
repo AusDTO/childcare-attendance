@@ -51,6 +51,7 @@ main>article input[type=submit] {
         @include font-size(13);
     }
 }
+
 .btn {
     padding: 0.75em 1.25em;
     display: inline-block;
@@ -66,6 +67,38 @@ main>article input[type=submit] {
     }
     @include breakpoint(large) { 
         @include font-size(13);
+    }
+}
+.content-table td input[type=text] {
+    padding: 0.25em;
+    line-height: 0.25em;
+    width: 5.8em;
+    text-align: center;
+    margin-top: 0.75em;
+}
+.content-table td a {
+    border-bottom: 0 ;
+    &.btn {
+        color: white;
+        cursor: pointer;
+        font-weight: 400;
+        height: 2.2em;
+        padding: 0.35em 1em 0.1em 1em;
+        margin: 0;
+        @include border-radius(5px);
+        @include font-size(8);
+        width: 6em;
+    }
+    &.btn-disabled {
+      &,
+      &:hover,
+      &:active,
+      &:focus {
+        cursor: not-allowed;
+        border-color: transparent;
+        background-color: $button-bg-colour--disabled;
+        color: $non-black;
+      }
     }
 }
 main>article a[role=button]:focus, 
@@ -91,6 +124,8 @@ main>article input[type=submit]:hover,
     background-color: black;
     color: #fff;
 }
+
+
 .btn--login-family {
     font-size: 1.8rem;
 }
@@ -123,4 +158,13 @@ form input[type='checkbox']+label {
     display: block;
     font-size: 1rem;
     color: #cc0000;
+}
+
+
+// Field lengths for admin data entry
+.form-group {
+    margin-bottom: 1em;
+        input[type=text] {
+        width: 350px;
+    }
 }
