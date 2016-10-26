@@ -137,8 +137,8 @@ main>article input[type=submit]:hover,
 }
 main {
         input, select {
-            &[type=text],&[type=password] {
             padding: 0.4em 0 0.4em 0.3em;
+            &[type=text],&[type=password] {
             @include border-radius(3px);
             border: 1px solid #bbbbbb;
         }
@@ -146,13 +146,19 @@ main {
 }
 
 form input[type='checkbox']+label {
-    outline: none !important;
+    // hidden for now, to meet 2.4.7
+    // outline: none !important;
 }
 
 
 // Validation for MCV controllers
 
-.field-validation-error {
+.validation-summary-errors ul {
+    margin: 0;
+    padding: 0;
+}
+.field-validation-error,
+.validation-summary-errors li  {
     background: transparent url(../img/ico-error.png) no-repeat 0 50%;
     padding: 3px 0 0 23px;
     display: block;
@@ -164,7 +170,9 @@ form input[type='checkbox']+label {
 // Field lengths for admin data entry
 .form-group {
     margin-bottom: 1em;
-        input[type=text] {
+    input[type=text],
+    input[type=password],
+    select {
         width: 350px;
     }
 }
