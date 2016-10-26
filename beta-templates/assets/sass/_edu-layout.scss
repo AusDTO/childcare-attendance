@@ -245,7 +245,8 @@ body.attendance {
     span {
         display: block;
         border-bottom: 2px solid $edu-secondary;
-        line-height: 3rem;
+        line-height: 1.75rem;
+        padding-bottom: .75em;
         @include breakpoint(tiny) {
             @include font-size(8);
         }
