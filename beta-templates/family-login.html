@@ -10,6 +10,7 @@
   <link rel="stylesheet" type="text/css" href="assets/css/ui-kit.css"/>
   <link rel="stylesheet" type="text/css" href="assets/css/education.css"/>
   <script type="text/javascript" src="assets/js/ui-kit.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 </head>
 <body class="kiosk">
 
@@ -22,9 +23,11 @@
     <div class="wrapper">
       <div class="govau--logo">
         <p><span class="logo">Child care attendance trial</span> <span class="badge--default">beta</span></p>
-        <p class="user"><strong>Caterpillars</strong> &nbsp;<a href="index.html">Admin</a></p>
+        <p class="user"><a href="#" id="linkOne" onclick="focusInput()" /><strong>Caterpillars</strong></a></p>
       </div>
     </div>
+
+
   </section>
 </header>
 
@@ -35,16 +38,16 @@
       <fieldset>
           <legend>Family login</legend>
           <div class="family-login-left">
-          <p>
-            <label for="phone">Phone <span class="hint">Your own 10 digit number</span></label>
-            <input id="phone" type="text" class="input-phone" maxlength="10"></input>
-          </p>
+            <p>
+              <label for="phone">Phone <span class="hint">10 digit number</span></label>
+              <input id="phone" type="text" class="input-phone" maxlength="10"></input>
+            </p>
           </div>
           <div class="family-login-right">
-          <p>
-            <label for="pin" class="input-right">PIN <span class="hint">4 digit number</span></label>
-            <input id="pin" type="password" class="input-pin" maxlength="4">
-          </p>
+            <p>
+              <label for="pin" class="input-right">PIN <span class="hint">4 digit number</span></label>
+              <input id="pin" type="password" class="input-pin" maxlength="4">
+            </p>
           </div>
           <p class="clear">
             <button type="button" onclick="location.href='family-confirmation.html'">Login</button><a href="#">Reset PIN</a>
@@ -52,13 +55,33 @@
       </fieldset>
     </form>
   </article>
+  <div id="dialogOne" class="va-container" style="display:none">
+    <h2>Educator login</h2>
+    <p>
+      <label for="adminPin" class="input-right">Administrator PIN</label><br />
+      <input id="adminPin" type="password" class="input-pin" maxlength="4">
+    </p>
+    <p><button class="btn btn-small" style="margin: 0 0.5em 0.8em 0;" onclick="location.href='attendance.html'">Login</button> <button id="educatorLoginCancel" class="btn-href" type="button">Cancel</button></p>
+   </div>
 </main>
 
-<script src="../js/vendor/jquery-3.1.0.min.js"></script>
-<script>  
-    $(function() {
-      $("#phone").focus();
-    });    
-</script>
+<script type="text/javascript" src="../js/vendor/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="../js/vadialog.js"></script> 
+<script type="text/javascript">
+        $(function() {
+          $("#phone").focus();
+        }); 
+
+        visionaustralia.addDialog("linkOne", "dialogOne"); 
+        jQuery('#educatorLoginCancel').click(function () {
+            visionaustralia.closeDialog("dialogOne");
+        });
+
+        function focusInput() {
+            setTimeout(function () {
+                $("[id$='adminPin']:first").focus();
+            }, 300);
+        }
+</script>     
 </body>
 </html>

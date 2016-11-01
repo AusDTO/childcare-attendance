@@ -135,6 +135,19 @@ main>article input[type=submit]:hover,
     height: 2.2em;
     padding: 0.1em 0.75em;
 }
+ .btn-href {
+    display: inline; 
+    border: none; 
+    padding: 0; 
+    margin-left: 0.25em; 
+    color: #3b53a4; 
+    background-color: white; 
+    text-decoration: underline; 
+    font-weight: normal;
+    &:hover {
+        color: black;
+    }
+}
 main {
         input, select {
             padding: 0.4em 0 0.4em 0.3em;
@@ -174,5 +187,80 @@ form input[type='checkbox']+label {
     input[type=password],
     select {
         width: 350px;
+    }
+}
+
+
+// Modal confirmation message
+// ------------------------------------------------------------------------------------------------------
+
+.vashadow {
+    background-color: black;
+    opacity: 0.6;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+}
+
+.vadialog {
+    display: none;
+    position: fixed;
+    left:50%;
+    top:50%;
+
+    h2 {
+        font-size: 2rem;
+        margin: 0;
+        padding: 0 0 10px 0;
+    }
+}
+
+.vaCloseButton {
+    float:right;
+    color:#999999;
+    border:none;
+    /*padding:0;
+    margin-right:-20px;
+    margin-top:0;*/
+    position: absolute;
+    right: 10px;
+    top: 27px;
+    background: white;
+    cursor:pointer;
+
+    &:focus{
+        outline:2px solid #999999;
+    }
+}
+
+.vaOffscreen{
+    position:absolute;
+    left:-9999px;
+}
+
+.va-container {
+    -webkit-box-shadow: 2px 2px 3px 0 rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 3px 0 rgba(0,0,0,0.3);
+    background-color: white;
+    color: black;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border-left: 12px solid $edu-primary;
+    padding: 1em 0.5em 0 1.5em;
+    margin: 1em 0;
+    display: table;
+    position: relative;
+
+    // overrides - refactor when styling clash bebugged
+    padding: 2em 2em 0.5em 2em;
+    width: 400px;
+    input {
+        padding: 0.4em 0 0.4em 0.3em;
+        @include border-radius(3px);
+        border: 1px solid #bbbbbb;
+        width: 6em;
     }
 }

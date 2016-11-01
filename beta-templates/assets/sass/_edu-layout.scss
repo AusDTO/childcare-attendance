@@ -19,6 +19,20 @@
 }
 
 
+// login screen
+
+@include breakpoint(medium) {
+    .intro {
+        float: right;
+        width: 60%;
+    }
+    .login-admin {
+        float: left;
+        width: 30%;
+    }
+}
+
+
 // Education branding
 
 h1 {
@@ -246,7 +260,7 @@ body.attendance {
         display: block;
         border-bottom: 2px solid $edu-secondary;
         line-height: 1.75rem;
-        padding-bottom: .75em;
+        padding-bottom: 0.75em;
         @include breakpoint(tiny) {
             @include font-size(8);
         }
