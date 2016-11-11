@@ -23,7 +23,7 @@
     <div class="wrapper">
       <div class="govau--logo">
         <p><span class="logo">Child care attendance trial</span> <span class="badge--default">beta</span></p>
-        <p class="user"><a href="#" id="linkOne" onclick="focusInput()" /><strong>Caterpillars</strong></a></p>
+        <p class="user"><a href="#" class="btn-panel" onclick="focusInput()" /><strong>Caterpillars log in</strong></a></p>
       </div>
     </div>
 
@@ -55,27 +55,39 @@
       </fieldset>
     </form>
   </article>
-  <div id="dialogOne" class="va-container" style="display:none">
-    <h2>Educator login</h2>
-    <p>
-      <label for="adminPin" class="input-right">Administrator PIN</label><br />
-      <input id="adminPin" type="password" class="input-pin" maxlength="4">
-    </p>
-    <p><button class="btn btn-small" style="margin: 0 0.5em 0.8em 0;" onclick="location.href='attendance.html'">Login</button> <button id="educatorLoginCancel" class="btn-href" type="button">Cancel</button></p>
-   </div>
+
+  <div class="saveforlater" id="saveForLater">
+      <div class="cd-panel from-right">
+          <div class="cd-panel-header">
+              <a href="#" class="cd-panel-close">Close</a>
+              <h2>Caterpillars log in</h2>
+          </div>
+          <div class="cd-panel-container">
+              <div class="cd-panel-content">
+                  <p>
+                      <label for="adminPin">Enter PIN</label><br />
+                      <input type="password" id="adminPin" />
+                  </p>
+                  <button class="btn btn-small" onclick="location.href='attendance.html'">Educator log in</button>
+              </div><!-- cd-panel-content -->
+          </div><!-- cd-panel-container -->
+      </div><!-- cd-panel -->
+  </div>
+
 </main>
 
-<script type="text/javascript" src="../js/vendor/jquery-3.1.0.min.js"></script>
-<script type="text/javascript" src="../js/vadialog.js"></script> 
+<script src="assets/js/vendor/jquery-3.1.0.min.js"></script>
+<script src="assets/js/jquery.collapse.js"></script>
+<script src="assets/js/functions.js"></script>
+<script>
+    $(document).ready(function () {
+        initSaveForLater();
+    });
+</script>
 <script type="text/javascript">
         $(function() {
           $("#phone").focus();
         }); 
-
-        visionaustralia.addDialog("linkOne", "dialogOne"); 
-        jQuery('#educatorLoginCancel').click(function () {
-            visionaustralia.closeDialog("dialogOne");
-        });
 
         function focusInput() {
             setTimeout(function () {

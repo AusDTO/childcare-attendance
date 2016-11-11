@@ -137,14 +137,15 @@ main {
 .content-main p {
     max-width: none;
 }
-main>article a {
+main>article a, main>article a:active {
     color: $edu-primary;
     text-decoration: none;
     border-bottom: solid 1px $edu-primary;
 }
 main>article a:hover, main>article a:focus {
-    background-color: white;
-    color: black;
+    background-color: black !important;
+    border-bottom: none;
+    color: white;
 }
 .wrapper {
     padding: 0 1em;
