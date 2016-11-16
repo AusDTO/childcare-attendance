@@ -88,24 +88,6 @@
         <label for="dateTo">Date to</label>
         <input name="dateTo" id="dateTo" type="date" value="" disabled />
       </p>
-      <!--
-      <p>
-        <label for="attendanceType">Attendance type</label>
-        <select name="attendanceType" id="attendanceType">
-          <option selected>-- Select attendance type --</option>
-          <option>Expected today</option>
-          <option>Total enrolled</option>
-        </select>
-      </p>
-      <p>
-        <label for="room">Room</label>
-        <select name="room" id="room">
-          <option selected>Burra</option>
-          <option>Kidna</option>
-          <option>Roo</option>
-        </select>
-      </p>
-      -->
       <p><button class="btn-small">Go</button></p>
    </aside>
 
@@ -116,42 +98,170 @@
       <caption>Attendance for today</caption>
       <thead>
         <tr>
-          <th scope="col" class="left" style="width: 73%"><p>Child</p></th>
+          <th scope="col" class="left" style="width: 64%"><p>Child</p></th>
           <th scope="col" style="width: 9%"><p>Absent</p></th>
           <th scope="col" style="width: 9%"><p>Sign in</p></th>
           <th scope="col" style="width: 9%"><p>Sign out</p></th>
+          <th scope="col"  class="left" style="width: 9%"><p>Actions</p></th>
         </tr>
       </thead>
       <tbody>
         <tr>
+          <td class="left">Elleanor Nelson</td>
+          <td>
+            <p>
+              <input type='checkbox' name='item.Absent' id='item_Absent_154' value='true' data-val-required='The item.Absent field is required.' data-val='true' />
+              <label for='item_Absent_154'></label>
+              <input name='item.Absent' type='hidden' value='false'>
+            </p>
+          </td>
+          <td>
+            <p><label for='item.SignInTime1'><span class='visuallyhidden'>Sign in</span></label><input id="item.SignInTime1" disabled = 'disabled' type='text' value='9:58'></p>
+          </td>
+          <td>
+            <p><label for='item.SignOutTime1'><span class='visuallyhidden'>Sign out</span></label><input id="item.SignInTime1" disabled = 'disabled' type='text' value='9:58'></p>
+          </td>
+          <td class="left">
+            <a class="row-add" href="#/" return false;">Add</a>
+          </td>
+        </tr>
+
+        <tr class="row-multiple">
+          <td class="left"><span class="visuallyhidden">Elleanor Nelson</span></td>
+          <td>
+            <p>
+              <input type='checkbox' name='item.Absent' id='item_Absent_167' value='true' data-val-required='The item.Absent field is required.' data-val='true' />
+              <label for='item_Absent_167'></label>
+              <input name='item.Absent' type='hidden' value='false'>
+            </p>
+          </td>
+          <td>
+            <p><label for='item.SignInTime'><span class='visuallyhidden'>Sign in</span></label><input disabled = 'disabled' type='text' value='9:58'></p>
+          </td>
+          <td>
+            <p><label for='item.SignOutTime'><span class='visuallyhidden'>Sign out</span></label><input disabled = 'disabled' type='text' value='9:58'></p>
+          </td>
+          <td></td>
+        </tr>
+
+        <tr class="row-multiple">
+          <td class="left"><span class="visuallyhidden">Elleanor Nelson</span></td>
+          <td>
+            <p>
+              <input type='checkbox' name='item.Absent' id='item_Absent_168' value='true' data-val-required='The item.Absent field is required.' data-val='true' />
+              <label for='item_Absent_168'></label>
+              <input name='item.Absent' type='hidden' value='false'>
+            </p>
+          </td>
+          <td>
+            <p><label for='item.SignInTime'><span class='visuallyhidden'>Sign in</span></label><input disabled = 'disabled' type='text' value='9:58'></p>
+          </td>
+          <td>
+            <p><label for='item.SignOutTime'><span class='visuallyhidden'>Sign out</span></label><input disabled = 'disabled' type='text' value='9:58'></p>
+          </td>
+          <td></td>
+        </tr>
+
+        <tr class="row-multiple">
+          <td class="left"><span class="visuallyhidden">Elleanor Nelson</span></td>
+          <td>
+            <p>
+              <input type='checkbox' name='item.Absent' id='item_Absent_168' value='true' data-val-required='The item.Absent field is required.' data-val='true' />
+              <label for='item_Absent_168'></label>
+              <input name='item.Absent' type='hidden' value='false'>
+            </p>
+          </td>
+          <td>
+            <a class='btn btn-small' href="#/">Sign in</a>
+          </td>
+          <td>
+            <a class='btn btn-small btn-disabled'>Sign out</a>
+          </td>
+          <td class="left"><a class="row-remove" href="#/">Remove</a></td>
+        </tr>
+
+        <tr class="">
+          <td class="left">Madison Lopez</td>
+          <td>
+            <p>
+              <input type='checkbox' name='item.Absent' id='item_Absent_158' value='true' data-val-required='The item.Absent field is required.' data-val='true' /><label for='item_Absent_158'></label><input name='item.Absent' type='hidden' value='false'>
+            </p>
+          </td>
+          <td>
+            <a class='btn btn-small' href="#/">Sign in</a>
+          </td>
+          <td>
+            <a class='btn btn-small btn-disabled'>Sign out</a>
+          </td>
+          <td></td>
+        </tr>
+
+        <tr class="">
+            <td class="left">Mia Davis</td>
+            <td>
+                <p>
+                    <input type='checkbox' name='item.Absent' id='item_Absent_157' value='true' data-val-required='The item.Absent field is required.' data-val='true' /><label for='item_Absent_157'></label><input name='item.Absent' type='hidden' value='false'>
+                </p>
+            </td>
+            <td>
+                <a class='btn btn-small' href="#/">Sign in</a>
+            </td>
+            <td>
+                <a class='btn btn-small btn-disabled'>Sign out</a>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="left">Noah Blanc</td>
+            <td>
+                <p>
+                    <input type='checkbox' name='item.Absent' id='item_Absent_155' value='true' data-val-required='The item.Absent field is required.' data-val='true' /><label for='item_Absent_155'></label><input name='item.Absent' type='hidden' value='false'>
+                </p>
+            </td>
+            <td>
+                <a class='btn btn-small' href="#/">Sign in</a>
+            </td>
+            <td>
+                <a class='btn btn-small btn-disabled'>Sign out</a>
+            </td>
+            <td></td>
+        </tr>
+
+        <!-- original version with buttons 
+        <tr>
           <td class="left"><p><a href="child-detail.html">Peta Lawson</a></p></td>
           <td><p><input type="checkbox" value="" id="c01-absent" /> <label for="c01-absent"><span class="visuallyhidden">Absent</span></label></p></td>
           <td><p><label for="c01-signedIn"><span class="visuallyhidden">Signed in</span></label>
-          <input name="c01-signedIn" id="c01-signedIn" type="text" value="06:32 AM" /></p></td>
+          <input name="c01-signedIn" id="c01-signedIn" type="text" value="06:32" /></p></td>
           <td><button class="btn-small">Sign out</button></td>
+          <td></td>
         </tr>
         <tr>
           <td class="left"><p><a href="child-detail.html">Bonnie Lawson</a></p></td>
           <td><p><input type="checkbox" value="" id="c02-absent" /> <label for="c02-absent"><span class="visuallyhidden">Absent</span></label></p></td>
           <td><button class="btn-small">Sign in</button></td>
           <td><button disabled class="btn-small">Sign out</button></td>
+          <td></td>
         </tr>
         <tr>
           <td class="left"><p><a href="child-detail.html">James Williams</a></p></td>
           <td><p><input type="checkbox" value="" id="c03-absent" /> <label for="c03-absent"><span class="visuallyhidden">Absent</span></label></p></td>
           <td><button class="btn-small">Sign in</button></td>
           <td><button disabled class="btn-small">Sign out</button></td>
+          <td></td>
         </tr>
         <tr>
           <td class="left"><p><a href="child-detail.html">Arminda Singh</a></p></td>
           <td><p><input type="checkbox" value="" id="c04-absent" /> <label for="c04-absent"><span class="visuallyhidden">Absent</span></label></p></td>
           <td><button class="btn-small">Sign in</button></td>
           <td><button disabled class="btn-small">Sign out</button></td>
+          <td></td>
         </tr>
+        -->
       </tbody>
       <tfoot>
         <tr>
-          <td colspan="4" class="left">
+          <td colspan="5" class="left">
             <p><button>Submit attendance</button></p>
             <p id="submitMessage" style="display: none"><strong>Attendance submitted</strong> <span id="timeStamp"></span></p>
           </td>

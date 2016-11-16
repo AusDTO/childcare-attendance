@@ -255,7 +255,7 @@ body.attendance {
         width: 18%;
     }
     @include breakpoint(large) {
-        margin: 0.5em 3em 0 0;
+        margin: 0.5em 3em 0 0; 
     }
     span {
         display: block;
@@ -343,18 +343,44 @@ body.attendance {
 
 .content-table {
     th, td {
+        border-bottom: 0;
+        border-top: solid 1px #bbbbbb;
         text-align: center;
-        padding: 0.25em 0.8em 0.25em 0.8em;
+        padding: 0.5em 0.8em 0 0.8em;
         background-color: transparent;
+    }
+    th {
+        border-top: 0;
+        padding-top: 1em;
     }
     tr:nth-child(even) {
         background-color: transparent;
+    }
+    tr.row-multiple td {
+        border: 0;
+        padding: 0 0.8em 0 0.8em;
     }
     td {
         a, a:link {
             color: $edu-link;
             font-weight: 600;
             border-bottom: solid 0.1rem $edu-link;
+        }
+        a.row-add {
+            background: transparent url(../img/sprite-add.png) no-repeat 0 0;
+            padding-left: 25px;
+            border-bottom: 0;
+        }
+        a.row-add:hover, a.row-add:focus {
+            background: transparent url(../img/sprite-add.png) no-repeat 0 -78px;
+        }
+        a.row-remove {
+            background: transparent url(../img/sprite-remove.png) no-repeat 0 0;
+            padding-left: 25px;
+            border-bottom: 0;
+        }
+        a.row-remove:hover, a.row-remove:focus {
+            background: transparent url(../img/sprite-remove.png) no-repeat 0 -78px;
         }
         a:focus, a:hover {
             background-color: black;
