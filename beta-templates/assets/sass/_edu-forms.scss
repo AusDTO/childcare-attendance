@@ -11,7 +11,7 @@ main>article input[type=reset],
 main>article input[type=submit] {
     border: none;
     color: #fff;
-    background-color: $edu-link;
+    background-color: $edu-link !important;
     @include border-radius(2px);
     @include breakpoint(small) {
         @include border-radius(2px);
@@ -50,6 +50,23 @@ main>article input[type=submit] {
         @include border-radius(8px);
         @include font-size(13);
     }
+}
+header[role=banner] a {
+    color: white;
+    border: 0;
+    text-decoration: underline;
+}
+header[role=banner] a:focus,
+header[role=banner] a:hover {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+
+body>main a {
+    color: black;
+    border: 0;
+    text-decoration: underline;
 }
 
 .btn {
@@ -96,7 +113,7 @@ main>article input[type=submit] {
       &:focus {
         cursor: not-allowed;
         border-color: transparent;
-        background-color: $button-bg-colour--disabled;
+        background-color: $button-bg-colour--disabled !important;
         color: $non-black;
       }
     }
@@ -123,7 +140,7 @@ main>article input[type=submit]:hover,
 .govau--header input[type=reset]:hover, 
 .govau--header input[type=submit]:focus,
 .govau--header input[type=submit]:hover {
-    background-color: black;
+    background-color: black !important;
     color: #fff;
 }
 

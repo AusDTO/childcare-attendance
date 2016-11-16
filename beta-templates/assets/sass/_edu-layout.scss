@@ -365,6 +365,7 @@ body.attendance {
             color: $edu-link;
             font-weight: 600;
             border-bottom: solid 0.1rem $edu-link;
+            text-decoration: none;
         }
         a.row-add {
             background: transparent url(../img/sprite-add.png) no-repeat 0 0;
@@ -395,7 +396,7 @@ body.attendance {
             background-color: $input-focus;
         }
         &[disabled]:focus, &[disabled]:hover {
-            background-color: $input-disabled;
+            background-color: $input-disabled !important;
         }
     }    
     .btn-small {

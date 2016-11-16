@@ -4,12 +4,34 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Home - child care attendance</title>
+  <title>Log in - child care attendance</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="https://gov-au-ui-kit.apps.staging.digital.gov.au/latest/ui-kit.min.css"/>
   <link rel="stylesheet" type="text/css" href="assets/css/education.css"/>
-  <script type="text/javascript" src="https://gov-au-ui-kit.apps.staging.digital.gov.au/latest/ui-kit.min.js"></script>
+  <script type="text/javascript" src="assets/js/ui-kit.min.js"></script>
+  <style>
+      #loginForm {
+          display: block;
+          position: relative;
+      }
+
+      #divProcessing {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          text-align: center;
+          background: url() no-repeat center #fff;
+          padding: 40px 1em 1em 1em;
+          z-index: 2;
+          opacity: 0.75;
+      }
+
+      #content {
+          padding-bottom: 12em;
+      }
+  </style>
 </head>
 <body class="unauthenticated">
 
@@ -21,7 +43,7 @@
   <section class="govau--header">
     <div class="wrapper">
       <div class="govau--logo">
-        <p><a href="index.html" class="logo">Child care attendance trial</a> <span class="badge--default">beta</span></p>
+        <p><span class="logo">Child care attendance trial</span> <span class="badge--default">beta</span></p>
       </div>
     </div>
   </section>
@@ -31,13 +53,14 @@
 
   <article id="content" class="wrapper">
     <header class="guide-section-header">
-      <h1>Login</h1>
+      <h1>Log in</h1>
     </header>
     <div class="intro">
-      <p>You are about to sign in to the Department of Education and Training's automated child care attendance system. This system has been designed to capture actual attendance data for early childhood services.</p>
-      <p>Information in this system will be used by the Australian Government for testing purposes only. It will not be replicated or sent to any party outside the Commonwealth and all personal information, including names will be held in accordance with the <a href="https://www.legislation.gov.au/Details/C2016C00838" target="_blank">Privacy Act 1988</a> (opens in new window).</p>
-      <p>By signing in you are accepting the terms and conditions.</p>
+        <p>Staff members accessing the system should use their own credentials for updating information. Your PIN should not be disclosed or shared with anyone.</p>
+        <p>You are about to sign in to the Department of Education and Training's automated child care attendance system. This system has been designed to capture actual attendance data for early childhood services.</p>
+        <p>Information in this system will be used by the Australian Government for testing purposes only. It will not be replicated or sent to any party outside the Commonwealth and all personal information, including names will be held in accordance with the <a href="https://www.legislation.gov.au/Details/C2016C00838" target="_blank">Privacy Act 1988</a> (opens in new window).</p>
     </div>
+
     <form class="form--admin login-admin">
       <p>
         <label for="userName">Username</label>
@@ -47,8 +70,9 @@
         <label for="password">Password</label>
         <input name="password" id="password" type="password" />
       </p>
-      <button type="button" class="btn btn-default" onclick="location.href='attendance.html'">Login</button>&nbsp;
-    </form>    
+      <button type="button" onclick="location.href='attendance.html'">Login</button>&nbsp;
+    </form>
+
   </article>
 </main>
 
