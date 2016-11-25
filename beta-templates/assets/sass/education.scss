@@ -1,9 +1,15 @@
 /* UI-Kit - compiled and compressed CSS file */
+/* created at: Wed Nov 09 2016 06:20:40 GMT+0000 (UTC) */
+
+// We are using a pre-compiled version of ui-kit which then has the education styling appended
+// If a newer version ui kit is included, the app needs to be carefully tested
 
 @import 'ui-kit-compiled';
 
 
 // Styling overrides for Education Childcare Attendance
+// All SASS and CSS are compiled into a single css file "education.css" for inclusion in the templates
+// No other CSS files are required
 // ------------------------------------------------------------------------------------------------------
 
 @import "edu-variables";
