@@ -7,9 +7,7 @@
   <title>Confirm - child care attendance</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="assets/css/ui-kit.css"/>
   <link rel="stylesheet" type="text/css" href="assets/css/education.css"/>
-  <script type="text/javascript" src="assets/js/ui-kit.js"></script>
   <style>
   .transform {
   -webkit-transition: all 2s ease;  
@@ -38,7 +36,7 @@
     <div class="wrapper">
       <div class="govau--logo">
         <p><span class="logo">Child care attendance trial</span> <span class="badge--default">beta</span></p>
-        <p class="user"><strong>Caterpillars</strong> &nbsp;<a href="index.html">Admin</a></p>
+        <p class="user"><a href="#" class="btn-panel" onclick="focusInput()" /><strong>Caterpillars log in</strong></a></p>
       </div>
     </div>
   </section>
@@ -72,10 +70,47 @@
         </div>
       </form>
   </article>
+  <div class="saveforlater" id="saveForLater">
+      <div class="cd-panel from-right">
+          <div class="cd-panel-header">
+              <a href="#" class="cd-panel-close">Close</a>
+              <h2>Caterpillars log in</h2>
+          </div>
+          <div class="cd-panel-container">
+              <div class="cd-panel-content">
+                  <p>
+                      <label for="adminPin">Enter PIN</label><br />
+                      <input type="password" id="adminPin" />
+                  </p>
+                  <button class="btn btn-small" onclick="location.href='attendance.html'">Educator log in</button>
+              </div><!-- cd-panel-content -->
+          </div><!-- cd-panel-container -->
+      </div><!-- cd-panel -->
+  </div>
 </main>
+<script src="assets/js/vendor/jquery-3.1.0.min.js"></script>
+<script src="assets/js/jquery.collapse.js"></script>
+<script src="assets/js/functions.js"></script>
+<script>
+    $(document).ready(function () {
+        initSaveForLater();
+    });
 
-<script src="../js/vendor/jquery-3.1.0.min.js"></script>
-<script>  
+    $(function() {
+      $("#phone").focus();
+    }); 
+
+    function focusInput() {
+        setTimeout(function () {
+            $("[id$='adminPin']:first").focus();
+        }, 300);
+    }
+
+    function signIn() {
+        $(".notConfirmed").hide();
+        $(".isConfirmed").fadeIn();
+    }  
+
     function signIn() {
         if(document.getElementById('c01').checked && document.getElementById('c02').checked) {
           $( ".confirmation-message-content" ).text( " Jay and Arminda dropped off at 7:30 AM" );
